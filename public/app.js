@@ -1,1 +1,1 @@
-var baSurvey = angular.module('baSurvey', ['ngRoute']);
+var baSurvey = angular.module('baSurvey', ['ngRoute', 'firebase']);

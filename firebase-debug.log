@@ -1,0 +1,28 @@
+[debug] ----------------------------------------------------------------------
+[debug] Command:      C:\Program Files\nodejs\node.exe C:\Users\gonza\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] CLI Version:  3.1.0
+[debug] Platform:     win32
+[debug] Node Version: v4.5.0
+[debug] Time:         Sat Nov 12 2016 14:12:10 GMT-0300 (Hora estándar de Argentina)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[info] Starting Firebase development server...
+[info] 
+[info] Project Directory: D:\Documentos\Webs\BancoAlimentos\ba-survey
+[info] Public Directory: public
+[info] 
+[info] Server listening at: http://localhost:5000
+[debug] ----------------------------------------------------------------------
+[debug] Command:      C:\Program Files\nodejs\node.exe C:\Users\gonza\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] CLI Version:  3.1.0
+[debug] Platform:     win32
+[debug] Node Version: v4.5.0
+[debug] Time:         Sat Nov 12 2016 16:13:35 GMT-0300 (Hora estándar de Argentina)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[info] Starting Firebase development server...
+[info] 
+[info] Project Directory: D:\Documentos\Webs\BancoAlimentos\ba-survey
+[info] Public Directory: public
+[info] 
+[info] Server listening at: http://localhost:5000

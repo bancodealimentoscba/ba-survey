@@ -54,3 +54,27 @@ a {
 .clearfix {
   clear: both;
 }
+
+.col-md-3 {
+  width: 25%;
+}
+
+.col-md-4 {
+  width: 33.33%;
+}
+
+.col-md-5 {
+  width: 41.66%;
+}
+
+.col-md-6 {
+  width: 50%;
+}
+
+.col-md-9 {
+  width: 75%;
+}
+
+.col-md-12 {
+  width: 100%;
+}

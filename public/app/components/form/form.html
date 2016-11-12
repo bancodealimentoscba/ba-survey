@@ -1,70 +1,266 @@
-<div id="message">
-	<h1>Bienvenido! </h1>
-	<p>
-		Necesitamos corroborar algunos datos para sobre su organización antes de comenzar.
-	</p>
-
-	<div class="col-md-12 form-group">
-		<label class="col-md-3">
-		Posee Personería Jurídica?
-		</label>
-		<div class="col-md-3">
-		<select value="option1" checked class="form-control" data-ng-model="legalStatus">
-				<option value="YES">Si</option>
-				<option value="NO">No</option>
-			</select>
-		</div>
+<!-- Sidebar -->
+<section id="sidebar">
+	<div class="inner">
+		<nav>
+			<ul>
+				<li><a href="" data-ng-click="scrollTo('intro')">Personería Jurídica</a></li>
+				<li><a href="" data-ng-click="scrollTo('one')" data-ng-show="legalStatus == 'NO'">Pasos previos</a></li>
+				<li><a href="" data-ng-click="scrollTo('two')" data-ng-show="legalStatus == 'YES'">Detalle</a></li>
+				<li><a href="" data-ng-click="scrollTo('three')" data-ng-show="legalStatus == 'YES'">Información de la Organización</a></li>
+			</ul>
+		</nav>
 	</div>
+</section>
 
-	<div data-ng-show="legalStatus == 'YES'">
-		<div class="form-group clearfix">
-			<label for="inputPassword" class="col-sm-3 control-label">Número de Personería Jurídica </label>
-			<div class="col-sm-9">
-				<input type="text" required class="form-control" id="inputPassword" placeholder="Número de Personería Jurídica">
-			</div>
-		</div>
-		<div class="form-group clearfix">
-			<div class="col-md-3">
-				<label for="beneficts">Beneficios que presta actualmente </label>
-			</div>
-			<div class="col-md-9">
-				
-				<div class="checkbox">
-					<label>
-						<input type="checkbox" value="">
-						Desayuno
-					</label>
-				</div>
-				<div class="checkbox">
+<!-- Wrapper -->
+<div id="wrapper">
 
-					<label>
-						<input type="checkbox" value="">
-						Almuerzo
-					</label>
-				</div>
-				<div class="checkbox">
+	<!-- Intro -->
+	<section id="intro" class="wrapper style1 fullscreen fade-up">
+		<div class="inner">
 
-					<label>
-						<input type="checkbox" value="">
-						Merienda
-					</label>
-				</div>
-				<div class="checkbox">
+			<h1>Bienvenido!</h1>
+			<p>
+				Necesitamos corroborar algunos datos para sobre su organización antes de comenzar.
+			</p>
 
-					<label>
-						<input type="checkbox" value="">
-						Cena
-					</label>
-				</div>
-			</div>
-		</div>
-	</div>
+			<div class="col-md-12 form-group">
+				<ul class="actions">
+					<li>Posee actualmente Personería Jurídica?</li>
+					<li>
+						<select value="option1" checked class="form-control" data-ng-model="legalStatus" data-ng-change="onLegalStatusChange()">
+							<option value="" selected="true" disabled="disabled">Seleccione una opción</option>  
+							<option value="YES">Si</option>
+							<option value="NO">No</option>
+						</select>
+					</li>
+				</ul>
+        		<!-- <label class="col-md-3">
+        			Posee Personería Jurídica?
+        		</label>
+        		<div class="col-md-3">
+        			
+        		</div> -->
+        	</div>
 
-	<div class="form-group clearfix" data-ng-show="legalStatus == 'NO'">
-		<div class="alert alert-danger" role="alert"> 
-			<strong>Opps!</strong> 
-			Debe gestionar la Personería Jurídica bla bla bla. 
-		</div>
-	</div>
+        </div>
+
+    </section>
+
+    <!-- One -->
+    <section id="one" class="wrapper style2 spotlights" data-ng-show="legalStatus == 'NO'">
+    	<section>
+    		<a href="" class="image"><img src="assets/images/pic01.jpg" alt="" data-position="center center" /></a>
+    		<div class="content">
+    			<div class="inner">
+    				<h2>Oops!</h2>
+    				<p>Debe gestionar la Personería Jurídica bla bla bla. </p>
+    				<ul class="actions">
+    					<li><a href="#" class="button">Como hacerlo</a></li>
+    				</ul>
+    			</div>
+    		</div>
+    	</section>
+    </section>
+
+    <!-- Two -->
+    <section id="two" class="wrapper style3 fade-up" data-ng-show="legalStatus == 'YES'">
+
+
+    	<div class="inner">
+    		<h2>Detalle de Personería Jurídica</h2>
+    		<p>
+    			Antes de continuar, necesitamos algunos datos de su organización.
+    		</p>
+    		<div class="features">
+    			<section>
+    				<span class="icon major fa-briefcase"></span>
+    				<h3>Número de Personería Jurídica</h3>
+    				<div>
+    					<input type="text" required class="form-control" id="inputPassword" placeholder="...">
+    				</div>
+    			</section>
+    			<section>
+    				<span class="icon major fa-coffee"></span>
+    				<h3>Beneficios que presta actualmente</h3>
+    				<div class="6u 12u$(small)">
+    					<input type="checkbox" id="desayuno" name="demo-copy">
+    					<label for="desayuno">Desayuno</label>
+    				</div>
+    				<div class="6u 12u$(small)">
+    					<input type="checkbox" id="almuerzo" name="demo-copy">
+    					<label for="almuerzo">Almuerzo</label>
+    				</div>
+    				<div class="6u 12u$(small)">
+    					<input type="checkbox" id="merienda" name="demo-copy">
+    					<label for="merienda">Merienda</label>
+    				</div>
+    				<div class="6u 12u$(small)">
+    					<input type="checkbox" id="cena" name="demo-copy">
+    					<label for="cena">Cena</label>
+    				</div>
+    			</section>
+    			<section>
+    				<span class="icon major fa-users"></span>
+    				<h3>Cantidad de Beneficiarios</h3>
+    				<ul class="actions 12u 12u$(small)">
+    					<li class="5u 12u$(small)">0-2 Años</li>
+    					<li class="6u 12u$(small)">
+    						<input type="text" required class="form-control" placeholder="Cant.">
+    					</li>
+    				</ul>
+    				<ul class="actions 12u 12u$(small)">
+    					<li class="5u 12u$(small)">3-5 Años</li>
+    					<li class="6u 12u$(small)">
+    						<input type="text" required class="form-control" placeholder="Cant.">
+    					</li>
+    				</ul>
+    				<ul class="actions 12u 12u$(small)">
+    					<li class="5u 12u$(small)">6-12 Años</li>
+    					<li class="6u 12u$(small)">
+    						<input type="text" required class="form-control" placeholder="Cant.">
+    					</li>
+    				</ul>
+    				<ul class="actions 12u 12u$(small)">
+    					<li class="5u 12u$(small)">Adolescentes</li>
+    					<li class="6u 12u$(small)">
+    						<input type="text" required class="form-control" placeholder="Cant.">
+    					</li>
+    				</ul>
+    				<ul class="actions 12u 12u$(small)">
+    					<li class="5u 12u$(small)">Adultos</li>
+    					<li class="6u 12u$(small)">
+    						<input type="text" required class="form-control" placeholder="Cant.">
+    					</li>
+    				</ul>
+    				<ul class="actions 12u 12u$(small)">
+    					<li class="5u 12u$(small)">Ancianos</li>
+    					<li class="6u 12u$(small)">
+    						<input type="text" required class="form-control" placeholder="Cant.">
+    					</li>
+    				</ul>
+    			</section>
+    			<section>
+    				<span class="icon major fa-calendar-o"></span>
+    				<h3>Periodicidad</h3>
+    				<div class="12u 12u$(small)">
+    					<input type="radio" id="unaPorSemana" name="demo-copy">
+    					<label for="unaPorSemana">Una vez por semana</label>
+    				</div>
+    				<div class="12u 12u$(small)">
+    					<input type="radio" id="tresPorSemana" name="demo-copy">
+    					<label for="tresPorSemana">Tres veces por semana</label>
+    				</div>
+    				<div class="12u 12u$(small)">
+    					<input type="radio" id="diario" name="demo-copy">
+    					<label for="diario">Diario</label>
+    				</div>
+    			</section>
+    			<section>
+    				<span class="icon major fa-clock-o"></span>
+    				<h3>Horario</h3>
+    				<div class="6u 12u$(small)">
+    					<input type="checkbox" id="mañana" name="demo-copy">
+    					<label for="mañana">Mañana</label>
+    				</div>
+    				<div class="6u 12u$(small)">
+    					<input type="checkbox" id="tarde" name="demo-copy">
+    					<label for="tarde">Tarde</label>
+    				</div>
+    				<div class="6u 12u$(small)">
+    					<input type="checkbox" id="Noche" name="demo-copy">
+    					<label for="Noche">Noche</label>
+    				</div>
+    			</section>
+    			<section>
+    			</section>
+    		</div>
+    	</div>
+    </section>
+
+    <!-- Three -->
+    <section id="three" class="wrapper style1 fade-up" data-ng-show="legalStatus == 'YES'">
+    	<div class="inner">
+    		<h2>Información de la Organización</h2>
+    		<p>
+    			Sólo unos ultimos datos más y habremos terminado.
+    		</p>
+    		<div class="features">
+    			<section>
+    				<span class="icon major fa-building"></span>
+    				<h3>Nombre de la Organización</h3>
+    				<div>
+    					<input type="text" required class="form-control" id="inputPassword" placeholder="...">
+    				</div>
+    			</section>
+    			<section>
+    				<span class="icon major fa-location-arrow"></span>
+    				<h3>Dirección</h3>
+    				<h4>Calle</h4>
+    				<div>
+    					<input type="text" required class="form-control" id="calle" placeholder="Calle">
+    				</div>
+    				<h4>Número</h4>
+    				<div>
+    					<input type="text" required class="form-control" id="numero" placeholder="Número">
+    				</div>
+    				<h4>Barrio</h4>
+    				<div>
+    					<input type="text" required class="form-control" id="barrio" placeholder="Barrio">
+    				</div>
+    				<h4>Localidad</h4>
+    				<div>
+    					<input type="text" required class="form-control" id="localidad" placeholder="Localidad">
+    				</div>
+    			</section>
+    			<section>
+    				<span class="icon major fa-legal"></span>
+    				<h3>Tipo de Organización</h3>
+    				<select value="option1" checked class="form-control" data-ng-model="organizationType">
+    					<option value="" selected="true" disabled="disabled">Seleccione una opción</option>  
+    					<option value="AC">Asociación Civil</option>
+    					<option value="Coop">Cooperativa</option>
+    					<option value="Fund">Fundación</option>
+    					<!-- <option value="ONG">ONG</option> -->
+    				</select>
+    			</section>
+    			<section>
+    				<span class="icon major fa-home"></span>
+    				<h3>Contacto</h3>
+    				<h4>Nombre</h4>
+    				<div>
+    					<input type="text" required class="form-control" id="nombre" placeholder="Nombre">
+    				</div>
+    				<h4>Teléfono</h4>
+    				<ul class="actions">
+    					<li class="5u 12u$(small)">
+    						
+    						<input type="text" required class="3u form-control" id="telefono" placeholder="(351)">
+    					</li>
+    					<li class="6u 12u$(small)">
+    						<input type="text" required class="9u form-control" id="telefono" placeholder="4444444">
+    						
+    					</li>
+    				</ul>
+    				<h4>Email</h4>
+    				<div>
+    					<input type="text" required class="form-control" id="email" placeholder="Email">
+    				</div>
+    			</section>
+    		</div>
+    		<ul class="actions">
+    			<li><input type="button" required class="button" id="submit" value="Enviar" data-ng-click="writeOrganization()"/></li>
+    		</ul>
+    	</div>
+    </section>
 
 </div>
+
+<!-- Footer -->
+<footer id="footer" class="wrapper style1-alt">
+	<div class="inner">
+		<ul class="menu">
+			<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+		</ul>
+	</div>
+</footer>
