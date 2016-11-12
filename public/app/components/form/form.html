@@ -3,10 +3,10 @@
 	<div class="inner">
 		<nav>
 			<ul>
-				<li><a href="#intro">Personería Jurídica</a></li>
-				<li><a href="#one" data-ng-show="legalStatus == 'NO'">Pasos previos</a></li>
-				<li><a href="#two" data-ng-show="legalStatus == 'YES'">Detalle</a></li>
-				<li><a href="#three" data-ng-show="legalStatus == 'YES'">Información de la Organización</a></li>
+				<li><a href="" data-ng-click="scrollTo('intro')">Personería Jurídica</a></li>
+				<li><a href="" data-ng-click="scrollTo('one')" data-ng-show="legalStatus == 'NO'">Pasos previos</a></li>
+				<li><a href="" data-ng-click="scrollTo('two')" data-ng-show="legalStatus == 'YES'">Detalle</a></li>
+				<li><a href="" data-ng-click="scrollTo('three')" data-ng-show="legalStatus == 'YES'">Información de la Organización</a></li>
 			</ul>
 		</nav>
 	</div>
@@ -28,7 +28,7 @@
 				<ul class="actions">
 					<li>Posee actualmente Personería Jurídica?</li>
 					<li>
-						<select value="option1" checked class="form-control" data-ng-model="legalStatus">
+						<select value="option1" checked class="form-control" data-ng-model="legalStatus" data-ng-change="onLegalStatusChange()">
 							<option value="" selected="true" disabled="disabled">Seleccione una opción</option>  
 							<option value="YES">Si</option>
 							<option value="NO">No</option>
@@ -53,7 +53,7 @@
     		<a href="" class="image"><img src="assets/images/pic01.jpg" alt="" data-position="center center" /></a>
     		<div class="content">
     			<div class="inner">
-    				<h2>Opps!</h2>
+    				<h2>Oops!</h2>
     				<p>Debe gestionar la Personería Jurídica bla bla bla. </p>
     				<ul class="actions">
     					<li><a href="#" class="button">Como hacerlo</a></li>
@@ -196,11 +196,19 @@
     			<section>
     				<span class="icon major fa-location-arrow"></span>
     				<h3>Dirección</h3>
+    				<h4>Calle</h4>
     				<div>
-    					<input type="text" required class="form-control" id="direccion1" placeholder="Dirección 1">
-    					<input type="text" required class="form-control" id="direccion2" placeholder="Dirección 2">
+    					<input type="text" required class="form-control" id="calle" placeholder="Calle">
     				</div>
-    				<h3>Localidad</h3>
+    				<h4>Número</h4>
+    				<div>
+    					<input type="text" required class="form-control" id="numero" placeholder="Número">
+    				</div>
+    				<h4>Barrio</h4>
+    				<div>
+    					<input type="text" required class="form-control" id="barrio" placeholder="Barrio">
+    				</div>
+    				<h4>Localidad</h4>
     				<div>
     					<input type="text" required class="form-control" id="localidad" placeholder="Localidad">
     				</div>
@@ -241,7 +249,7 @@
     			</section>
     		</div>
     		<ul class="actions">
-    			<li><input type="button" required class="button" id="submit" value="Enviar"/></li>
+    			<li><input type="button" required class="button" id="submit" value="Enviar" data-ng-click="writeOrganization()"/></li>
     		</ul>
     	</div>
     </section>
