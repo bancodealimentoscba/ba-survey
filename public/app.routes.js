@@ -9,6 +9,10 @@ baSurvey.config(['$routeProvider',
 			templateUrl: 'app/components/form/form.html',
 			controller: 'formCtrl'
 		}).
+		when('/orgsList', {
+			templateUrl: 'app/components/orgsList/orgsList.html',
+			controller: 'orgsListCtrl'
+		}).
 		when('/', {
 			templateUrl: 'app/components/landing/landing.html',
 			controller: 'landingCtrl'

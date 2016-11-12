@@ -1,0 +1,127 @@
+<!-- Header -->
+  <header id="header">
+    <a href="http://bancodealimentoscba.org.ar/" class="title">Banco de Alimentos WEB ADMIN</a>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Lista de Organizaciones</a></li>
+        <li><a href="http://bancodealimentoscba.org.ar/quienes-somos/">Quienes Somos</a></li>
+        <li><a href="http://bancodealimentoscba.org.ar/contacto/">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Wrapper -->
+    <div id="wrapper">
+
+      <!-- Main -->
+        <section id="main" class="wrapper">
+          <div class="inner">
+            <h1 class="major">Lista de Organizaciones</h1>
+            <!-- Table -->
+              <section>
+                <div class="table-wrapper">
+                  <table class="alt">
+                    <thead>
+                      <tr>
+                        <th>Nombre</th>
+                        <th>Ubicación</th>
+                        <th>Contacto</th>
+                        <th>Ver más</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat="org in orgs">
+                        <td>{{org.nombre}}</td>
+                        <td>
+                          <div>
+                            Localidad {{org.ubicacion.localidad}}
+                          </div>
+                          <div>
+                            B° {{org.ubicacion.barrio}}
+                          </div>
+                          <div>
+                            Calle {{org.ubicacion.calle}}
+                          </div>
+                          <div>
+                            N° {{org.ubicacion.numero}}
+                          </div>
+                        </td>
+                        <td>
+                          <div>
+                            Nombre <span class="italic">{{org.contacto.nombre}}</span>
+                          </div>
+                            Fijo <span class="italic">{{org.contacto.telefonos.fijo.caracteristica}}-{{org.contacto.telefonos.fijo.numero}}</span>
+                          </div>
+                          <div>
+                            Celular <span class="italic">{{org.contacto.telefonos.celular.caracteristica}}-{{org.contacto.telefonos.celular.numero}}</span>
+                          <div>
+                            Correo <span class="italic">{{org.contacto.email}}</span>
+                          </div>
+                        </td>
+                        <td>
+                          <button
+                            ng-click="showModal($index)"
+                            type="button"
+                            class="btn btn-info btn-lg"
+                            data-toggle="modal"
+                            data-target="#myModal">
+                              <a class="icon fa-plus-square"></a>
+                            </button>
+                        </td>
+                      </tr>
+                  </table>
+                </div>
+              </section>
+          </div>
+        </section>
+
+    </div>
+
+  <!-- Footer -->
+    <footer id="footer" class="wrapper alt">
+      <div class="inner">
+        <ul class="menu">
+          <li>© Copyright 2015 - Banco de Alimentos Córdoba</li><li>Template: <a href="http://html5up.net">HTML5 UP</a></li>
+        </ul>
+        <ul class="icons">
+          <li><a href="https://twitter.com/BDACordoba" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+          <li><a href="https://www.facebook.com/bancodealimentoscordoba" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+          <li><a href="#https://www.instagram.com/bancodealimentoscba/" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+          <li><a href="https://www.linkedin.com/in/fundaci%C3%B3n-banco-de-alimentos-c%C3%B3rdoba-a30848116?trk=hp-identity-name" class="icon fa-linkedin"><span class="label">Github</span></a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <div class="container">
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">{{orgModal.nombre}}</h4>
+            </div>
+            <div class="modal-body">
+              <p>{{orgModal.nombre}}</p>
+              <p>{{orgModal.ubicacion.localidad}}</p>
+              <p>{{orgModal.ubicacion.barrio}}</p>
+              <p>{{orgModal.ubicacion.calle}}</p>
+              <p>{{orgModal.ubicacion.numero}}</p>
+              <p>{{orgModal.contacto.nombre}}</p>
+              <p>{{orgModal.contacto.telefonos.fijo.caracteristica.numero}}</p>
+              <p>{{orgModal.contacto.telefonos.celular.caracteristica.numero}}</p>
+              <p>{{orgModal.contacto.email}}</p>
+              <p>{{orgModal.contacto.personaria_juridica.nombre}}</p>
+              <p>{{orgModal.contacto.personaria_juridica.nombre}}</p>
+              <p ng-show="orgModal.contacto.personaria_juridica.beneficios.desayuno">Desayuno</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
