@@ -1,0 +1,70 @@
+<div id="message">
+	<h1>Bienvenido! </h1>
+	<p>
+		Necesitamos corroborar algunos datos para sobre su organización antes de comenzar.
+	</p>
+
+	<div class="col-md-12 form-group">
+		<label class="col-md-3">
+		Posee Personería Jurídica?
+		</label>
+		<div class="col-md-3">
+		<select value="option1" checked class="form-control" data-ng-model="legalStatus">
+				<option value="YES">Si</option>
+				<option value="NO">No</option>
+			</select>
+		</div>
+	</div>
+
+	<div data-ng-show="legalStatus == 'YES'">
+		<div class="form-group clearfix">
+			<label for="inputPassword" class="col-sm-3 control-label">Número de Personería Jurídica </label>
+			<div class="col-sm-9">
+				<input type="text" required class="form-control" id="inputPassword" placeholder="Número de Personería Jurídica">
+			</div>
+		</div>
+		<div class="form-group clearfix">
+			<div class="col-md-3">
+				<label for="beneficts">Beneficios que presta actualmente </label>
+			</div>
+			<div class="col-md-9">
+				
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" value="">
+						Desayuno
+					</label>
+				</div>
+				<div class="checkbox">
+
+					<label>
+						<input type="checkbox" value="">
+						Almuerzo
+					</label>
+				</div>
+				<div class="checkbox">
+
+					<label>
+						<input type="checkbox" value="">
+						Merienda
+					</label>
+				</div>
+				<div class="checkbox">
+
+					<label>
+						<input type="checkbox" value="">
+						Cena
+					</label>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="form-group clearfix" data-ng-show="legalStatus == 'NO'">
+		<div class="alert alert-danger" role="alert"> 
+			<strong>Opps!</strong> 
+			Debe gestionar la Personería Jurídica bla bla bla. 
+		</div>
+	</div>
+
+</div>
