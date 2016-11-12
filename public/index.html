@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Welcome to Firebase Hosting</title>
-    <link rel="stylesheet" href="css/main.css">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  </head>
-  <body data-ng-app="">
-    <div id="message">
-      <h1>Welcome to Firebase Hosting</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <ul>
-        <li><a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a></li>
-      </ul>
-    </div>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Welcome to Firebase Hosting</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body data-ng-app="baSurvey">
+  <div data-ng-view></div>
 
-    <script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
-    <script src="js/main.css"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js">​</script>​
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-route.min.js">​</script>​
-    <script src="https://cdn.firebase.com/libs/angularfire/2.1.0/angularfire.min.js">​</script>​
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">​</script>​
+  <script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js">​</script>​
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-route.min.js">​</script>​
+  <script src="https://cdn.firebase.com/libs/angularfire/2.1.0/angularfire.min.js">​</script>​
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">​</script>​
+  <script src="assets/js/main.js"></script>
+
+  <script src="app.js"></script>
+  <script src="app.routes.js"></script>
+  <script src="app/components/indexController.js"></script>
 </body>
 </html>
+
