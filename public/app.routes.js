@@ -5,8 +5,12 @@ baSurvey.config(['$routeProvider',
 			templateUrl: 'app/components/index/index.html',
 			controller: 'indexCtrl'
 		}).
+		when('/', {
+			templateUrl: 'app/components/landing/landing.html',
+			controller: 'landingCtrl'
+		}).
 		otherwise({
-			redirectTo: '/index'
+			redirectTo: '/'
 		});
 
 	}
