@@ -1,7 +1,7 @@
 baSurvey.controller('orgsListCtrl', ['$scope',
 	function($scope) {
+		// Show modal with all data from the org
     $scope.showModal = function(index) {
-      console.log(index);
       $scope.orgModal = $scope.orgs[index];
     };
     $scope.orgs = [
@@ -31,9 +31,9 @@ baSurvey.controller('orgsListCtrl', ['$scope',
             "cena": true
           },
           "beneficiarios": {
-            "0_2": 12,
-            "3_5": 12,
-            "6_12": 12,
+            "dos": 12,
+            "cinco": 12,
+            "doce": 12,
             "adolescentes": 12,
             "adultos": 12,
             "ancianos": 12
@@ -72,9 +72,9 @@ baSurvey.controller('orgsListCtrl', ['$scope',
             "cena": true
           },
           "beneficiarios": {
-            "0_2": 12,
-            "3_5": 12,
-            "6_12": 12,
+            "dos": 12,
+            "cinco": 12,
+            "doce": 12,
             "adolescentes": 12,
             "adultos": 12,
             "ancianos": 12

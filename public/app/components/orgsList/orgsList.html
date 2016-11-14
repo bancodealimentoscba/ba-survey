@@ -3,15 +3,13 @@
     <a href="http://bancodealimentoscba.org.ar/" class="title">Banco de Alimentos WEB ADMIN</a>
     <nav>
       <ul>
-        <li><a href="index.html" class="active">Lista de Organizaciones</a></li>
-        <li><a href="http://bancodealimentoscba.org.ar/quienes-somos/">Quienes Somos</a></li>
-        <li><a href="http://bancodealimentoscba.org.ar/contacto/">Contacto</a></li>
+        <li><a class="active">Lista de Organizaciones</a></li>
       </ul>
     </nav>
   </header>
 
   <!-- Wrapper -->
-    <div id="wrapper">
+    <div id="wrapper" class="orgs-list">
 
       <!-- Main -->
         <section id="main" class="wrapper">
@@ -26,7 +24,7 @@
                         <th>Nombre</th>
                         <th>Ubicación</th>
                         <th>Contacto</th>
-                        <th>Ver más</th>
+                        <th></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -34,38 +32,38 @@
                         <td>{{org.nombre}}</td>
                         <td>
                           <div>
-                            Localidad {{org.ubicacion.localidad}}
+                            Localidad: <span class="italic">{{org.ubicacion.localidad}}</span>
                           </div>
                           <div>
-                            B° {{org.ubicacion.barrio}}
+                            B°: <span class="italic">{{org.ubicacion.barrio}}</span>
                           </div>
                           <div>
-                            Calle {{org.ubicacion.calle}}
+                            Calle: <span class="italic">{{org.ubicacion.calle}}</span>
                           </div>
                           <div>
-                            N° {{org.ubicacion.numero}}
+                            N°: <span class="italic">{{org.ubicacion.numero}}</span>
                           </div>
                         </td>
                         <td>
                           <div>
-                            Nombre <span class="italic">{{org.contacto.nombre}}</span>
+                            Nombre: <span class="italic">{{org.contacto.nombre}}</span>
                           </div>
-                            Fijo <span class="italic">{{org.contacto.telefonos.fijo.caracteristica}}-{{org.contacto.telefonos.fijo.numero}}</span>
+                            Fijo: <span class="italic">{{org.contacto.telefonos.fijo.caracteristica}}-{{org.contacto.telefonos.fijo.numero}}</span>
                           </div>
                           <div>
-                            Celular <span class="italic">{{org.contacto.telefonos.celular.caracteristica}}-{{org.contacto.telefonos.celular.numero}}</span>
+                            Celular: <span class="italic">{{org.contacto.telefonos.celular.caracteristica}}-{{org.contacto.telefonos.celular.numero}}</span>
                           <div>
-                            Correo <span class="italic">{{org.contacto.email}}</span>
+                            Correo: <span class="italic">{{org.contacto.email}}</span>
                           </div>
                         </td>
-                        <td>
+                        <td class="td-more">
                           <button
                             ng-click="showModal($index)"
                             type="button"
-                            class="btn btn-info btn-lg"
+                            class="btn btn-info btn-lg button-more"
                             data-toggle="modal"
                             data-target="#myModal">
-                              <a class="icon fa-plus-square"></a>
+                              Ver más
                             </button>
                         </td>
                       </tr>
@@ -99,25 +97,52 @@
           <!-- Modal content-->
           <div class="modal-content">
             <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">{{orgModal.nombre}}</h4>
+              <h4 class="modal-title">Detalle de la Organización {{orgModal.nombre}}</h4>
             </div>
             <div class="modal-body">
-              <p>{{orgModal.nombre}}</p>
-              <p>{{orgModal.ubicacion.localidad}}</p>
-              <p>{{orgModal.ubicacion.barrio}}</p>
-              <p>{{orgModal.ubicacion.calle}}</p>
-              <p>{{orgModal.ubicacion.numero}}</p>
-              <p>{{orgModal.contacto.nombre}}</p>
-              <p>{{orgModal.contacto.telefonos.fijo.caracteristica.numero}}</p>
-              <p>{{orgModal.contacto.telefonos.celular.caracteristica.numero}}</p>
-              <p>{{orgModal.contacto.email}}</p>
-              <p>{{orgModal.contacto.personaria_juridica.nombre}}</p>
-              <p>{{orgModal.contacto.personaria_juridica.nombre}}</p>
-              <p ng-show="orgModal.contacto.personaria_juridica.beneficios.desayuno">Desayuno</p>
+              <p class="sub-title">Nombre de la Organización</p>
+              <p>Nombre: <span class="italic">{{orgModal.nombre}}</span></p>
+
+              <p class="sub-title">Ubicación</p>
+              <p>Localidad: <span class="italic">{{orgModal.ubicacion.localidad}}</span></p>
+              <p>Barrio: <span class="italic">{{orgModal.ubicacion.barrio}}</span></p>
+              <p>Calle: <span class="italic">{{orgModal.ubicacion.calle}}</span></p>
+              <p>N°: <span class="italic">{{orgModal.ubicacion.numero}}</span></p>
+
+              <p class="sub-title">Contacto</p>
+              <p>Nombre: <span class="italic">{{orgModal.contacto.nombre}}</span></p>
+              <p>Fijo: <span class="italic">{{orgModal.contacto.telefonos.fijo.caracteristica}}-{{orgModal.contacto.telefonos.fijo.numero}}</span></p>
+              <p>Celular: <span class="italic">{{orgModal.contacto.telefonos.celular.caracteristica}}-{{orgModal.contacto.telefonos.celular.numero}}</span></p>
+              <p>Correo: <span class="italic">{{orgModal.contacto.email}}</span></p>
+
+              <p class="sub-title">Personería Jurídica</p>
+              <p>Nombre: <span class="italic">{{orgModal.personaria_juridica.nombre}}</span></p>
+
+              <p class="sub-title">Beneficios</p>
+              <p ng-show="orgModal.personaria_juridica.beneficios.desayuno">Desayuno</p>
+              <p ng-show="orgModal.personaria_juridica.beneficios.almuerzo">Almuerzo</p>
+              <p ng-show="orgModal.personaria_juridica.beneficios.merienda">Merienda</p>
+              <p ng-show="orgModal.personaria_juridica.beneficios.cena">Cena</p>
+
+              <p class="sub-title">Beneficiarios</p>
+              <p ng-show="orgModal.personaria_juridica.beneficiarios.dos > 0">0/2 años: <span class="italic">{{orgModal.personaria_juridica.beneficiarios.dos}}</span></p>
+              <p ng-show="orgModal.personaria_juridica.beneficiarios.cinco > 0">3/5 años: <span class="italic">{{orgModal.personaria_juridica.beneficiarios.cinco}}</span></p>
+              <p ng-show="orgModal.personaria_juridica.beneficiarios.doce > 0">6/12 años: <span class="italic">{{orgModal.personaria_juridica.beneficiarios.doce}}</span></p>
+              <p ng-show="orgModal.personaria_juridica.beneficiarios.adolescentes > 0">Adolescentes: <span class="italic">{{orgModal.personaria_juridica.beneficiarios.adolescentes}}</span></p>
+              <p ng-show="orgModal.personaria_juridica.beneficiarios.adultos > 0">Adultos: <span class="italic">{{orgModal.personaria_juridica.beneficiarios.adultos}}</span></p>
+              <p ng-show="orgModal.personaria_juridica.beneficiarios.ancianos > 0">Ancianos: <span class="italic">{{orgModal.personaria_juridica.beneficiarios.ancianos}}</span></p>
+
+              <p class="sub-title">Periodicidad</p>
+              <p>Periodicidad: <span class="italic">{{orgModal.personaria_juridica.periodicidad}}</span></p>
+
+              <p class="sub-title">Horario</p>
+              <p ng-show="orgModal.personaria_juridica.horario.manana">Mañana</p>
+              <p ng-show="orgModal.personaria_juridica.horario.tarde">Tarde</p>
+              <p ng-show="orgModal.personaria_juridica.horario.noche">Noche</p>
+
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
             </div>
           </div>
 

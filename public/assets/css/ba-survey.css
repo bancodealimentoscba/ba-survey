@@ -10,6 +10,39 @@ span.italic {
   font-style: italic;
 }
 
+/*.orgs-list td.td-more {
+  position: relative;
+}
+
+.orgs-list button.button-more {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}*/
+
 .container .modal {
   color: black;
+}
+
+.modal .modal-dialog .modal-content .modal-header,
+.modal .modal-dialog .modal-content .modal-footer {
+  background-color: #5e42a6;
+}
+
+.modal .modal-dialog .modal-content .modal-footer button {
+  background-color: white;
+  color: #5e42a6!important;
+}
+
+.modal .modal-dialog .modal-content .modal-body p {
+  margin: 0;
+  padding-left: 50px;
+}
+
+.modal .modal-dialog .modal-content .modal-body p.sub-title {
+  padding: 0;
+  margin: 0;
+  margin-top: 15px;
+  font-weight: bold;
 }
