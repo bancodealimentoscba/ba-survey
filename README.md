@@ -9,7 +9,11 @@ Web app para que organizaciones puedan llenar un formulario con sus datos e insc
 
 # Requisitos
 * [Instalar GIT](https://git-scm.com/book/es/v1/Empezando-Instalando-Git)
-
+* [Instalar Node.js](https://nodejs.org/en/download/)
+* [Instalar firebase tools](https://www.npmjs.com/package/firebase-tools)
+```
+npm install -g firebase-tools
+```
 # Empezar
 
 Clonar el proyecto en consola
