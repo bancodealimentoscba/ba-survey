@@ -1,5 +1,5 @@
-baSurvey.controller('formCtrl', ['$scope', '$timeout', '$firebaseObject',
-	function($scope, $timeout, $firebaseObject) {
+baSurvey.controller('formCtrl', ['$scope', '$timeout', 'database',
+	function($scope, $timeout, database) {
 		$scope.legalStatus = '';
 		$scope.organizacion = {
 			direccion: {},
@@ -22,17 +22,12 @@ baSurvey.controller('formCtrl', ['$scope', '$timeout', '$firebaseObject',
 			}, 250)
 		}
 
-		var ref = firebase.database().ref();
-
-		var firebaseOrganizaciones = $firebaseObject(ref); //.child("organizaciones")
-		firebaseOrganizaciones.$loaded().then(function(data) {
+		database.connect().then(function(data) {
 			console.log(data);
 		});
 
 		$scope.writeOrganization = function() {
-			var id = 'ORG' + ref.push().key;
 			var nuevaOrganizacion = {
-				id: id,
 				nombre: $scope.organizacion.nombre,
 				calle: $scope.organizacion.direccion.calle,
 				numero: $scope.organizacion.direccion.numero,
@@ -43,11 +38,8 @@ baSurvey.controller('formCtrl', ['$scope', '$timeout', '$firebaseObject',
 				email:  $scope.organizacion.contacto.email,
 				tipo: $scope.organizacion.tipo
 			}
-			firebaseOrganizaciones.organizaciones[id] = nuevaOrganizacion
-			var saveProcess = firebaseOrganizaciones.$save();
-			saveProcess.then(function(data){
-				debugger
-			});
+			database.writeData('organizaciones', nuevaOrganizacion)
+			
 		}
 	}
 ])
