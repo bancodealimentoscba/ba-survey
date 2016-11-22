@@ -22,9 +22,9 @@ baSurvey.controller('formCtrl', ['$scope', '$timeout', 'database',
 			}, 250)
 		}
 
-		database.connect().then(function(data) {
+		database.connect()/*.then(function(data) {
 			console.log(data);
-		});
+		});*/
 
 		$scope.writeOrganization = function() {
 			var nuevaOrganizacion = {

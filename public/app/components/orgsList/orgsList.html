@@ -31,29 +31,34 @@
                       <tr ng-repeat="org in orgs">
                         <td>{{org.nombre}}</td>
                         <td>
-                          <div>
-                            Localidad: <span class="italic">{{org.ubicacion.localidad}}</span>
+                          <div data-ng-show="org.localidad">
+                            Localidad: <span class="italic">{{org.localidad}}</span>
                           </div>
-                          <div>
-                            B°: <span class="italic">{{org.ubicacion.barrio}}</span>
+                          <div data-ng-show="org.barrio">
+                            B°: <span class="italic">{{org.barrio}}</span>
                           </div>
-                          <div>
-                            Calle: <span class="italic">{{org.ubicacion.calle}}</span>
+                          <div data-ng-show="org.calle">
+                            Calle: <span class="italic">{{org.calle}}</span>
                           </div>
-                          <div>
-                            N°: <span class="italic">{{org.ubicacion.numero}}</span>
+                          <div data-ng-show="org.numero">
+                            N°: <span class="italic">{{org.numero}}</span>
+                          </div>
+                          <div data-ng-show="!org.localidad && !org.barrio && !org.calle && !org.numero">
+                            N/C
                           </div>
                         </td>
                         <td>
-                          <div>
-                            Nombre: <span class="italic">{{org.contacto.nombre}}</span>
+                          <div data-ng-show="org.referente">
+                            Nombre: <span class="italic">{{org.referente}}</span>
                           </div>
-                            Fijo: <span class="italic">{{org.contacto.telefonos.fijo.caracteristica}}-{{org.contacto.telefonos.fijo.numero}}</span>
+                          <div data-ng-show="org.telefono">
+                            Telefono: <span class="italic">{{org.caracteristica}}-{{org.telefono}}</span>
                           </div>
-                          <div>
-                            Celular: <span class="italic">{{org.contacto.telefonos.celular.caracteristica}}-{{org.contacto.telefonos.celular.numero}}</span>
-                          <div>
-                            Correo: <span class="italic">{{org.contacto.email}}</span>
+                          <div data-ng-show="org.email">
+                            Email: <span class="italic">{{org.contacto.email}}</span>
+                          </div>
+                          <div data-ng-show="!org.referente && !org.telefono && !org.email">
+                            N/C
                           </div>
                         </td>
                         <td class="td-more">
