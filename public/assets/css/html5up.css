@@ -2598,6 +2598,20 @@
 		.image img {
 			border-radius: 0.25em;
 			display: block;
+			width: 100%;
+		}
+
+		.image::before {
+			content: "";
+			display: block;
+			height: 100%;
+			width: 100%;
+			top: 0;
+			left: 0;
+			position: absolute;
+			pointer-events: none;
+			opacity: 0.38;
+			background: rgba(62, 162, 253, 0.5);
 		}
 
 		.image.left, .image.right {
@@ -3038,15 +3052,15 @@
 				-webkit-transition: opacity 1s ease;
 				-ms-transition: opacity 1s ease;
 				transition: opacity 1s ease;
-				background: rgba(49, 36, 80, 0.9);
 				content: '';
 				display: block;
 				height: 100%;
-				left: 0;
-				opacity: 0;
 				position: absolute;
-				top: 0;
 				width: 100%;
+				top: 0;
+				left: 0;
+				opacity: 0.38;
+				background: rgba(62, 162, 253, 0.5);
 			}
 
 		.spotlights > section > .content {

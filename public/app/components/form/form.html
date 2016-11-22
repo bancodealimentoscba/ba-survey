@@ -50,13 +50,13 @@
     <!-- One -->
     <section id="one" class="wrapper style2 spotlights" data-ng-show="legalStatus == 'NO'">
     	<section>
-    		<a href="" class="image"><img src="assets/images/pic01.jpg" alt="" data-position="center center" /></a>
+    		<a href="" class="image"><img src="assets/images/oops.png" alt="" data-position="center center" /></a>
     		<div class="content">
     			<div class="inner">
     				<h2>Oops!</h2>
     				<p>Debe gestionar la Personería Jurídica bla bla bla. </p>
     				<ul class="actions">
-    					<li><a href="#" class="button">Como hacerlo</a></li>
+    					<li><a href="" class="button" ng-click="showModal($index)" data-toggle="modal" data-target="#myModal">Como hacerlo</a></li>
     				</ul>
     			</div>
     		</div>
@@ -190,7 +190,7 @@
     				<span class="icon major fa-building"></span>
     				<h3>Nombre de la Organización</h3>
     				<div>
-    					<input type="text" required class="form-control" id="inputPassword" placeholder="...">
+    					<input type="text" required class="form-control" data-ng-model="organizacion.nombre" id="inputPassword" placeholder="...">
     				</div>
     			</section>
     			<section>
@@ -198,25 +198,25 @@
     				<h3>Dirección</h3>
     				<h4>Calle</h4>
     				<div>
-    					<input type="text" required class="form-control" id="calle" placeholder="Calle">
+    					<input type="text" required class="form-control" data-ng-model="organizacion.direccion.calle" id="calle" placeholder="Calle">
     				</div>
     				<h4>Número</h4>
     				<div>
-    					<input type="text" required class="form-control" id="numero" placeholder="Número">
+    					<input type="text" required class="form-control" data-ng-model="organizacion.direccion.numero" id="numero" placeholder="Número">
     				</div>
     				<h4>Barrio</h4>
     				<div>
-    					<input type="text" required class="form-control" id="barrio" placeholder="Barrio">
+    					<input type="text" required class="form-control" data-ng-model="organizacion.direccion.barrio" id="barrio" placeholder="Barrio">
     				</div>
     				<h4>Localidad</h4>
     				<div>
-    					<input type="text" required class="form-control" id="localidad" placeholder="Localidad">
+    					<input type="text" required class="form-control" data-ng-model="organizacion.direccion.localidad" id="localidad" placeholder="Localidad">
     				</div>
     			</section>
     			<section>
     				<span class="icon major fa-legal"></span>
     				<h3>Tipo de Organización</h3>
-    				<select value="option1" checked class="form-control" data-ng-model="organizationType">
+    				<select value="option1" checked class="form-control" data-ng-model="tipo">
     					<option value="" selected="true" disabled="disabled">Seleccione una opción</option>  
     					<option value="AC">Asociación Civil</option>
     					<option value="Coop">Cooperativa</option>
@@ -229,22 +229,22 @@
     				<h3>Contacto</h3>
     				<h4>Nombre</h4>
     				<div>
-    					<input type="text" required class="form-control" id="nombre" placeholder="Nombre">
+    					<input type="text" required class="form-control" data-ng-model="organizacion.contacto.nombre" id="nombre" placeholder="Nombre">
     				</div>
     				<h4>Teléfono</h4>
     				<ul class="actions">
     					<li class="5u 12u$(small)">
     						
-    						<input type="text" required class="3u form-control" id="telefono" placeholder="(351)">
+    						<input type="text" required class="3u form-control" data-ng-model="organizacion.contacto.caracteristica" id="caracteristica" placeholder="(351)">
     					</li>
     					<li class="6u 12u$(small)">
-    						<input type="text" required class="9u form-control" id="telefono" placeholder="4444444">
+    						<input type="text" required class="9u form-control" data-ng-model="organizacion.contacto.telefono" id="telefono" placeholder="4444444">
     						
     					</li>
     				</ul>
     				<h4>Email</h4>
     				<div>
-    					<input type="text" required class="form-control" id="email" placeholder="Email">
+    					<input type="text" required class="form-control" data-ng-model="organizacion.contacto.email" id="email" placeholder="Email">
     				</div>
     			</section>
     		</div>
@@ -254,13 +254,31 @@
     	</div>
     </section>
 
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Titulo</h4>
+            </div>
+            <div class="modal-body">
+              <p class="sub-title">Subtitulo</p>
+              <p>Nombre: <span class="italic">Explicacion aqui</span></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
 </div>
 
 <!-- Footer -->
 <footer id="footer" class="wrapper style1-alt">
 	<div class="inner">
 		<ul class="menu">
-			<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+			<!-- <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li> -->
 		</ul>
 	</div>
 </footer>
