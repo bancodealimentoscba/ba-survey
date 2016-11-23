@@ -1,9 +1,13 @@
- // Initialize Firebase
- var config = {
-   apiKey: "AIzaSyAMI0K3YIMh1-iL0z0syTTnhFK_f3eaIlU",
-   authDomain: "bac-gmap-data.firebaseapp.com",
-   databaseURL: "https://bac-gmap-data.firebaseio.com",
-   storageBucket: "bac-gmap-data.appspot.com",
-   messagingSenderId: "384811510436"
- };
- firebase.initializeApp(config);
+(function (_firebase) {
+  var config;
+  
+  config = {
+    apiKey: "AIzaSyCgv9v7BUbJJYHhpz5dqweEwAqzzJDkYx0",
+    authDomain: "bancodealimentoscba-1e703.firebaseapp.com",
+    databaseURL: "https://bancodealimentoscba-1e703.firebaseio.com",
+    storageBucket: "bancodealimentoscba-1e703.appspot.com",
+    messagingSenderId: "850994234398"
+  };
+
+  _firebase.initializeApp(config);
+})(window.firebase);
