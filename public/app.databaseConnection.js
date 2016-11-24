@@ -15,9 +15,9 @@ baSurvey.factory('database', ['$firebaseObject', function($firebaseObject) {
 			connection = $firebaseObject(ref);
 			return connection.$loaded();
 
-			// connection.$loaded().then(function(data) {
-			// 	console.log(data);
-			// });
+			connection.$loaded().then(function(data) {
+				console.log(data);
+			});
 		},
 		writeData: function(field, value) {
 			var preId = field.slice(0,3).toUpperCase();

@@ -17,8 +17,8 @@ baSurvey.controller('formCtrl', ['$scope', '$timeout', 'database',
 		$scope.onLegalStatusChange = function() {
 			$timeout(function() {
 				if ($scope.legalStatus === 'YES') {
-					$scope.scrollTo('two');
-				} else $scope.scrollTo('one');
+					$scope.scrollTo('three');
+				} else $scope.scrollTo('two');
 			}, 250)
 		}
 
@@ -34,8 +34,10 @@ baSurvey.controller('formCtrl', ['$scope', '$timeout', 'database',
 				barrio:  $scope.organization.address.neighborhood,
 				localidad:  $scope.organization.address.city,
 				referente:  $scope.organization.contact.name,
-				caracteristica:  $scope.organization.contact.prefix,
-				telefono:  $scope.organization.contact.phone,
+				fijo_caracteristica:  $scope.organization.contact.phone_prefix,
+				fijo_numero:  $scope.organization.contact.phone_number,
+				celular_caracteristica:  $scope.organization.contact.cellphone_prefix,
+				celular_numero:  $scope.organization.contact.cellphone_number,
 				email:  $scope.organization.contact.email,
 				tipo: $scope.organization.type
 			}
