@@ -1,10 +1,10 @@
 baSurvey.controller('formCtrl', ['$scope', '$timeout', 'database',
 	function($scope, $timeout, database) {
 		$scope.legalStatus = '';
-		$scope.organizacion = {
-			direccion: {},
-			contacto: {},
-			tipo: ''
+		$scope.organization = {
+			address: {},
+			contact: {},
+			type: ''
 		};
 		$scope.personeria = {};
 
@@ -27,18 +27,19 @@ baSurvey.controller('formCtrl', ['$scope', '$timeout', 'database',
 		});*/
 
 		$scope.writeOrganization = function() {
-			var nuevaOrganizacion = {
-				nombre: $scope.organizacion.nombre,
-				calle: $scope.organizacion.direccion.calle,
-				numero: $scope.organizacion.direccion.numero,
-				barrio:  $scope.organizacion.direccion.barrio,
-				referente:  $scope.organizacion.contacto.nombre,
-				caracteristica:  $scope.organizacion.contacto.caracteristica,
-				telefono:  $scope.organizacion.contacto.telefono,
-				email:  $scope.organizacion.contacto.email,
-				tipo: $scope.organizacion.tipo
+			var newOrganization = {
+				nombre: $scope.organization.name,
+				calle: $scope.organization.address.street,
+				numero: $scope.organization.address.number,
+				barrio:  $scope.organization.address.neighborhood,
+				localidad:  $scope.organization.address.city,
+				referente:  $scope.organization.contact.name,
+				caracteristica:  $scope.organization.contact.prefix,
+				telefono:  $scope.organization.contact.phone,
+				email:  $scope.organization.contact.email,
+				tipo: $scope.organization.type
 			}
-			database.writeData('organizaciones', nuevaOrganizacion)
+			database.writeData('organizaciones', newOrganization)
 			
 		}
 	}
