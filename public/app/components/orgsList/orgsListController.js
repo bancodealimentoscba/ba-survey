@@ -1,12 +1,16 @@
-baSurvey.controller('orgsListCtrl', ['$scope', 'database',
-  function($scope, database) {
+baSurvey.controller('orgsListCtrl', ['$scope', 'blockUI', 'database',
+  function($scope, blockUI, database) {
     // Show modal with all data from the org
     $scope.showModal = function(index) {
       $scope.orgModal = $scope.orgs[index];
     };
 
+    blockUI.start();
     database.connect().then(function(data) {
+      console.log(data);
       $scope.orgs = data.organizaciones;
+    }).finally(function(){
+      blockUI.stop();
     });
 
 
