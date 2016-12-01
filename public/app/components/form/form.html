@@ -5,8 +5,8 @@
 			<ul>
 				<li><a href="" data-ng-click="scrollTo('intro')">Personería Jurídica</a></li>
 				<li><a href="" data-ng-click="scrollTo('one')">Información de la Organización</a></li>
-                <li><a href="" data-ng-click="scrollTo('two')" data-ng-show="legalStatus == 'NO'">Pasos previos</a></li>
-                <li><a href="" data-ng-click="scrollTo('three')" data-ng-show="legalStatus == 'YES'">Detalle</a></li>
+        <li><a href="" data-ng-click="scrollTo('two')" data-ng-show="legalStatus == 'NO'">Pasos previos</a></li>
+        <li><a href="" data-ng-click="scrollTo('three')" data-ng-show="legalStatus == 'YES'">Detalle</a></li>
 			</ul>
 		</nav>
 	</div>
@@ -23,8 +23,8 @@
 			<p>
 				Necesitamos corroborar algunos datos para sobre su organización antes de comenzar.
 			</p>
-        </div>
-    </section>
+    </div>
+  </section>
 
     <!-- One -->
     <section id="one" class="wrapper style3 fade-up">
@@ -64,11 +64,12 @@
                 <section>
                     <span class="icon major fa-legal"></span>
                     <h3>Tipo de Organización</h3>
-                    <select value="option1" checked class="form-control" data-ng-model="type">
-                        <option value="" selected="true" disabled="disabled">Seleccione una opción</option>  
-                        <option value="AC">Asociación Civil</option>
-                        <option value="Coop">Cooperativa</option>
-                        <option value="Fund">Fundación</option>
+                    <select value="option1" checked class="form-control" data-ng-model="organization.type">
+                        <option value="" selected="true" disabled="disabled">Seleccione una opción</option>
+                        <option value="1">Asociación Civil</option>
+                        <option value="2">Cooperativa</option>
+												<option value="3">Fundación</option>
+                        <option value="4">Otro</option>
                         <!-- <option value="ONG">ONG</option> -->
                     </select>
                 </section>
@@ -83,21 +84,21 @@
                     <ul class="actions">
                     <h5>Fijo</h5>
                         <li class="5u 12u$(small)">
-                            
+
                             <input type="text" required class="3u form-control" data-ng-model="organization.contact.phone_prefix" id="caracteristica" placeholder="(351)">
                         </li>
                         <li class="6u 12u$(small)">
                             <input type="text" required class="9u form-control" data-ng-model="organization.contact.phone_number" id="telefono" placeholder="4444444">
-                            
+
                         </li>
                         <h5>Celular</h5>
                         <li class="5u 12u$(small)">
-                            
+
                             <input type="text" required class="3u form-control" data-ng-model="organization.contact.cellphone_prefix" id="caracteristica" placeholder="(351)">
                         </li>
                         <li class="6u 12u$(small)">
                             <input type="text" required class="9u form-control" data-ng-model="organization.contact.cellphone_number" id="telefono" placeholder="4444444">
-                            
+
                         </li>
                     </ul>
 
@@ -112,7 +113,7 @@
                     <li>Posee actualmente Personería Jurídica?</li>
                     <li>
                         <select value="option1" checked class="form-control" data-ng-model="legalStatus" data-ng-change="onLegalStatusChange()">
-                            <option value="" selected="true" disabled="disabled">Seleccione una opción</option>  
+                            <option value="" selected="true" disabled="disabled">Seleccione una opción</option>
                             <option value="YES">Si</option>
                             <option value="NO">No</option>
                         </select>
@@ -122,7 +123,7 @@
                     Posee Personería Jurídica?
                 </label>
                 <div class="col-md-3">
-                    
+
                 </div> -->
             </div>
         </div>
@@ -156,26 +157,26 @@
     				<span class="icon major fa-briefcase"></span>
     				<h3>Número de Personería Jurídica</h3>
     				<div>
-    					<input type="text" required class="form-control" id="inputPassword" placeholder="...">
+    					<input type="text" required class="form-control" id="inputPassword" data-ng-model="organization.legalStatus" placeholder="...">
     				</div>
     			</section>
     			<section>
     				<span class="icon major fa-coffee"></span>
     				<h3>Beneficios que presta actualmente</h3>
     				<div class="6u 12u$(small)">
-    					<input type="checkbox" id="desayuno" name="demo-copy">
+    					<input type="checkbox" id="desayuno" data-ng-model="organization.services.breakfast" name="demo-copy">
     					<label for="desayuno">Desayuno</label>
     				</div>
     				<div class="6u 12u$(small)">
-    					<input type="checkbox" id="almuerzo" name="demo-copy">
+    					<input type="checkbox" id="almuerzo" data-ng-model="organization.services.lunch" name="demo-copy">
     					<label for="almuerzo">Almuerzo</label>
     				</div>
     				<div class="6u 12u$(small)">
-    					<input type="checkbox" id="merienda" name="demo-copy">
+    					<input type="checkbox" id="merienda" data-ng-model="organization.services.snak" name="demo-copy">
     					<label for="merienda">Merienda</label>
     				</div>
     				<div class="6u 12u$(small)">
-    					<input type="checkbox" id="cena" name="demo-copy">
+    					<input type="checkbox" id="cena" data-ng-model="organization.services.dinner" name="demo-copy">
     					<label for="cena">Cena</label>
     				</div>
     			</section>
@@ -185,37 +186,37 @@
     				<ul class="actions 12u 12u$(small)">
     					<li class="5u 12u$(small)">0-2 Años</li>
     					<li class="6u 12u$(small)">
-    						<input type="text" required class="form-control" placeholder="Cant.">
+    						<input type="text" data-ng-model="organization.recipient._0_2" required class="form-control" placeholder="Cant.">
     					</li>
     				</ul>
     				<ul class="actions 12u 12u$(small)">
     					<li class="5u 12u$(small)">3-5 Años</li>
     					<li class="6u 12u$(small)">
-    						<input type="text" required class="form-control" placeholder="Cant.">
+    						<input type="text" data-ng-model="organization.recipient._3_5" required class="form-control" placeholder="Cant.">
     					</li>
     				</ul>
     				<ul class="actions 12u 12u$(small)">
     					<li class="5u 12u$(small)">6-12 Años</li>
     					<li class="6u 12u$(small)">
-    						<input type="text" required class="form-control" placeholder="Cant.">
+    						<input type="text" data-ng-model="organization.recipient._6_12" required class="form-control" placeholder="Cant.">
     					</li>
     				</ul>
     				<ul class="actions 12u 12u$(small)">
     					<li class="5u 12u$(small)">Adolescentes</li>
     					<li class="6u 12u$(small)">
-    						<input type="text" required class="form-control" placeholder="Cant.">
+    						<input type="text" data-ng-model="organization.recipient.teenagers" required class="form-control" placeholder="Cant.">
     					</li>
     				</ul>
     				<ul class="actions 12u 12u$(small)">
     					<li class="5u 12u$(small)">Adultos</li>
     					<li class="6u 12u$(small)">
-    						<input type="text" required class="form-control" placeholder="Cant.">
+    						<input type="text" data-ng-model="organization.recipient.adults" required class="form-control" placeholder="Cant.">
     					</li>
     				</ul>
     				<ul class="actions 12u 12u$(small)">
     					<li class="5u 12u$(small)">Ancianos</li>
     					<li class="6u 12u$(small)">
-    						<input type="text" required class="form-control" placeholder="Cant.">
+    						<input type="text" data-ng-model="organization.recipient.elder" required class="form-control" placeholder="Cant.">
     					</li>
     				</ul>
     			</section>
@@ -223,15 +224,15 @@
     				<span class="icon major fa-calendar-o"></span>
     				<h3>Periodicidad</h3>
     				<div class="12u 12u$(small)">
-    					<input type="radio" id="unaPorSemana" name="demo-copy">
+    					<input type="radio" data-ng-model="organization.periodicity" id="unaPorSemana" value="1" name="demo-copy">
     					<label for="unaPorSemana">Una vez por semana</label>
     				</div>
     				<div class="12u 12u$(small)">
-    					<input type="radio" id="tresPorSemana" name="demo-copy">
+    					<input type="radio" data-ng-model="organization.periodicity" id="tresPorSemana" value="2" name="demo-copy">
     					<label for="tresPorSemana">Tres veces por semana</label>
     				</div>
     				<div class="12u 12u$(small)">
-    					<input type="radio" id="diario" name="demo-copy">
+    					<input type="radio" data-ng-model="organization.periodicity" id="diario" value="3" name="demo-copy">
     					<label for="diario">Diario</label>
     				</div>
     			</section>
@@ -239,16 +240,28 @@
     				<span class="icon major fa-clock-o"></span>
     				<h3>Horario</h3>
     				<div class="6u 12u$(small)">
-    					<input type="checkbox" id="mañana" name="demo-copy">
+    					<input type="checkbox" data-ng-model="organization.schedule.morning.available" id="mañana" name="demo-copy">
     					<label for="mañana">Mañana</label>
+							<label ng-show="organization.schedule.morning.available">Desde</label>
+							<input type="text" data-ng-model="organization.schedule.morning.from" ng-show="organization.schedule.morning.available" name="demo-copy">
+    					<label ng-show="organization.schedule.morning.available">Hasta</label>
+							<input type="text" data-ng-model="organization.schedule.morning.to" ng-show="organization.schedule.morning.available" name="demo-copy">
     				</div>
     				<div class="6u 12u$(small)">
-    					<input type="checkbox" id="tarde" name="demo-copy">
+    					<input type="checkbox" data-ng-model="organization.schedule.afternoon.available" id="tarde" name="demo-copy">
     					<label for="tarde">Tarde</label>
+							<label ng-show="organization.schedule.afternoon.available">Desde</label>
+							<input type="text" data-ng-model="organization.schedule.afternoon.from" ng-show="organization.schedule.afternoon.available" name="demo-copy">
+    					<label ng-show="organization.schedule.afternoon.available">Hasta</label>
+							<input type="text" data-ng-model="organization.schedule.afternoon.to" ng-show="organization.schedule.afternoon.available" name="demo-copy">
     				</div>
     				<div class="6u 12u$(small)">
-    					<input type="checkbox" id="Noche" name="demo-copy">
-    					<label for="Noche">Noche</label>
+    					<input type="checkbox" data-ng-model="organization.schedule.night.available" id="Noche" name="demo-copy">
+							<label for="Noche">Noche</label>
+							<label ng-show="organization.schedule.night.available">Desde</label>
+							<input type="text" data-ng-model="organization.schedule.night.from" ng-show="organization.schedule.night.available" name="demo-copy">
+    					<label ng-show="organization.schedule.night.available">Hasta</label>
+							<input type="text" data-ng-model="organization.schedule.night.to" ng-show="organization.schedule.night.available" name="demo-copy">
     				</div>
     			</section>
     			<section>
