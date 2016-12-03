@@ -1,6 +1,6 @@
 <!-- Header -->
   <header id="header">
-    <a href="http://bancodealimentoscba.org.ar/" class="title">Banco de Alimentos WEB ADMIN</a>
+    <a href="http://bancodealimentoscba.org.ar/" class="title">Banco de Alimentos</a>
     <nav>
       <ul>
         <li><a class="active">Lista de Organizaciones</a></li>
@@ -29,7 +29,14 @@
                     </thead>
                     <tbody>
                       <tr ng-repeat="org in orgs">
-                        <td>{{org.nombre}}</td>
+                        <td>
+                          <div>
+                            {{org.nombre}}
+                          </div>
+                          <div>
+                            <p><b>{{getStatus(org.estado)}}</b></p>
+                          </div>
+                        </td>
                         <td>
                           <div data-ng-show="org.ubicacion.localidad">
                             Localidad: <span class="italic">{{org.ubicacion.localidad}}</span>
@@ -111,6 +118,9 @@
               <p class="sub-title">Nombre de la Organización</p>
               <p>Nombre: <span class="italic">{{orgModal.nombre}}</span></p>
 
+              <p class="sub-title">Estado</p>
+              <p><span class="italic">{{getStatus(orgModal.estado)}}</span></p>
+
               <p class="sub-title">Ubicación</p>
               <p>Localidad: <span class="italic">{{orgModal.ubicacion.localidad}}</span></p>
               <p>Barrio: <span class="italic">{{orgModal.ubicacion.barrio}}</span></p>
@@ -123,33 +133,34 @@
               <p>Celular: <span class="italic">{{orgModal.contacto.telefonos.celular.caracteristica}}-{{orgModal.contacto.telefonos.celular.numero}}</span></p>
               <p>Correo: <span class="italic">{{orgModal.contacto.email}}</span></p>
 
-              <p class="sub-title">Personería Jurídica</p>
-              <p>Nombre: <span class="italic">{{orgModal.personaria_juridica.numero}}</span></p>
+              <p ng-show="orgModal.hasLegalStatus" class="sub-title">Personería Jurídica</p>
+              <p ng-show="orgModal.hasLegalStatus">Número: <span class="italic">{{orgModal.personaria_juridica.numero}}</span></p>
 
-              <p class="sub-title">Beneficios</p>
-              <p ng-show="orgModal.beneficios.desayuno">Desayuno</p>
-              <p ng-show="orgModal.beneficios.almuerzo">Almuerzo</p>
-              <p ng-show="orgModal.beneficios.merienda">Merienda</p>
-              <p ng-show="orgModal.beneficios.cena">Cena</p>
+              <p ng-show="orgModal.hasLegalStatus" class="sub-title">Beneficios</p>
+              <p ng-show="orgModal.beneficios.desayuno && orgModal.hasLegalStatus">Desayuno</p>
+              <p ng-show="orgModal.beneficios.almuerzo && orgModal.hasLegalStatus">Almuerzo</p>
+              <p ng-show="orgModal.beneficios.merienda && orgModal.hasLegalStatus">Merienda</p>
+              <p ng-show="orgModal.beneficios.cena && orgModal.hasLegalStatus">Cena</p>
 
-              <p class="sub-title">Beneficiarios</p>
-              <p ng-show="orgModal.beneficiarios.dos > 0">0/2 años: <span class="italic">{{orgModal.beneficiarios.dos}}</span></p>
-              <p ng-show="orgModal.beneficiarios.cinco > 0">3/5 años: <span class="italic">{{orgModal.beneficiarios.cinco}}</span></p>
-              <p ng-show="orgModal.beneficiarios.doce > 0">6/12 años: <span class="italic">{{orgModal.beneficiarios.doce}}</span></p>
-              <p ng-show="orgModal.beneficiarios.adolescentes > 0">Adolescentes: <span class="italic">{{orgModal.beneficiarios.adolescentes}}</span></p>
-              <p ng-show="orgModal.beneficiarios.adultos > 0">Adultos: <span class="italic">{{orgModal.beneficiarios.adultos}}</span></p>
-              <p ng-show="orgModal.beneficiarios.ancianos > 0">Ancianos: <span class="italic">{{orgModal.beneficiarios.ancianos}}</span></p>
+              <p ng-show="orgModal.hasLegalStatus" class="sub-title">Beneficiarios</p>
+              <p ng-show="orgModal.beneficiarios._0_2 > 0  && orgModal.hasLegalStatus">0/2 años: <span class="italic">{{orgModal.beneficiarios._0_2}}</span></p>
+              <p ng-show="orgModal.beneficiarios._3_5 > 0  && orgModal.hasLegalStatus">3/5 años: <span class="italic">{{orgModal.beneficiarios._3_5}}</span></p>
+              <p ng-show="orgModal.beneficiarios._6_12 > 0  && orgModal.hasLegalStatus">6/12 años: <span class="italic">{{orgModal.beneficiarios._6_12}}</span></p>
+              <p ng-show="orgModal.beneficiarios.adolescentes > 0  && orgModal.hasLegalStatus">Adolescentes: <span class="italic">{{orgModal.beneficiarios.adolescentes}}</span></p>
+              <p ng-show="orgModal.beneficiarios.adultos > 0  && orgModal.hasLegalStatus">Adultos: <span class="italic">{{orgModal.beneficiarios.adultos}}</span></p>
+              <p ng-show="orgModal.beneficiarios.ancianos > 0  && orgModal.hasLegalStatus">Ancianos: <span class="italic">{{orgModal.beneficiarios.ancianos}}</span></p>
 
-              <p class="sub-title">Periodicidad</p>
-              <p>Periodicidad: <span class="italic">{{orgModal.periodicidad}}</span></p>
+              <p ng-show="orgModal.hasLegalStatus" class="sub-title">Periodicidad</p>
+              <p ng-show="orgModal.hasLegalStatus"><span class="italic">{{getShedule(orgModal.periodicidad)}}</span></p>
 
-              <p class="sub-title">Horario</p>
-              <p ng-show="orgModal.horario.manana.disponible">Mañana  desde {{orgModal.horario.manana.desde}} hasta {{orgModal.horario.manana.hasta}}</p>
-              <p ng-show="orgModal.horario.tarde.disponible">Tarde desde {{orgModal.horario.tarde.desde}} hasta {{orgModal.horario.tarde.hasta}}</p>
-              <p ng-show="orgModal.horario.noche.disponible">Noche desde {{orgModal.horario.noche.desde}} hasta {{orgModal.horario.noche.hasta}}</p>
+              <p ng-show="orgModal.hasLegalStatus" class="sub-title">Horario</p>
+              <p ng-show="orgModal.horario.manana.disponible && orgModal.hasLegalStatus">Mañana: Desde {{orgModal.horario.manana.desde}} hasta {{orgModal.horario.manana.hasta}} hs</p>
+              <p ng-show="orgModal.horario.tarde.disponible && orgModal.hasLegalStatus">Tarde: Desde {{orgModal.horario.tarde.desde}} hasta {{orgModal.horario.tarde.hasta}} hs</p>
+              <p ng-show="orgModal.horario.noche.disponible && orgModal.hasLegalStatus">Noche: Desde {{orgModal.horario.noche.desde}} hasta {{orgModal.horario.noche.hasta}} hs</p>
 
             </div>
             <div class="modal-footer">
+              <button type="button" class="btn btn-primary" ng-click="goEdit()">Editar</button>
               <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
             </div>
           </div>

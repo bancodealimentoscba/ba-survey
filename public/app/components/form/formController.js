@@ -1,5 +1,5 @@
-baSurvey.controller('formCtrl', ['$scope', '$timeout', 'blockUI', 'database',
-	function($scope, $timeout, blockUI, database) {
+baSurvey.controller('formCtrl', ['$location', '$scope', '$timeout', 'blockUI', 'database',
+	function($location, $scope, $timeout, blockUI, database) {
 		$scope.legalStatus = '';
 		$scope.organization = {
 			address: {},
@@ -121,10 +121,15 @@ baSurvey.controller('formCtrl', ['$scope', '$timeout', 'blockUI', 'database',
 	        }
 				}
 			};
+			// blockUI.start();
+			// database.writeData('organizaciones', newOrganization).finally(function(){
+	    //   blockUI.stop();
+	    // });
 			blockUI.start();
-			database.writeData('organizaciones', newOrganization).finally(function(){
-	      blockUI.stop();
-	    });
+			$timeout(function() {
+				$location.path('');
+				blockUI.stop();
+			}, 2000);
 		};
 	}
 ])

@@ -60,7 +60,7 @@
                     <div>
                         <input type="text" required class="form-control" data-ng-model="organizacion.ubicacion.localidad" id="localidad" placeholder="organizacion.ubicacion.localidad">
                     </div>
-										<h3>Ubicación</h3>
+										<!-- <h3>Ubicación</h3>
 										<ui-gmap-google-map
 														center="map.center"
 														zoom="map.zoom"
@@ -72,7 +72,7 @@
 															events="marker.events"
 															idkey="marker.id">
 								        </ui-gmap-marker>
-								    </ui-gmap-google-map>
+								    </ui-gmap-google-map> -->
                 </section>
                 <section>
                     <span class="icon major fa-legal"></span>
@@ -173,19 +173,19 @@
     				<ul class="actions 12u 12u$(small)">
     					<li class="5u 12u$(small)">0-2 Años</li>
     					<li class="6u 12u$(small)">
-    						<input type="text" data-ng-model="organizacion.beneficiarios.cero" required class="form-control" placeholder="organizacion.beneficiarios.cero">
+    						<input type="text" data-ng-model="organizacion.beneficiarios._0_2" required class="form-control" placeholder="organizacion.beneficiarios._0_2">
     					</li>
     				</ul>
     				<ul class="actions 12u 12u$(small)">
     					<li class="5u 12u$(small)">3-5 Años</li>
     					<li class="6u 12u$(small)">
-    						<input type="text" data-ng-model="organizacion.beneficiarios.tres" required class="form-control" placeholder="organizacion.beneficiarios.tres">
+    						<input type="text" data-ng-model="organizacion.beneficiarios._3_5" required class="form-control" placeholder="organizacion.beneficiarios._3_5">
     					</li>
     				</ul>
     				<ul class="actions 12u 12u$(small)">
     					<li class="5u 12u$(small)">6-12 Años</li>
     					<li class="6u 12u$(small)">
-    						<input type="text" data-ng-model="organizacion.beneficiarios.seis" required class="form-control" placeholder="organizacion.beneficiarios.seis">
+    						<input type="text" data-ng-model="organizacion.beneficiarios._6_12" required class="form-control" placeholder="organizacion.beneficiarios._6_12">
     					</li>
     				</ul>
     				<ul class="actions 12u 12u$(small)">
@@ -254,29 +254,16 @@
     			<section>
     			</section>
     		</div>
-            <ul class="actions">
-                <li><input type="button" required class="button special" id="submit" value="Guardar" data-ng-click="writeOrganization()"/></li>
-            </ul>
     	</div>
     </section>
 
-    <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog">
-          <!-- Modal content-->
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Titulo</h4>
-            </div>
-            <div class="modal-body">
-              <p class="sub-title">Subtitulo</p>
-              <p>Nombre: <span class="italic">Explicacion aqui</span></p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
-            </div>
-          </div>
-        </div>
-      </div>
+		<section id="three" class="wrapper style1 fade-up">
+	    	<div class="inner">
+						<ul class="actions">
+								<li><input type="button" required class="button special" id="submit" value="Guardar" ng-click="save()"/></li>
+						</ul>
+				</div>
+		</section>
 
 </div>
 
