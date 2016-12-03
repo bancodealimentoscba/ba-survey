@@ -242,33 +242,33 @@
     				<div class="6u 12u$(small)">
     					<input type="checkbox" data-ng-model="organization.schedule.morning.available" id="mañana" name="demo-copy">
     					<label for="mañana">Mañana</label>
-							<label ng-show="organization.schedule.morning.available">Desde</label>
-							<input type="text" data-ng-model="organization.schedule.morning.from" ng-show="organization.schedule.morning.available" name="demo-copy">
-    					<label ng-show="organization.schedule.morning.available">Hasta</label>
-							<input type="text" data-ng-model="organization.schedule.morning.to" ng-show="organization.schedule.morning.available" name="demo-copy">
+							<label class="schedule" ng-show="organization.schedule.morning.available">Desde</label>
+							<input class="schedule" type="text" data-ng-model="organization.schedule.morning.from" ng-show="organization.schedule.morning.available" name="demo-copy">
+    					<label class="schedule" ng-show="organization.schedule.morning.available">Hasta</label>
+							<input class="schedule" type="text" data-ng-model="organization.schedule.morning.to" ng-show="organization.schedule.morning.available" name="demo-copy">
     				</div>
     				<div class="6u 12u$(small)">
     					<input type="checkbox" data-ng-model="organization.schedule.afternoon.available" id="tarde" name="demo-copy">
     					<label for="tarde">Tarde</label>
-							<label ng-show="organization.schedule.afternoon.available">Desde</label>
-							<input type="text" data-ng-model="organization.schedule.afternoon.from" ng-show="organization.schedule.afternoon.available" name="demo-copy">
-    					<label ng-show="organization.schedule.afternoon.available">Hasta</label>
-							<input type="text" data-ng-model="organization.schedule.afternoon.to" ng-show="organization.schedule.afternoon.available" name="demo-copy">
+							<label class="schedule" ng-show="organization.schedule.afternoon.available">Desde</label>
+							<input class="schedule" type="text" data-ng-model="organization.schedule.afternoon.from" ng-show="organization.schedule.afternoon.available" name="demo-copy">
+    					<label class="schedule" ng-show="organization.schedule.afternoon.available">Hasta</label>
+							<input class="schedule" type="text" data-ng-model="organization.schedule.afternoon.to" ng-show="organization.schedule.afternoon.available" name="demo-copy">
     				</div>
     				<div class="6u 12u$(small)">
     					<input type="checkbox" data-ng-model="organization.schedule.night.available" id="Noche" name="demo-copy">
 							<label for="Noche">Noche</label>
-							<label ng-show="organization.schedule.night.available">Desde</label>
-							<input type="text" data-ng-model="organization.schedule.night.from" ng-show="organization.schedule.night.available" name="demo-copy">
-    					<label ng-show="organization.schedule.night.available">Hasta</label>
-							<input type="text" data-ng-model="organization.schedule.night.to" ng-show="organization.schedule.night.available" name="demo-copy">
+							<label class="schedule" ng-show="organization.schedule.night.available">Desde</label>
+							<input class="schedule" type="text" data-ng-model="organization.schedule.night.from" ng-show="organization.schedule.night.available" name="demo-copy">
+    					<label class="schedule" ng-show="organization.schedule.night.available">Hasta</label>
+							<input class="schedule" type="text" data-ng-model="organization.schedule.night.to" ng-show="organization.schedule.night.available" name="demo-copy">
     				</div>
     			</section>
     			<section>
     			</section>
     		</div>
             <ul class="actions">
-                <li><input type="button" required class="button" id="submit" value="Enviar" data-ng-click="writeOrganization()"/></li>
+                <li><input type="button" required class="button special" id="submit" value="Enviar" data-ng-click="writeOrganization()"/></li>
             </ul>
     	</div>
     </section>

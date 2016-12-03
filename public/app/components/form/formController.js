@@ -121,7 +121,6 @@ baSurvey.controller('formCtrl', ['$scope', '$timeout', 'blockUI', 'database',
 	        }
 				}
 			};
-			console.log(newOrganization);
 			blockUI.start();
 			database.writeData('organizaciones', newOrganization).finally(function(){
 	      blockUI.stop();

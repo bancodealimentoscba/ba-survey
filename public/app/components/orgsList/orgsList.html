@@ -31,33 +31,36 @@
                       <tr ng-repeat="org in orgs">
                         <td>{{org.nombre}}</td>
                         <td>
-                          <div data-ng-show="org.localidad">
-                            Localidad: <span class="italic">{{org.localidad}}</span>
+                          <div data-ng-show="org.ubicacion.localidad">
+                            Localidad: <span class="italic">{{org.ubicacion.localidad}}</span>
                           </div>
-                          <div data-ng-show="org.barrio">
-                            B°: <span class="italic">{{org.barrio}}</span>
+                          <div data-ng-show="org.ubicacion.barrio">
+                            B°: <span class="italic">{{org.ubicacion.barrio}}</span>
                           </div>
-                          <div data-ng-show="org.calle">
-                            Calle: <span class="italic">{{org.calle}}</span>
+                          <div data-ng-show="org.ubicacion.calle">
+                            Calle: <span class="italic">{{org.ubicacion.calle}}</span>
                           </div>
-                          <div data-ng-show="org.numero">
-                            N°: <span class="italic">{{org.numero}}</span>
+                          <div data-ng-show="org.ubicacion.numero">
+                            N°: <span class="italic">{{org.ubicacion.numero}}</span>
                           </div>
-                          <div data-ng-show="!org.localidad && !org.barrio && !org.calle && !org.numero">
+                          <div data-ng-show="!org.ubicacion.localidad && !org.ubicacion.barrio && !org.ubicacion.calle && !org.ubicacion.numero">
                             N/C
                           </div>
                         </td>
                         <td>
-                          <div data-ng-show="org.referente">
-                            Nombre: <span class="italic">{{org.referente}}</span>
+                          <div data-ng-show="org.contacto.nombre">
+                            Nombre: <span class="italic">{{org.contacto.nombre}}</span>
                           </div>
-                          <div data-ng-show="org.telefono">
-                            Telefono: <span class="italic">{{org.caracteristica}}-{{org.telefono}}</span>
+                          <div data-ng-show="org.contacto.telefonos.fijo.numero">
+                            Teléfono: <span class="italic">{{org.contacto.telefonos.fijo.caracteristica}}-{{org.contacto.telefonos.fijo.numero}}</span>
                           </div>
-                          <div data-ng-show="org.email">
+                          <div data-ng-show="org.contacto.telefonos.celular.numero">
+                            Cel: <span class="italic">{{org.contacto.telefonos.celular.caracteristica}}-{{org.contacto.telefonos.celular.numero}}</span>
+                          </div>
+                          <div data-ng-show="org.contacto.email">
                             Email: <span class="italic">{{org.contacto.email}}</span>
                           </div>
-                          <div data-ng-show="!org.referente && !org.telefono && !org.email">
+                          <div data-ng-show="!org.contacto.nombre && !org.contacto.telefonos.fijo.numero && !org.contacto.telefonos.celular.numero && !org.contacto.email">
                             N/C
                           </div>
                         </td>
@@ -121,29 +124,29 @@
               <p>Correo: <span class="italic">{{orgModal.contacto.email}}</span></p>
 
               <p class="sub-title">Personería Jurídica</p>
-              <p>Nombre: <span class="italic">{{orgModal.personaria_juridica.nombre}}</span></p>
+              <p>Nombre: <span class="italic">{{orgModal.personaria_juridica.numero}}</span></p>
 
               <p class="sub-title">Beneficios</p>
-              <p ng-show="orgModal.personaria_juridica.beneficios.desayuno">Desayuno</p>
-              <p ng-show="orgModal.personaria_juridica.beneficios.almuerzo">Almuerzo</p>
-              <p ng-show="orgModal.personaria_juridica.beneficios.merienda">Merienda</p>
-              <p ng-show="orgModal.personaria_juridica.beneficios.cena">Cena</p>
+              <p ng-show="orgModal.beneficios.desayuno">Desayuno</p>
+              <p ng-show="orgModal.beneficios.almuerzo">Almuerzo</p>
+              <p ng-show="orgModal.beneficios.merienda">Merienda</p>
+              <p ng-show="orgModal.beneficios.cena">Cena</p>
 
               <p class="sub-title">Beneficiarios</p>
-              <p ng-show="orgModal.personaria_juridica.beneficiarios.dos > 0">0/2 años: <span class="italic">{{orgModal.personaria_juridica.beneficiarios.dos}}</span></p>
-              <p ng-show="orgModal.personaria_juridica.beneficiarios.cinco > 0">3/5 años: <span class="italic">{{orgModal.personaria_juridica.beneficiarios.cinco}}</span></p>
-              <p ng-show="orgModal.personaria_juridica.beneficiarios.doce > 0">6/12 años: <span class="italic">{{orgModal.personaria_juridica.beneficiarios.doce}}</span></p>
-              <p ng-show="orgModal.personaria_juridica.beneficiarios.adolescentes > 0">Adolescentes: <span class="italic">{{orgModal.personaria_juridica.beneficiarios.adolescentes}}</span></p>
-              <p ng-show="orgModal.personaria_juridica.beneficiarios.adultos > 0">Adultos: <span class="italic">{{orgModal.personaria_juridica.beneficiarios.adultos}}</span></p>
-              <p ng-show="orgModal.personaria_juridica.beneficiarios.ancianos > 0">Ancianos: <span class="italic">{{orgModal.personaria_juridica.beneficiarios.ancianos}}</span></p>
+              <p ng-show="orgModal.beneficiarios.dos > 0">0/2 años: <span class="italic">{{orgModal.beneficiarios.dos}}</span></p>
+              <p ng-show="orgModal.beneficiarios.cinco > 0">3/5 años: <span class="italic">{{orgModal.beneficiarios.cinco}}</span></p>
+              <p ng-show="orgModal.beneficiarios.doce > 0">6/12 años: <span class="italic">{{orgModal.beneficiarios.doce}}</span></p>
+              <p ng-show="orgModal.beneficiarios.adolescentes > 0">Adolescentes: <span class="italic">{{orgModal.beneficiarios.adolescentes}}</span></p>
+              <p ng-show="orgModal.beneficiarios.adultos > 0">Adultos: <span class="italic">{{orgModal.beneficiarios.adultos}}</span></p>
+              <p ng-show="orgModal.beneficiarios.ancianos > 0">Ancianos: <span class="italic">{{orgModal.beneficiarios.ancianos}}</span></p>
 
               <p class="sub-title">Periodicidad</p>
-              <p>Periodicidad: <span class="italic">{{orgModal.personaria_juridica.periodicidad}}</span></p>
+              <p>Periodicidad: <span class="italic">{{orgModal.periodicidad}}</span></p>
 
               <p class="sub-title">Horario</p>
-              <p ng-show="orgModal.personaria_juridica.horario.manana">Mañana</p>
-              <p ng-show="orgModal.personaria_juridica.horario.tarde">Tarde</p>
-              <p ng-show="orgModal.personaria_juridica.horario.noche">Noche</p>
+              <p ng-show="orgModal.horario.manana.disponible">Mañana  desde {{orgModal.horario.manana.desde}} hasta {{orgModal.horario.manana.hasta}}</p>
+              <p ng-show="orgModal.horario.tarde.disponible">Tarde desde {{orgModal.horario.tarde.desde}} hasta {{orgModal.horario.tarde.hasta}}</p>
+              <p ng-show="orgModal.horario.noche.disponible">Noche desde {{orgModal.horario.noche.desde}} hasta {{orgModal.horario.noche.hasta}}</p>
 
             </div>
             <div class="modal-footer">

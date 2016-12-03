@@ -46,3 +46,12 @@ span.italic {
   margin-top: 15px;
   font-weight: bold;
 }
+
+.angular-google-map-container {
+  height: 400px;
+  margin-top: 10px;
+}
+
+.schedule {
+  margin-left: 30px;
+}

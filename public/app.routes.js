@@ -5,6 +5,10 @@ baSurvey.config(['$routeProvider',
 			templateUrl: 'app/components/index/index.html',
 			controller: 'indexCtrl'
 		}).
+		when('/editOrg', {
+			templateUrl: 'app/components/editOrg/editOrg.html',
+			controller: 'editOrgCtrl'
+		}).
 		when('/form', {
 			templateUrl: 'app/components/form/form.html',
 			controller: 'formCtrl'
@@ -24,6 +28,5 @@ baSurvey.config(['$routeProvider',
 		otherwise({
 			redirectTo: '/'
 		});
-
 	}
 ]);
