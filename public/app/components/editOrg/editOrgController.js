@@ -1,5 +1,13 @@
-baSurvey.controller('editOrgCtrl', ['$location', '$scope', '$timeout', 'blockUI', 'database',
-  function($location, $scope, $timeout, blockUI, database) {
+baSurvey.controller('editOrgCtrl', [
+  '$location',
+  '$routeParams',
+  '$scope',
+  '$timeout',
+  'blockUI',
+  'database',
+  function($location, $routeParams, $scope, $timeout, blockUI, database) {
+
+    var id = $routeParams.id;
 
     $scope.map = {
       center: {

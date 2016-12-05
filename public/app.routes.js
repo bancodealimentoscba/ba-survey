@@ -5,7 +5,7 @@ baSurvey.config(['$routeProvider',
 			templateUrl: 'app/components/index/index.html',
 			controller: 'indexCtrl'
 		}).
-		when('/editOrg', {
+		when('/editOrg/:id', {
 			templateUrl: 'app/components/editOrg/editOrg.html',
 			controller: 'editOrgCtrl'
 		}).

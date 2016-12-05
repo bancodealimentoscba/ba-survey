@@ -1,5 +1,11 @@
-baSurvey.controller('orgsListCtrl', ['$location', '$scope', '$timeout', 'blockUI', 'database',
-  function($location, $scope, $timeout, blockUI, database) {
+baSurvey.controller('orgsListCtrl', [
+  '$location',
+  '$scope',
+  '$timeout',
+  'blockUI',
+  'database',
+  'FieldService',
+  function($location, $scope, $timeout, blockUI, database, FieldService) {
 
     blockUI.start();
     $timeout(function() {
@@ -7,8 +13,9 @@ baSurvey.controller('orgsListCtrl', ['$location', '$scope', '$timeout', 'blockUI
     }, 2000);
 
     // Show modal with all data from the org
-    $scope.showModal = function(index) {
-      $scope.orgModal = $scope.orgs[index];
+    $scope.showModal = function(key) {
+      $scope.orgModal = $scope.orgs[key];
+      $scope.orgModal.id = key;
       $scope.orgModal.hasLegalStatus = ($scope. orgModal.personaria_juridica.numero > 0);
     };
 
@@ -20,43 +27,16 @@ baSurvey.controller('orgsListCtrl', ['$location', '$scope', '$timeout', 'blockUI
       blockUI.stop();
     });
 
-    $scope.goEdit = function() {
-      $location.path('editOrg');
+    $scope.goEdit = function(id) {
+      $location.path('editOrg/' + id);
     };
 
     $scope.getStatus =  function(status) {
-        var statusName = '';
-        switch(status) {
-            case 1:
-                statusName = "Pendiente Inscripta";
-                break;
-            case 2:
-                statusName = "Pendiente No Inscripta";
-                break;
-            case 3:
-                statusName = "Aprobada";
-                break;
-            case 4:
-                statusName = "Inactiva";
-                break;
-        };
-        return statusName;
+        return FieldService.getStatus(status);
     };
 
     $scope.getShedule =  function(schedule) {
-        var scheduleText = '';
-        switch(schedule) {
-            case 1:
-                scheduleText = "Una vez por semana";
-                break;
-            case 2:
-                scheduleText = "Tres veces por semana";
-                break;
-            case 3:
-                scheduleText = "Diario";
-                break;
-        };
-        return scheduleText;
+      return FieldService.getSchedule(status);
     };
 
     // $scope.orgs = [

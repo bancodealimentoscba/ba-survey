@@ -28,7 +28,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr ng-repeat="org in orgs">
+                      <tr ng-repeat="(key, org) in orgs">
                         <td>
                           <div>
                             {{org.nombre}}
@@ -73,7 +73,7 @@
                         </td>
                         <td class="td-more">
                           <button
-                            ng-click="showModal($index)"
+                            ng-click="showModal(key)"
                             type="button"
                             class="btn btn-info btn-lg button-more"
                             data-toggle="modal"
@@ -160,7 +160,7 @@
 
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-primary" ng-click="goEdit()">Editar</button>
+              <button type="button" class="btn btn-primary" ng-click="goEdit(orgModal.id)">Editar</button>
               <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
             </div>
           </div>
