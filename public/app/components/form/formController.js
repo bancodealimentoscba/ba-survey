@@ -121,15 +121,15 @@ baSurvey.controller('formCtrl', ['$location', '$scope', '$timeout', 'blockUI', '
 	        }
 				}
 			};
-			// blockUI.start();
-			// database.writeData('organizaciones', newOrganization).finally(function(){
-	    //   blockUI.stop();
-	    // });
 			blockUI.start();
-			$timeout(function() {
+			database.writeData('organizaciones', newOrganization).finally(function(){
 				$location.path('');
 				blockUI.stop();
-			}, 2000);
+			});
+			// blockUI.start();
+			// $timeout(function() {
+			// 	blockUI.stop();
+			// }, 2000);
 		};
 	}
 ])

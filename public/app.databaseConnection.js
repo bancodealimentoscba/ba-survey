@@ -2,10 +2,14 @@ baSurvey.factory('database', ['$firebaseObject', function($firebaseObject) {
 	var ref = firebase.database().ref();
 	var connection;
 
-	checkUndefined = function(value){
-		for (var val in value){
-			if (value[val] === undefined){
-				value[val] = '';
+	checkUndefined = function(organization){
+		for (var field in organization){
+			if (typeof(organization[field]) === 'object'){
+				checkUndefined(organization[field]);
+			} else {
+				if (typeof(organization[field]) === 'undefined'){
+					organization[field] = '';
+				}
 			}
 		}
 	}
