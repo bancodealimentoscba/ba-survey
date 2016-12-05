@@ -30,15 +30,15 @@
     <section id="one" class="wrapper style3 fade-up">
         <div class="inner">
             <h2>Información de la Organización</h2>
-            <p>
+            <!-- <p>
                 Sólo unos ultimos datos más y habremos terminado.
-            </p>
+            </p> -->
             <div class="features">
                 <section>
                     <span class="icon major fa-building"></span>
                     <h3>Nombre de la Organización</h3>
                     <div>
-                        <input type="text" required class="form-control" data-ng-model="organization.name" id="inputPassword" placeholder="...">
+                        <input type="text" required class="form-control" data-ng-model="organization.name" id="inputPassword" placeholder="Nombre de la Organización">
                     </div>
                 </section>
                 <section>
@@ -157,7 +157,7 @@
     				<span class="icon major fa-briefcase"></span>
     				<h3>Número de Personería Jurídica</h3>
     				<div>
-    					<input type="text" required class="form-control" id="inputPassword" data-ng-model="organization.legalStatus" placeholder="...">
+    					<input type="text" required class="form-control" id="inputPassword" data-ng-model="organization.legalStatus" placeholder="Número de Personería Jurídica">
     				</div>
     			</section>
     			<section>
@@ -270,13 +270,13 @@
     	</div>
     </section>
 
-		<section id="three" class="wrapper style1 fade-up">
-	    	<div class="inner">
-						<ul class="actions">
-							<li><input type="button" required class="button special" id="submit" value="Enviar" data-ng-click="writeOrganization()"/></li>
-						</ul>
-				</div>
-		</section>
+    <section id="three" class="wrapper style1 fade-up" data-ng-show="legalStatus">
+        <div class="inner">
+            <ul class="actions">
+                <li><input type="button" required class="button special" id="submit" value="Enviar" data-ng-click="writeOrganization()"/></li>
+            </ul>
+        </div>
+    </section>
 
     <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">
