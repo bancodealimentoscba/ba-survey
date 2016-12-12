@@ -39,6 +39,10 @@ baSurvey.controller('editOrgCtrl', [
       }, 2000);
     }
 
+    $scope.cancel = function() {
+      $location.path('orgsList');
+    }
+
     $scope.organizacion = {
       "estado": 1,
       "nombre": "Fundación Córdoba",

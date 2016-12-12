@@ -1,9 +1,18 @@
-baSurvey.controller('loginCtrl', ['$location', '$scope', '$location',
-	function($location, $scope, $location) {
+baSurvey.controller('loginCtrl', [
+	'$location',
+	'$scope',
+	'$firebaseAuth',
+	'blockUI',
+	function($location, $scope, $firebaseAuth, blockUI) {
     $scope.login = function () {
-      $scope.email;
-      $scope.password;
-			$location.path('orgsList');
+			blockUI.start();
+			$firebaseAuth().$signInWithEmailAndPassword($scope.email, $scope.password)
+			.then(function(firebaseUser) {
+				$location.path('orgsList');
+			}).finally(function(){
+	      blockUI.stop();
+	    });
     };
+
 	}
 ])

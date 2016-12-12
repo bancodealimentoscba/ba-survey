@@ -1,4 +1,5 @@
-baSurvey.config(['$routeProvider',
+baSurvey.config([
+	'$routeProvider',
 	function ($routeProvider) {
 		$routeProvider.
 		when('/index', {
@@ -7,7 +8,12 @@ baSurvey.config(['$routeProvider',
 		}).
 		when('/editOrg/:id', {
 			templateUrl: 'app/components/editOrg/editOrg.html',
-			controller: 'editOrgCtrl'
+			controller: 'editOrgCtrl',
+			resolve: {
+	      'currentAuth': ['Auth', function(Auth) {
+	        return Auth.$requireSignIn();
+	      }]
+	    }
 		}).
 		when('/form', {
 			templateUrl: 'app/components/form/form.html',
@@ -19,7 +25,12 @@ baSurvey.config(['$routeProvider',
 		}).
 		when('/orgsList', {
 			templateUrl: 'app/components/orgsList/orgsList.html',
-			controller: 'orgsListCtrl'
+			controller: 'orgsListCtrl',
+			resolve: {
+	      'currentAuth': ['Auth', function(Auth) {
+	        return Auth.$requireSignIn();
+	      }]
+	    }
 		}).
 		when('/', {
 			templateUrl: 'app/components/landing/landing.html',
@@ -29,4 +40,9 @@ baSurvey.config(['$routeProvider',
 			redirectTo: '/'
 		});
 	}
+]);
+baSurvey.factory('Auth', ['$firebaseAuth',
+  function($firebaseAuth) {
+    return $firebaseAuth();
+  }
 ]);
