@@ -1,5 +1,19 @@
-baSurvey.controller('formCtrl', ['$location', '$scope', '$timeout', 'blockUI', 'database',
-	function($location, $scope, $timeout, blockUI, database) {
+baSurvey.controller('formCtrl', [
+	'$location',
+	'$scope',
+	'$timeout',
+	'$firebaseAuth',
+	'blockUI',
+	'database',
+	function($location, $scope, $timeout, $firebaseAuth, blockUI, database) {
+
+		// Authenticates the client using a new, temporary guest account
+		blockUI.start();
+		$firebaseAuth().$signInAnonymously().then(function(firebaseUser) {
+		}).finally(function(){
+			blockUI.stop();
+		});
+
 		$scope.legalStatus = '';
 		$scope.organization = {
 			address: {},
@@ -124,10 +138,14 @@ baSurvey.controller('formCtrl', ['$location', '$scope', '$timeout', 'blockUI', '
 
 			blockUI.start();
 			database.writeData('organizaciones', newOrganization).finally(function(){
-				$location.path('');
-				blockUI.stop();
+				// Signs out the temporary guest account
+				$firebaseAuth().$signOut().then(function() {
+					$location.path('');
+				}).finally(function(){
+					blockUI.stop();
+				});
 			});
-			
+
 			// blockUI.start();
 			// $timeout(function() {
 			// 	blockUI.stop();
