@@ -15,4 +15,4 @@ baSurvey.controller('loginCtrl', [
     };
 
 	}
-])
+]);

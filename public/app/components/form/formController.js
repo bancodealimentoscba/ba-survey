@@ -57,15 +57,15 @@ baSurvey.controller('formCtrl', [
 			$('html, body').animate({
 				scrollTop: $('#' + target).offset().top
 			}, 1000);
-		}
+		};
 
 		$scope.onLegalStatusChange = function() {
 			$timeout(function() {
 				if ($scope.legalStatus === 'YES') {
 					$scope.scrollTo('three');
 				} else $scope.scrollTo('two');
-			}, 250)
-		}
+			}, 250);
+		};
 
 		database.connect()/*.then(function(data) {
 			console.log(data);
@@ -152,4 +152,4 @@ baSurvey.controller('formCtrl', [
 			// }, 2000);
 		};
 	}
-])
+]);

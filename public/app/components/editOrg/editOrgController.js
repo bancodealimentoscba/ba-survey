@@ -15,7 +15,7 @@ baSurvey.controller('editOrgCtrl', [
         longitude: -73
       },
       zoom: 15
-    }
+    };
 
     $scope.marker = {
       id: 0,
@@ -26,7 +26,7 @@ baSurvey.controller('editOrgCtrl', [
         latitude: -40.1451,
         longitude: -99.6680
       }
-    }
+    };
 
     $scope.save = function() {
       $scope.organizacion.ubicacion.coordenadas.lat = $scope.marker.coords.latitude;
@@ -37,11 +37,11 @@ baSurvey.controller('editOrgCtrl', [
         blockUI.stop();
         $location.path('orgsList');
       }, 2000);
-    }
+    };
 
     $scope.cancel = function() {
       $location.path('orgsList');
-    }
+    };
 
     $scope.organizacion = {
       "estado": 1,
@@ -106,7 +106,7 @@ baSurvey.controller('editOrgCtrl', [
           "hasta": "10"
         }
       }
-    }
+    };
 
     if ($scope.organizacion.ubicacion.coordenadas.lng === 0 && $scope.organizacion.ubicacion.coordenadas.lng === 0) {
 
@@ -120,7 +120,7 @@ baSurvey.controller('editOrgCtrl', [
           var location = {
             latitude: results[0].geometry.location.lat(),
             longitude: results[0].geometry.location.lng()
-          }
+          };
 
           console.log(location);
           $scope.map.center = location;
@@ -129,7 +129,7 @@ baSurvey.controller('editOrgCtrl', [
           $scope.marker.coords.longitude = location.longitude;
 
         }
-      })
+      });
     } else {
       $scope.map.center.latitude = $scope.organizacion.ubicacion.coordenadas.lat;
       $scope.map.center.longitude = $scope.organizacion.ubicacion.coordenadas.lng;
@@ -139,4 +139,4 @@ baSurvey.controller('editOrgCtrl', [
     }
 
   }
-])
+]);

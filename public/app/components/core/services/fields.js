@@ -17,27 +17,27 @@ baSurvey.service('FieldService', [
       case TimeCode.everyday:
         scheduleText = TimeText.everyday;
         break;
-    };
+    }
     return scheduleText;
   };
 
-  var getStatus = function (schedule) {
-    var scheduleText = '';
-    switch(schedule) {
+  var getStatus = function (status) {
+    var statusText = '';
+    switch(status) {
       case StatusCode.pendingLegal:
-        scheduleText = StatusText.pendingLegal;
+        statusText = StatusText.pendingLegal;
         break;
       case StatusCode.pendingNotLegal:
-        scheduleText = StatusText.pendingNotLegal;
+        statusText = StatusText.pendingNotLegal;
         break;
       case StatusCode.approved:
-        scheduleText = StatusText.approved;
+        statusText = StatusText.approved;
         break;
       case StatusCode.inactive:
-        scheduleText = StatusText.inactive;
+        statusText = StatusText.inactive;
         break;
-    };
-    return scheduleText;
+    }
+    return statusText;
   };
 
   return {

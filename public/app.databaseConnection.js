@@ -12,7 +12,7 @@ baSurvey.factory('database', ['$firebaseObject', function($firebaseObject) {
 				}
 			}
 		}
-	}
+	};
 
 	return {
 		connect: function() {
@@ -33,5 +33,5 @@ baSurvey.factory('database', ['$firebaseObject', function($firebaseObject) {
 			var saveProcess = connection.$save();
 			return saveProcess;
 		}
-	}
+	};
 }]);
