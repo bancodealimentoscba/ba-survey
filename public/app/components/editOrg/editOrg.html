@@ -45,19 +45,19 @@
                     <h3>Dirección</h3>
                     <h4>Calle</h4>
                     <div>
-                        <input type="text" required class="form-control" data-ng-model="organizacion.ubicacion.calle" id="calle" placeholder="organizacion.ubicacion.calle">
+                        <input type="text" required class="form-control" data-ng-model="organizacion.ubicacion.calle" id="calle" placeholder="Calle">
                     </div>
                     <h4>Número</h4>
                     <div>
-                        <input type="text" required class="form-control" data-ng-model="organizacion.ubicacion.numero" id="numero" placeholder="organizacion.ubicacion.numero">
+                        <input type="text" required class="form-control" data-ng-model="organizacion.ubicacion.numero" id="numero" placeholder="Numero">
                     </div>
                     <h4>Barrio</h4>
                     <div>
-                        <input type="text" required class="form-control" data-ng-model="organizacion.ubicacion.barrio" id="barrio" placeholder="organizacion.ubicacion.barrio">
+                        <input type="text" required class="form-control" data-ng-model="organizacion.ubicacion.barrio" id="barrio" placeholder="Barrio">
                     </div>
                     <h4>Localidad</h4>
                     <div>
-                        <input type="text" required class="form-control" data-ng-model="organizacion.ubicacion.localidad" id="localidad" placeholder="organizacion.ubicacion.localidad">
+                        <input type="text" required class="form-control" data-ng-model="organizacion.ubicacion.localidad" id="localidad" placeholder="Localidad">
                     </div>
                     <h3>Ubicación</h3>
                     <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options">
@@ -81,33 +81,33 @@
                     <h3>Contacto</h3>
                     <h4>Nombre</h4>
                     <div>
-                        <input type="text" required class="form-control" data-ng-model="organizacion.contacto.nombre" id="nombre" placeholder="organizacion.contacto.nombre">
+                        <input type="text" required class="form-control" data-ng-model="organizacion.contacto.nombre" id="nombre" placeholder="Nombre">
                     </div>
                     <h4>Teléfonos</h4>
                     <ul class="actions">
                     <h5>Fijo</h5>
                         <li class="5u 12u$(small)">
-                            <input type="text" required class="3u form-control" data-ng-model="organizacion.contacto.telefonos.fijo.caracteristica" id="caracteristica" placeholder="organizacion.contacto.telefonos.fijo.caracteristica">
+                            <input type="text" required class="3u form-control" data-ng-model="organizacion.contacto.telefonos.fijo.caracteristica" id="caracteristica" placeholder="Caracteristica">
                         </li>
                         <li class="6u 12u$(small)">
-                            <input type="text" required class="9u form-control" data-ng-model="organizacion.contacto.telefonos.fijo.numero" id="telefono" placeholder="organizacion.contacto.telefonos.fijo.numero">
+                            <input type="text" required class="9u form-control" data-ng-model="organizacion.contacto.telefonos.fijo.numero" id="telefono" placeholder="Numero">
                         </li>
                         <h5>Celular</h5>
                         <li class="5u 12u$(small)">
-                            <input type="text" required class="3u form-control" data-ng-model="organizacion.contacto.telefonos.celular.caracteristica" id="caracteristica" placeholder="organizacion.contacto.telefonos.celular.caracteristica">
+                            <input type="text" required class="3u form-control" data-ng-model="organizacion.contacto.telefonos.celular.caracteristica" id="caracteristica" placeholder="Caracteristica">
                         </li>
                         <li class="6u 12u$(small)">
-                            <input type="text" required class="9u form-control" data-ng-model="organizacion.contacto.telefonos.celular.caracteristica" id="telefono" placeholder="organizacion.contacto.telefonos.celular.caracteristica">
+                            <input type="text" required class="9u form-control" data-ng-model="organizacion.contacto.telefonos.celular.numero" id="telefono" placeholder="Numero">
                         </li>
                     </ul>
 
                     <h4>Email</h4>
                     <div>
-                        <input type="text" required class="form-control" data-ng-model="organizacion.contacto.email" id="email" placeholder="organizacion.contacto.email">
+                        <input type="text" required class="form-control" data-ng-model="organizacion.contacto.email" id="email" placeholder="Email">
                     </div>
                 </section>
             </div>
-            <div class="col-md-12 form-group" data-ng-hide="organizacion.personaria_juridica.numero > 0">
+            <div class="col-md-12 form-group" data-ng-hide="organizacion.personaria_juridica.numero">
                 <ul class="actions">
                     <li>Actualmente {{organizacion.nombre}} no posee Personería Jurídica. Querés Agregarla?</li>
                     <li>
@@ -123,7 +123,7 @@
     </section>
 
     <!-- Three -->
-    <section id="three" class="wrapper style1 fade-up" data-ng-show="organizacion.personaria_juridica.numero > 0 || updateLegalStatus">
+    <section id="three" class="wrapper style1 fade-up" data-ng-show="organizacion.personaria_juridica.numero || updateLegalStatus">
     	<div class="inner">
     		<h2>Detalle de Personería Jurídica</h2>
     		<p>
@@ -163,37 +163,37 @@
     				<ul class="actions 12u 12u$(small)">
     					<li class="5u 12u$(small)">0-2 Años</li>
     					<li class="6u 12u$(small)">
-    						<input type="text" data-ng-model="organizacion.beneficiarios._0_2" required class="form-control" placeholder="organizacion.beneficiarios._0_2">
+    						<input type="text" data-ng-model="organizacion.beneficiarios._0_2" required class="form-control" placeholder="0">
     					</li>
     				</ul>
     				<ul class="actions 12u 12u$(small)">
     					<li class="5u 12u$(small)">3-5 Años</li>
     					<li class="6u 12u$(small)">
-    						<input type="text" data-ng-model="organizacion.beneficiarios._3_5" required class="form-control" placeholder="organizacion.beneficiarios._3_5">
+    						<input type="text" data-ng-model="organizacion.beneficiarios._3_5" required class="form-control" placeholder="0">
     					</li>
     				</ul>
     				<ul class="actions 12u 12u$(small)">
     					<li class="5u 12u$(small)">6-12 Años</li>
     					<li class="6u 12u$(small)">
-    						<input type="text" data-ng-model="organizacion.beneficiarios._6_12" required class="form-control" placeholder="organizacion.beneficiarios._6_12">
+    						<input type="text" data-ng-model="organizacion.beneficiarios._6_12" required class="form-control" placeholder="0">
     					</li>
     				</ul>
     				<ul class="actions 12u 12u$(small)">
     					<li class="5u 12u$(small)">Adolescentes</li>
     					<li class="6u 12u$(small)">
-    						<input type="text" data-ng-model="organizacion.beneficiarios.adolescentes" required class="form-control" placeholder="organizacion.beneficiarios.adolescentes">
+    						<input type="text" data-ng-model="organizacion.beneficiarios.adolescentes" required class="form-control" placeholder="0">
     					</li>
     				</ul>
     				<ul class="actions 12u 12u$(small)">
     					<li class="5u 12u$(small)">Adultos</li>
     					<li class="6u 12u$(small)">
-    						<input type="text" data-ng-model="organizacion.beneficiarios.adultos" required class="form-control" placeholder="organizacion.beneficiarios.adultos">
+    						<input type="text" data-ng-model="organizacion.beneficiarios.adultos" required class="form-control" placeholder="0">
     					</li>
     				</ul>
     				<ul class="actions 12u 12u$(small)">
     					<li class="5u 12u$(small)">Ancianos</li>
     					<li class="6u 12u$(small)">
-    						<input type="text" data-ng-model="organizacion.beneficiarios.ancianos" required class="form-control" placeholder="organizacion.beneficiarios.ancianos">
+    						<input type="text" data-ng-model="organizacion.beneficiarios.ancianos" required class="form-control" placeholder="0">
     					</li>
     				</ul>
     			</section>
@@ -220,25 +220,25 @@
     					<input type="checkbox" data-ng-model="organizacion.horario.manana.disponible" id="mañana" name="demo-copy">
     					<label for="mañana">Mañana</label>
 							<label class="schedule" ng-show="organizacion.horario.manana.disponible">Desde</label>
-							<input class="schedule" type="text" data-ng-model="organizacion.horario.manana.desde" ng-show="organizacion.horario.manana.disponible" name="demo-copy" placeholder="organizacion.horario.manana.desde">
+							<input class="schedule" type="text" data-ng-model="organizacion.horario.manana.desde" ng-show="organizacion.horario.manana.disponible" name="demo-copy" placeholder="8:00">
     					<label class="schedule" ng-show="organizacion.horario.manana.disponible">Hasta</label>
-							<input class="schedule" type="text" data-ng-model="organizacion.horario.manana.hasta" ng-show="organizacion.horario.manana.disponible" name="demo-copy" placeholder="organizacion.horario.manana.hasta">
+							<input class="schedule" type="text" data-ng-model="organizacion.horario.manana.hasta" ng-show="organizacion.horario.manana.disponible" name="demo-copy" placeholder="12:00">
     				</div>
     				<div class="6u 12u$(small)">
     					<input type="checkbox" data-ng-model="organizacion.horario.tarde.disponible" id="tarde" name="demo-copy">
     					<label for="tarde">Tarde</label>
 							<label class="schedule" ng-show="organizacion.horario.tarde.disponible">Desde</label>
-							<input class="schedule" type="text" data-ng-model="organizacion.horario.tarde.desde" ng-show="organizacion.horario.tarde.disponible" name="demo-copy" placeholder="organizacion.horario.tarde.desde">
+							<input class="schedule" type="text" data-ng-model="organizacion.horario.tarde.desde" ng-show="organizacion.horario.tarde.disponible" name="demo-copy" placeholder="14:00">
     					<label class="schedule" ng-show="organizacion.horario.tarde.disponible">Hasta</label>
-							<input class="schedule" type="text" data-ng-model="organizacion.horario.tarde.hasta" ng-show="organizacion.horario.tarde.disponible" name="demo-copy" placeholder="organizacion.horario.tarde.hasta">
+							<input class="schedule" type="text" data-ng-model="organizacion.horario.tarde.hasta" ng-show="organizacion.horario.tarde.disponible" name="demo-copy" placeholder="19:00">
     				</div>
     				<div class="6u 12u$(small)">
     					<input type="checkbox" data-ng-model="organizacion.horario.noche.disponible" id="Noche" name="demo-copy">
 							<label for="Noche">Noche</label>
 							<label class="schedule" ng-show="organizacion.horario.noche.disponible">Desde</label>
-							<input class="schedule" type="text" data-ng-model="organizacion.horario.noche.desde" ng-show="organizacion.horario.noche.disponible" name="demo-copy" placeholder="organizacion.horario.noche.desde">
+							<input class="schedule" type="text" data-ng-model="organizacion.horario.noche.desde" ng-show="organizacion.horario.noche.disponible" name="demo-copy" placeholder="20:00">
     					<label class="schedule" ng-show="organizacion.horario.noche.disponible">Hasta</label>
-							<input class="schedule" type="text" data-ng-model="organizacion.horario.noche.hasta" ng-show="organizacion.horario.noche.disponible" name="demo-copy" placeholder="organizacion.horario.noche.hasta">
+							<input class="schedule" type="text" data-ng-model="organizacion.horario.noche.hasta" ng-show="organizacion.horario.noche.disponible" name="demo-copy" placeholder="23:00">
     				</div>
     			</section>
     			<section>

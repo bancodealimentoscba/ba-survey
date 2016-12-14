@@ -23,12 +23,16 @@ baSurvey.controller('orgsListCtrl', [
     blockUI.start();
     database.connect().then(function(data) {
       $scope.orgs = data.organizaciones;
+      
     }).finally(function(){
       blockUI.stop();
     });
 
     $scope.goEdit = function(id) {
-      $location.path('editOrg/' + id);
+        $('#myModal').modal('hide');
+        $timeout(function() {
+            $location.path('editOrg/' + id);
+        }, 750);
     };
 
     $scope.getStatus =  function(status) {

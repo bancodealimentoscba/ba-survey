@@ -17,6 +17,7 @@ baSurvey.factory('database', ['$firebaseObject', function($firebaseObject) {
 	return {
 		connect: function() {
 			connection = $firebaseObject(ref);
+
 			return connection.$loaded();
 
 			connection.$loaded().then(function(data) {
@@ -28,8 +29,15 @@ baSurvey.factory('database', ['$firebaseObject', function($firebaseObject) {
 			var id = preId + ref.push().key;
 
 			checkUndefined(value);
-
+			connection.organizaciones[id].id = id;
 			connection.organizaciones[id] = value;
+			var saveProcess = connection.$save();
+			return saveProcess;
+		},
+		editData: function(value) {
+			checkUndefined(value);
+
+			connection.organizaciones[value.id] = value;
 			var saveProcess = connection.$save();
 			return saveProcess;
 		}
