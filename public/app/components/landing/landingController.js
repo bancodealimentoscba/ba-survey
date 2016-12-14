@@ -4,4 +4,4 @@ baSurvey.controller('landingCtrl', ['$scope', '$location',
 			$location.path('/form');
 		};
 	}
-])
+]);

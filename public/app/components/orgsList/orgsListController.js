@@ -7,11 +7,6 @@ baSurvey.controller('orgsListCtrl', [
   'FieldService',
   function($location, $scope, $timeout, blockUI, database, FieldService) {
 
-    blockUI.start();
-    $timeout(function() {
-      blockUI.stop();
-    }, 2000);
-
     // Show modal with all data from the org
     $scope.showModal = function(key) {
       $scope.orgModal = $scope.orgs[key];
@@ -29,18 +24,17 @@ baSurvey.controller('orgsListCtrl', [
     });
 
     $scope.goEdit = function(id) {
-        $('#myModal').modal('hide');
-        $timeout(function() {
-            $location.path('editOrg/' + id);
-        }, 750);
+      $timeout(function(){
+        $location.path('editOrg/' + id);
+      }, 500);
     };
 
-    $scope.getStatus =  function(status) {
+    $scope.getStatus = function(status) {
         return FieldService.getStatus(status);
     };
 
-    $scope.getShedule =  function(schedule) {
-      return FieldService.getSchedule(status);
+    $scope.getShedule = function(schedule) {
+      return FieldService.getSchedule(schedule);
     };
 
     // $scope.orgs = [
@@ -239,4 +233,4 @@ baSurvey.controller('orgsListCtrl', [
     // ];
 
   }
-])
+]);

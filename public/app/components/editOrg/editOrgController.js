@@ -24,7 +24,7 @@ baSurvey.controller('editOrgCtrl', [
         longitude: -73
       },
       zoom: 15
-    }
+    };
 
     $scope.marker = {
       id: 0,
@@ -35,7 +35,7 @@ baSurvey.controller('editOrgCtrl', [
         latitude: -40.1451,
         longitude: -99.6680
       }
-    }
+    };
 
     $scope.save = function() {
       $scope.organizacion.ubicacion.coordenadas.lat = $scope.marker.coords.latitude;
@@ -51,7 +51,7 @@ baSurvey.controller('editOrgCtrl', [
 
     $scope.cancel = function() {
       $location.path('orgsList');
-    }
+    };
 
     $scope.setCenterAndMarker = function(lat, lng) {
       // $scope.$apply(function() {
@@ -153,4 +153,4 @@ baSurvey.controller('editOrgCtrl', [
     // }
    
   }
-])
+]);

@@ -9,10 +9,10 @@ baSurvey.constant('TimeCode', {
   everyday: 'Diario'
 })
 .constant('StatusCode', {
-  onceWeek: '1',
-  threeTimes: '2',
-  everyday: '3',
-  everyday: '4'
+  pendingLegal: '1',
+  pendingNotLegal: '2',
+  approved: '3',
+  inactive: '4'
 })
 .constant('StatusText', {
   pendingLegal: 'Pendiente Inscripta',

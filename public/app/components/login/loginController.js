@@ -16,4 +16,4 @@ baSurvey.controller('loginCtrl', [
 		};
 
 	}
-])
+]);
