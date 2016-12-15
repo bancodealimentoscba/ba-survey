@@ -29,7 +29,7 @@ baSurvey.factory('database', ['$firebaseObject', function($firebaseObject) {
 			var id = preId + ref.push().key;
 
 			checkUndefined(value);
-			connection.organizaciones[id].id = id;
+			value.id = id;
 			connection.organizaciones[id] = value;
 			var saveProcess = connection.$save();
 			return saveProcess;
