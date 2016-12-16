@@ -2533,6 +2533,14 @@
 		position: relative;
 	}
 
+	.td-more .icon{
+		padding-right: 7px;
+		cursor: pointer;
+	}
+	.td-more .td-more-content {
+		text-align: center;
+	}
+
 		.icon:before {
 			-moz-osx-font-smoothing: grayscale;
 			-webkit-font-smoothing: antialiased;

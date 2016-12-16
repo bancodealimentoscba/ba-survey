@@ -79,14 +79,11 @@
                           </div>
                         </td>
                         <td class="td-more">
-                          <button
-                            ng-click="showModal(key)"
-                            type="button"
-                            class="btn btn-info btn-lg button-more"
-                            data-toggle="modal"
-                            data-target="#myModal">
-                              Ver más
-                            </button>
+                        <div class="td-more-content">
+                            <span class="icon fa-eye" title="Ver más" data-ng-click="showModal(key)" type="button" data-toggle="modal" data-target="#myModal"></span>
+                            <span class="icon fa-edit" title="Editar" data-ng-click="goEdit(org.id)" type="button"></span>
+                            <span class="icon fa-trash-o" title="Eliminar" data-ng-click="delete(key)" type="button"></span>
+                          </div>
                         </td>
                       </tr>
                   </table>
@@ -101,13 +98,13 @@
     <footer id="footer" class="wrapper alt">
       <div class="inner">
         <ul class="menu">
-          <li>© Copyright 2015 - Banco de Alimentos Córdoba</li><li>Template: <a href="http://html5up.net">HTML5 UP</a></li>
+          <li>© Copyright 2015 - Banco de Alimentos Córdoba</li><!-- <li>Template: <a href="http://html5up.net">HTML5 UP</a></li> -->
         </ul>
         <ul class="icons">
           <li><a href="https://twitter.com/BDACordoba" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
           <li><a href="https://www.facebook.com/bancodealimentoscordoba" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
           <li><a href="#https://www.instagram.com/bancodealimentoscba/" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-          <li><a href="https://www.linkedin.com/in/fundaci%C3%B3n-banco-de-alimentos-c%C3%B3rdoba-a30848116?trk=hp-identity-name" class="icon fa-linkedin"><span class="label">Github</span></a></li>
+          <li><a href="https://www.linkedin.com/in/fundaci%C3%B3n-banco-de-alimentos-c%C3%B3rdoba-a30848116?trk=hp-identity-name" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
         </ul>
       </div>
     </footer>
@@ -120,6 +117,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h4 class="modal-title">Detalle de la Organización {{orgModal.nombre}}</h4>
+              <span class="modal-edit icon fa-edit" data-dismiss="modal" title="Editar" data-ng-click="goEdit(orgModal.id)" type="button"></span>
             </div>
             <div class="modal-body">
               <p class="sub-title">Nombre de la Organización</p>
@@ -170,7 +168,7 @@
 
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="goEdit(orgModal.id)">Editar</button>
+              <!-- <button type="button" class="btn btn-primary" data-dismiss="modal" data-ng-click="goEdit(orgModal.id)">Editar</button> -->
               <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
             </div>
           </div>

@@ -93,6 +93,13 @@
 .modal-title {
   margin: 0;
   line-height: 1.42857143;
+  width: calc(100% - 18px);
+  float: left;
+}
+.modal-edit {
+  float: right;
+  color: #fff;
+  cursor: pointer;
 }
 .modal-body {
   position: relative;
