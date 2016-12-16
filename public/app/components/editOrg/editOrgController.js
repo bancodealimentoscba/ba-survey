@@ -8,7 +8,7 @@ baSurvey.controller('editOrgCtrl', [
   function($location, $routeParams, $scope, $timeout, blockUI, database) {
 
     var id = $routeParams.id;
-    
+
     // Get the organization list
     blockUI.start();
     database.connect().then(function(data) {
@@ -68,19 +68,27 @@ baSurvey.controller('editOrgCtrl', [
     $scope.init = function() {
 
       if ($scope.organizacion.ubicacion.coordenadas.lng === 0 && $scope.organizacion.ubicacion.coordenadas.lng === 0) {
+        //DOESNT EXISTS COORS LOADED
         geocoder = new google.maps.Geocoder();
 
-        geocoder.geocode({
-          'address': $scope.organizacion.ubicacion.calle + " " + $scope.organizacion.ubicacion.numero + " " + $scope.organizacion.ubicacion.localidad + " Argentina"
-        }, function(results, status) {
-          if (status == google.maps.GeocoderStatus.OK) {
-            $scope.setCenterAndMarker(results[0].geometry.location.lat(), results[0].geometry.location.lng());
-          } else {
-            $scope.setCenterAndMarker(-31.4202849, -64.1887434);
-          }
+        if (!$scope.organizacion.ubicacion.calle || !$scope.organizacion.ubicacion.localidad) {
+          //WE CAN SET THE MARKER IF WE DONT HAVE THIS PARAMETERS
+          $scope.setCenterAndMarker(-31.4202849, -64.1887434);
+        } else {
+          geocoder.geocode({
+            'address': $scope.organizacion.ubicacion.calle + " " + $scope.organizacion.ubicacion.numero + " " + $scope.organizacion.ubicacion.localidad + " Argentina"
+          }, function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+              $scope.setCenterAndMarker(results[0].geometry.location.lat(), results[0].geometry.location.lng());
+            } else {
+              //THIS CASE WILL PROBABLY NEVER HAPPEN BECAUSE ALWAYS SEARCH WITH "AREGENTINA"
+              $scope.setCenterAndMarker(-31.4202849, -64.1887434);
+            }
 
-        })
+          })
+        }
       } else {
+        //EXISTS COORS LOADED
         $scope.setCenterAndMarker($scope.organizacion.ubicacion.coordenadas.lat, $scope.organizacion.ubicacion.coordenadas.lng);
       }
       blockUI.stop();

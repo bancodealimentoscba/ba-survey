@@ -18,7 +18,7 @@ baSurvey.controller('orgsListCtrl', [
     blockUI.start();
     database.connect().then(function(data) {
       $scope.orgs = data.organizaciones;
-      
+      console.log(data);
     }).finally(function(){
       blockUI.stop();
     });
