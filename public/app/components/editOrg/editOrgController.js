@@ -13,12 +13,10 @@ baSurvey.controller('editOrgCtrl', [
     blockUI.start();
     database.connect().then(function(data) {
       $scope.organizacion = data.organizaciones[id];
-      // console.log($scope.organizacion);
       $timeout(function() {
-
         $scope.init();
       }, 200);
-    })
+    });
 
     $scope.map = {
       center: {
@@ -48,7 +46,7 @@ baSurvey.controller('editOrgCtrl', [
         blockUI.stop();
         $location.path('orgsList');
       })
-    }
+    };
 
     $scope.cancel = function() {
       $location.path('orgsList');
@@ -63,10 +61,9 @@ baSurvey.controller('editOrgCtrl', [
         $scope.marker.coords.latitude = lat;
         $scope.marker.coords.longitude = lng;
       })
-    }
+    };
 
     $scope.init = function() {
-
       if ($scope.organizacion.ubicacion.coordenadas.lng === 0 && $scope.organizacion.ubicacion.coordenadas.lng === 0) {
         //DOESNT EXISTS COORS LOADED
         geocoder = new google.maps.Geocoder();
@@ -87,79 +84,12 @@ baSurvey.controller('editOrgCtrl', [
 
           })
         }
+
       } else {
         //EXISTS COORS LOADED
         $scope.setCenterAndMarker($scope.organizacion.ubicacion.coordenadas.lat, $scope.organizacion.ubicacion.coordenadas.lng);
       }
       blockUI.stop();
-
-    }
-
-
-    // $scope.organizacion = {
-    //   "estado": 1,
-    //   "nombre": "Fundación Córdoba",
-    //   "ubicacion": {
-    //     "localidad": "cordoba",
-    //     "barrio": "centro",
-    //     "calle": "av colon",
-    //     "numero": "135",
-    //     "coordenadas": {
-    //       "lat": 0,
-    //       "lng": 0
-    //     }
-    //   },
-    //   "tipo": 1,
-    //   "contacto": {
-    //     "nombre": "A B C",
-    //     "telefonos": {
-    //       "celular": {
-    //         "caracteristica": "351",
-    //         "numero": "4244444"
-    //       },
-    //       "fijo": {
-    //         "caracteristica": "351",
-    //         "numero": "5555555"
-    //       }
-    //     },
-    //     "email": "r@fake.com"
-    //   },
-    //   "beneficios": {
-    //     "desayuno": true,
-    //     "almuerzo": true,
-    //     "merienda": true,
-    //     "cena": true
-    //   },
-    //   "personaria_juridica": {
-    //     "numero": ""
-    //   },
-    //   "beneficiarios": {
-    //     "_0_2": 10,
-    //     "_3_5": 20,
-    //     "_6_12": 30,
-    //     "adolescentes": 40,
-    //     "adultos": 50,
-    //     "ancianos": 60
-    //   },
-    //   "periodicidad": 1,
-    //   "horario": {
-    //     "manana": {
-    //       "disponible": true,
-    //       "desde": "8",
-    //       "hasta": "10"
-    //     },
-    //     "tarde": {
-    //       "disponible": true,
-    //       "desde": "4",
-    //       "hasta": "6"
-    //     },
-    //     "noche": {
-    //       "disponible": true,
-    //       "desde": "8",
-    //       "hasta": "10"
-    //     }
-    //   }
-    // }
-
+    };
   }
 ]);

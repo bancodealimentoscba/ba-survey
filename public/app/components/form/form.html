@@ -121,12 +121,6 @@
                         </select>
                     </li>
                 </ul>
-                <!-- <label class="col-md-3">
-                    Posee Personería Jurídica?
-                </label>
-                <div class="col-md-3">
-
-                </div> -->
             </div>
         </div>
     </section>
@@ -140,7 +134,7 @@
     				<h2>Oops!</h2>
     				<p>Debe gestionar la Personería Jurídica... </p>
     				<ul class="actions">
-    					<li><a href="" class="button" ng-click="showModal($index)" data-toggle="modal" data-target="#myModal">Como hacerlo</a></li>
+    					<li><a href="" class="button special" ng-click="showModal($index)" data-toggle="modal" data-target="#myModal">Como hacerlo</a></li>
     				</ul>
     			</div>
     		</div>
@@ -282,23 +276,80 @@
 
 </form>
 
-    <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal form-documentation fade" id="myModal" role="dialog">
         <div class="modal-dialog">
           <!-- Modal content-->
           <div class="modal-content">
             <div class="modal-header">
-              <h4 class="modal-title">Cómo gestionar la Personería Jurídica</h4>
+              <h4 class="modal-title">
+								Requisitos de documentación legal para organizaciones sociales
+							</h4>
             </div>
             <div class="modal-body">
-              <p class="sub-title">Paso 1</p>
-              <p>Tenés que conseguir tus ...</p>
-							<p class="sub-title">Paso 2</p>
-              <p>Dirigirte a ...</p>
-							<p class="sub-title">Paso 3</p>
-              <p>Inscribir en ...</p>
+              <p>
+								Los requisitos de documentación no son los mismos para todas las organizaciones. Eso dependerá de la forma jurídica que asuman, a saber:
+							</p>
+							<ul>
+								<li>
+									<b>
+										Organizaciones sin Personería Jurídica:
+									</b>
+									asociación civil, fundación, centro vecinal, cooperativa, mutual, organización religiosa, centro de jubilados, etc.
+								</li>
+								<li>
+									<b>
+										Organizaciones con personería Jurídica:
+									</b>
+									Cooperadoras, Comedores, copas de leche, clubes de trueque, merenderos, que no poseen reconocimiento jurídico estatal).								</li>
+							</ul>
+							<p>
+								Para informarse respecto de si una organización se encuentra inscripta y ha actualizado documentación legal comunicarse al Registro vía:
+							</p>
+							<ul>
+								<li>
+									<b>
+										Teléfono:
+									</b>
+									(0351) 4688572
+								</li>
+								<li>
+									<b>
+										Correo electrónico:
+									</b>
+									registrounicoong@cba.gov.ar
+								</li>
+								<li>
+									<b>
+										Personalmente a la dirección:
+									</b>
+									Av. Vélez Sarfield 2311
+								</li>
+							</ul>
+							<p>
+								Por consultas referidas a requerimientos legales (inscripción o actualización de documentación legal) dirigirse al Registro de ONG y Entidades de Bien Público del Ministerio de Desarrollo Social:							</p>
+							<ul>
+								<li>
+									<b>Domicilio:</b> (Av. Vélez Sarsfield 2311
+								</li>
+								<li>
+									<b>Teléfono:</b> 0351-4688572/8525
+								</li>
+								<li>
+									<b>Horario de Atención:</b> De Lunes a Viernes de 8 a 20 hrs.
+								</li>
+							</ul>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+							<button
+							type="button"
+							class="btn btn-primary"
+							onclick="window.open('assets/pdf/requisitos-documentacion-organizaciones-sociales.pdf', '_blank', 'fullscreen=yes'); return false;"
+							data-dismiss="modal">
+							Ver en PDF
+						</button>
+							<button type="button" class="btn btn-primary" data-dismiss="modal">
+								Cerrar
+							</button>
             </div>
           </div>
         </div>
@@ -310,7 +361,6 @@
 <footer id="footer" class="wrapper style1-alt">
 	<div class="inner">
 		<ul class="menu">
-			<!-- <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li> -->
 		</ul>
 	</div>
 </footer>

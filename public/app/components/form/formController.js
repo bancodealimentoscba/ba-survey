@@ -67,14 +67,17 @@ baSurvey.controller('formCtrl', [
 			}, 250);
 		};
 
-		database.connect()/*.then(function(data) {
-			console.log(data);
-		});*/
+		var getLegalStatus = function () {
+			return ($scope.legalStatus === 'YES' ? '1' : '2');
+		};
+
+		database.connect();
 
 		$scope.writeOrganization = function() {
 			debugger
 			var newOrganization = {
 				nombre: $scope.organization.name,
+				estado: getLegalStatus(),
 				ubicacion: {
 					localidad: $scope.organization.address.city,
 					barrio: $scope.organization.address.neighborhood,
@@ -146,11 +149,6 @@ baSurvey.controller('formCtrl', [
 					blockUI.stop();
 				});
 			});
-
-			// blockUI.start();
-			// $timeout(function() {
-			// 	blockUI.stop();
-			// }, 2000);
 		};
 	}
 ]);
