@@ -74,7 +74,6 @@ baSurvey.controller('formCtrl', [
 		database.connect();
 
 		$scope.writeOrganization = function() {
-			debugger
 			var newOrganization = {
 				nombre: $scope.organization.name,
 				estado: getLegalStatus(),
@@ -141,7 +140,7 @@ baSurvey.controller('formCtrl', [
 			};
 
 			blockUI.start();
-			database.writeData('organizaciones', newOrganization).finally(function(){
+			database.writeItem('organizaciones', newOrganization).finally(function(){
 				// Signs out the temporary guest account
 				$firebaseAuth().$signOut().then(function() {
 					$location.path('');

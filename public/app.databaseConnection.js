@@ -19,25 +19,28 @@ baSurvey.factory('database', ['$firebaseObject', function($firebaseObject) {
 			connection = $firebaseObject(ref);
 
 			return connection.$loaded();
-
-			// connection.$loaded().then(function(data) {
-			// 	console.log(data);
-			// });
 		},
-		writeData: function(field, value) {
+		writeItem: function(field, item) {
 			var preId = field.slice(0,3).toUpperCase();
 			var id = preId + ref.push().key;
 
-			checkUndefined(value);
-			value.id = id;
-			connection.organizaciones[id] = value;
+			checkUndefined(item);
+			item.id = id;
+			connection[field][id] = item;
+			
 			var saveProcess = connection.$save();
 			return saveProcess;
 		},
-		editData: function(value) {
-			checkUndefined(value);
+		editItem: function(field, item) {
+			checkUndefined(item);
 
-			connection.organizaciones[value.id] = value;
+			connection[field][item.id] = item;
+			var saveProcess = connection.$save();
+			return saveProcess;
+		},
+		removeItem: function(field, item){
+			delete connection[field][item];
+
 			var saveProcess = connection.$save();
 			return saveProcess;
 		}

@@ -42,7 +42,7 @@ baSurvey.controller('editOrgCtrl', [
       $scope.organizacion.ubicacion.coordenadas.lng = $scope.marker.coords.longitude;
 
       blockUI.start();
-      database.editData($scope.organizacion).then(function() {
+      database.editItem('organizaciones', $scope.organizacion).then(function() {
         blockUI.stop();
         $location.path('orgsList');
       })

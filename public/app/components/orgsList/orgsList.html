@@ -35,7 +35,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr ng-repeat="(key, org) in orgs">
+                      <tr data-ng-repeat="(key, org) in orgs">
                         <td>
                           <div>
                             {{org.nombre}}
@@ -81,8 +81,8 @@
                         <td class="td-more">
                         <div class="td-more-content">
                             <span class="icon fa-eye" title="Ver más" data-ng-click="showModal(key)" type="button" data-toggle="modal" data-target="#myModal"></span>
-                            <span class="icon fa-edit" title="Editar" data-ng-click="goEdit(org.id)" type="button"></span>
-                            <span class="icon fa-trash-o" title="Eliminar" data-ng-click="delete(key)" type="button"></span>
+                            <span class="icon fa-edit" title="Editar" data-ng-click="goEdit(key)" type="button"></span>
+                            <span class="icon fa-trash-o" title="Eliminar" data-ng-click="remove(key)" type="button"></span>
                           </div>
                         </td>
                       </tr>
