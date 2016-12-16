@@ -72,6 +72,7 @@ baSurvey.controller('formCtrl', [
 		});*/
 
 		$scope.writeOrganization = function() {
+			debugger
 			var newOrganization = {
 				nombre: $scope.organization.name,
 				ubicacion: {
