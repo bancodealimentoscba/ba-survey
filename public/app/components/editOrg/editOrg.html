@@ -32,8 +32,8 @@
                         <input type="text" required class="form-control" data-ng-model="organizacion.nombre" id="inputPassword" placeholder="Nombre de la Organización">
                     </div>
                     <h3>Estado</h3>
-										<select value="option1" checked class="form-control" data-ng-model="organizacion.tipo">
-                        <option value="" ng-selected="organizacion.tipo < 1 || organizacion.tipo > 5" disabled="disabled">Seleccione una opción</option>
+										<select value="option1" checked class="form-control" data-ng-model="organizacion.estado">
+                        <option value="" ng-selected="organizacion.estado < 1 || organizacion.estado > 5" disabled="disabled">Seleccione una opción</option>
                         <option value="1" ng-selected="organizacion.estado == 1">Pendiente Inscripta</option>
                         <option value="2" ng-selected="organizacion.estado == 2">Pendiente No Inscripta</option>
 												<option value="3" ng-selected="organizacion.estado == 3">Aprobada</option>
@@ -73,7 +73,6 @@
                         <option value="2" ng-selected="organizacion.tipo == 2">Cooperativa</option>
 												<option value="3" ng-selected="organizacion.tipo == 3">Fundación</option>
                         <option value="4" ng-selected="organizacion.tipo == 4">Otro</option>
-                        <!-- <option value="ONG">ONG</option> -->
                     </select>
                 </section>
                 <section>
@@ -262,7 +261,6 @@
 <footer id="footer" class="wrapper style1-alt">
 	<div class="inner">
 		<ul class="menu">
-			<!-- <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li> -->
 		</ul>
 	</div>
 </footer>

@@ -143,6 +143,9 @@
               <p ng-show="orgModal.hasLegalStatus" class="sub-title">Personería Jurídica</p>
               <p ng-show="orgModal.hasLegalStatus">Número: <span class="italic">{{orgModal.personaria_juridica.numero}}</span></p>
 
+              <p ng-show="orgModal.tipo" class="sub-title">Tipo de Organización</p>
+              <p ng-show="orgModal.tipo">Tipo: <span class="italic">{{getType(orgModal.tipo)}}</span></p>
+
               <p ng-show="orgModal.hasLegalStatus" class="sub-title">Beneficios</p>
               <p ng-show="orgModal.beneficios.desayuno && orgModal.hasLegalStatus">Desayuno</p>
               <p ng-show="orgModal.beneficios.almuerzo && orgModal.hasLegalStatus">Almuerzo</p>

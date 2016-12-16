@@ -4,7 +4,6 @@ baSurvey.controller('loginCtrl', [
 	'$firebaseAuth',
 	'blockUI',
 	function($location, $scope, $firebaseAuth, blockUI) {
-		
 		$scope.login = function() {
 			blockUI.start();
 			$firebaseAuth().$signInWithEmailAndPassword($scope.email, $scope.password)
@@ -14,6 +13,5 @@ baSurvey.controller('loginCtrl', [
 					blockUI.stop();
 				});
 		};
-
 	}
 ]);

@@ -10,17 +10,6 @@ span.italic {
   font-style: italic;
 }
 
-/*.orgs-list td.td-more {
-  position: relative;
-}
-
-.orgs-list button.button-more {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}*/
-
 .modal {
   color: black;
 }
@@ -54,4 +43,16 @@ span.italic {
 
 .schedule {
   margin-left: 30px;
+}
+
+.modal.form-documentation .modal-dialog .modal-content .modal-body p {
+  padding-left: inherit;
+}
+
+.modal.form-documentation b {
+  color: inherit;
+}
+
+.modal.form-documentation ul {
+  padding-left: 4em;
 }

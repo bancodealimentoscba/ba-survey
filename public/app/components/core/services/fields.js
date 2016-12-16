@@ -3,10 +3,13 @@ baSurvey.service('FieldService', [
   'StatusText',
   'TimeCode',
   'TimeText',
-  function (StatusCode, StatusText, TimeCode, TimeText) {
+  'TypeCode',
+  'TypeText',
+  function (StatusCode, StatusText, TimeCode, TimeText, TypeCode, TypeText) {
 
   var getSchedule = function (schedule) {
     var scheduleText = '';
+    schedule = parseInt(schedule);
     switch(schedule) {
       case TimeCode.onceWeek:
         scheduleText = TimeText.onceWeek;
@@ -23,6 +26,7 @@ baSurvey.service('FieldService', [
 
   var getStatus = function (status) {
     var statusText = '';
+    status = parseInt(status);
     switch(status) {
       case StatusCode.pendingLegal:
         statusText = StatusText.pendingLegal;
@@ -40,8 +44,29 @@ baSurvey.service('FieldService', [
     return statusText;
   };
 
+  var getType = function (type) {
+    var typeText = '';
+    type = parseInt(type);
+    switch(type) {
+      case TypeCode.civilAssociation:
+        typeText = TypeText.civilAssociation;
+        break;
+      case TypeCode.cooperative:
+        typeText = TypeText.cooperative;
+        break;
+      case TypeCode.foundation:
+        typeText = TypeText.foundation;
+        break;
+      case TypeCode.other:
+        typeText = TypeText.other;
+        break;
+    }
+    return typeText;
+  };
+
   return {
     getSchedule: getSchedule,
-    getStatus: getStatus
+    getStatus: getStatus,
+    getType: getType
   };
 }]);
