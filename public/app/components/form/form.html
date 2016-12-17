@@ -25,7 +25,7 @@
 			</p>
         </div>
     </section>
-        
+
     <form name="organizationForm" data-ng-submit="writeOrganization()">
 
         <!-- One -->
@@ -153,7 +153,7 @@
     				<span class="icon major fa-briefcase"></span>
     				<h3>Número de Personería Jurídica</h3>
     				<div>
-    					<input type="text" required class="form-control" id="inputPassword" data-ng-model="organization.legalStatus" placeholder="Número de Personería Jurídica">
+    					<input type="text" ng-required="isLegalStatusRequired" class="form-control" id="inputPassword" data-ng-model="organization.legalStatus" placeholder="Número de Personería Jurídica">
     				</div>
     			</section>
     			<section>
@@ -182,37 +182,37 @@
     				<ul class="actions 12u 12u$(small)">
     					<li class="5u 12u$(small)">0-2 Años</li>
     					<li class="6u 12u$(small)">
-    						<input type="text" data-ng-model="organization.recipient._0_2" required class="form-control" placeholder="Cant.">
+    						<input type="text" data-ng-model="organization.recipient._0_2" ng-required="isLegalStatusRequired" class="form-control" placeholder="Cant.">
     					</li>
     				</ul>
     				<ul class="actions 12u 12u$(small)">
     					<li class="5u 12u$(small)">3-5 Años</li>
     					<li class="6u 12u$(small)">
-    						<input type="text" data-ng-model="organization.recipient._3_5" required class="form-control" placeholder="Cant.">
+    						<input type="text" data-ng-model="organization.recipient._3_5" ng-required="isLegalStatusRequired" class="form-control" placeholder="Cant.">
     					</li>
     				</ul>
     				<ul class="actions 12u 12u$(small)">
     					<li class="5u 12u$(small)">6-12 Años</li>
     					<li class="6u 12u$(small)">
-    						<input type="text" data-ng-model="organization.recipient._6_12" required class="form-control" placeholder="Cant.">
+    						<input type="text" data-ng-model="organization.recipient._6_12" ng-required="isLegalStatusRequired" class="form-control" placeholder="Cant.">
     					</li>
     				</ul>
     				<ul class="actions 12u 12u$(small)">
     					<li class="5u 12u$(small)">Adolescentes</li>
     					<li class="6u 12u$(small)">
-    						<input type="text" data-ng-model="organization.recipient.teenagers" required class="form-control" placeholder="Cant.">
+    						<input type="text" data-ng-model="organization.recipient.teenagers" ng-required="isLegalStatusRequired" class="form-control" placeholder="Cant.">
     					</li>
     				</ul>
     				<ul class="actions 12u 12u$(small)">
     					<li class="5u 12u$(small)">Adultos</li>
     					<li class="6u 12u$(small)">
-    						<input type="text" data-ng-model="organization.recipient.adults" required class="form-control" placeholder="Cant.">
+    						<input type="text" data-ng-model="organization.recipient.adults" ng-required="isLegalStatusRequired" class="form-control" placeholder="Cant.">
     					</li>
     				</ul>
     				<ul class="actions 12u 12u$(small)">
     					<li class="5u 12u$(small)">Ancianos</li>
     					<li class="6u 12u$(small)">
-    						<input type="text" data-ng-model="organization.recipient.elder" required class="form-control" placeholder="Cant.">
+    						<input type="text" data-ng-model="organization.recipient.elder" ng-required="isLegalStatusRequired" class="form-control" placeholder="Cant.">
     					</li>
     				</ul>
     			</section>
@@ -220,7 +220,7 @@
     				<span class="icon major fa-calendar-o"></span>
     				<h3>Periodicidad</h3>
     				<div class="12u 12u$(small)">
-    					<input type="radio" data-ng-model="organization.periodicity" id="unaPorSemana" required value="1" name="demo-copy">
+    					<input type="radio" data-ng-model="organization.periodicity" id="unaPorSemana" ng-required="isLegalStatusRequired" value="1" name="demo-copy">
     					<label for="unaPorSemana">Una vez por semana</label>
     				</div>
     				<div class="12u 12u$(small)">

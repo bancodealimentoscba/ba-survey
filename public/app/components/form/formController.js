@@ -7,6 +7,8 @@ baSurvey.controller('formCtrl', [
 	'database',
 	function($location, $scope, $timeout, $firebaseAuth, blockUI, database) {
 
+		$scope.isLegalStatusRequired = false;
+
 		// Authenticates the client using a new, temporary guest account
 		blockUI.start();
 		$firebaseAuth().$signInAnonymously().then(function(firebaseUser) {
@@ -63,7 +65,12 @@ baSurvey.controller('formCtrl', [
 			$timeout(function() {
 				if ($scope.legalStatus === 'YES') {
 					$scope.scrollTo('three');
-				} else $scope.scrollTo('two');
+					$scope.isLegalStatusRequired = true;
+				}
+				else {
+					$scope.scrollTo('two');
+					$scope.isLegalStatusRequired = false;
+				}
 			}, 250);
 		};
 
