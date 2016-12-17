@@ -8,10 +8,20 @@ baSurvey.controller('orgsListCtrl', [
     function($location, $scope, $timeout, blockUI, database, FieldService) {
 
         // Show modal with all data from the org
-        $scope.showModal = function(key) {
+        $scope.showEditOrgModal = function(key) {
             $scope.orgModal = $scope.orgs[key];
+            // Prevent issue because the key name starts with a number
+            $scope.orgModal.beneficiarios._0_2 = $scope.orgModal.beneficiarios['0_2'];
+            $scope.orgModal.beneficiarios._3_5 = $scope.orgModal.beneficiarios['3_5'];
+            $scope.orgModal.beneficiarios._6_12 = $scope.orgModal.beneficiarios['6_12'];
             $scope.orgModal.id = key;
             $scope.orgModal.hasLegalStatus = ($scope.orgModal.personaria_juridica.numero > 0);
+        };
+
+        // Show modal to confirm remove a org
+        $scope.showRemoveOrgModal = function(key) {
+            $scope.removeOrgModal = $scope.orgs[key];
+            $scope.removeOrgModal.id = key;
         };
 
         // Get the organization list

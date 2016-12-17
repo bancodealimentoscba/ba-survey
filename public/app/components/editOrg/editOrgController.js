@@ -13,6 +13,10 @@ baSurvey.controller('editOrgCtrl', [
     blockUI.start();
     database.connect().then(function(data) {
       $scope.organizacion = data.organizaciones[id];
+      // Prevent issue because the key name starts with a number
+      $scope.organizacion.beneficiarios._0_2 = $scope.organizacion.beneficiarios['0_2'];
+      $scope.organizacion.beneficiarios._3_5 = $scope.organizacion.beneficiarios['3_5'];
+      $scope.organizacion.beneficiarios._6_12 = $scope.organizacion.beneficiarios['6_12'];
       $timeout(function() {
         $scope.init();
       }, 200);
@@ -40,6 +44,14 @@ baSurvey.controller('editOrgCtrl', [
     $scope.save = function() {
       $scope.organizacion.ubicacion.coordenadas.lat = $scope.marker.coords.latitude;
       $scope.organizacion.ubicacion.coordenadas.lng = $scope.marker.coords.longitude;
+
+      // Prevent issue because the key name starts with a number
+      $scope.organizacion.beneficiarios['0_2'] = $scope.organizacion.beneficiarios._0_2;
+      $scope.organizacion.beneficiarios['3_5'] = $scope.organizacion.beneficiarios._3_5;
+      $scope.organizacion.beneficiarios['6_12'] = $scope.organizacion.beneficiarios._6_12;
+      delete $scope.organizacion.beneficiarios._0_2;
+      delete $scope.organizacion.beneficiarios._3_5;
+      delete $scope.organizacion.beneficiarios._6_12;
 
       blockUI.start();
       database.editItem('organizaciones', $scope.organizacion).then(function() {
