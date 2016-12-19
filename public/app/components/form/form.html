@@ -106,7 +106,7 @@
 
                     <h4>Email</h4>
                     <div>
-                        <input type="text" required class="form-control" data-ng-model="organization.contact.email" id="email" placeholder="Email">
+                        <input type="email" required class="form-control" data-ng-model="organization.contact.email" id="email" placeholder="Email">
                     </div>
                 </section>
             </div>
@@ -134,7 +134,7 @@
     				<h2>Oops!</h2>
     				<p>Debe gestionar la Personería Jurídica... </p>
     				<ul class="actions">
-    					<li><a href="" class="button special" ng-click="showModal($index)" data-toggle="modal" data-target="#myModal">Como hacerlo</a></li>
+    					<li><a href="" class="button special" ng-click="showModal($index)" data-toggle="modal" data-target="#myModal">Cómo hacerlo</a></li>
     				</ul>
     			</div>
     		</div>
@@ -182,37 +182,37 @@
     				<ul class="actions 12u 12u$(small)">
     					<li class="5u 12u$(small)">0-2 Años</li>
     					<li class="6u 12u$(small)">
-    						<input type="text" data-ng-model="organization.recipient._0_2" ng-required="isLegalStatusRequired" class="form-control" placeholder="Cant.">
+    						<input type="number" data-ng-model="organization.recipient._0_2" ng-required="isLegalStatusRequired" class="form-control" placeholder="Cant.">
     					</li>
     				</ul>
     				<ul class="actions 12u 12u$(small)">
     					<li class="5u 12u$(small)">3-5 Años</li>
     					<li class="6u 12u$(small)">
-    						<input type="text" data-ng-model="organization.recipient._3_5" ng-required="isLegalStatusRequired" class="form-control" placeholder="Cant.">
+    						<input type="number" data-ng-model="organization.recipient._3_5" ng-required="isLegalStatusRequired" class="form-control" placeholder="Cant.">
     					</li>
     				</ul>
     				<ul class="actions 12u 12u$(small)">
     					<li class="5u 12u$(small)">6-12 Años</li>
     					<li class="6u 12u$(small)">
-    						<input type="text" data-ng-model="organization.recipient._6_12" ng-required="isLegalStatusRequired" class="form-control" placeholder="Cant.">
+    						<input type="number" data-ng-model="organization.recipient._6_12" ng-required="isLegalStatusRequired" class="form-control" placeholder="Cant.">
     					</li>
     				</ul>
     				<ul class="actions 12u 12u$(small)">
     					<li class="5u 12u$(small)">Adolescentes</li>
     					<li class="6u 12u$(small)">
-    						<input type="text" data-ng-model="organization.recipient.teenagers" ng-required="isLegalStatusRequired" class="form-control" placeholder="Cant.">
+    						<input type="number" data-ng-model="organization.recipient.teenagers" ng-required="isLegalStatusRequired" class="form-control" placeholder="Cant.">
     					</li>
     				</ul>
     				<ul class="actions 12u 12u$(small)">
     					<li class="5u 12u$(small)">Adultos</li>
     					<li class="6u 12u$(small)">
-    						<input type="text" data-ng-model="organization.recipient.adults" ng-required="isLegalStatusRequired" class="form-control" placeholder="Cant.">
+    						<input type="number" data-ng-model="organization.recipient.adults" ng-required="isLegalStatusRequired" class="form-control" placeholder="Cant.">
     					</li>
     				</ul>
     				<ul class="actions 12u 12u$(small)">
     					<li class="5u 12u$(small)">Ancianos</li>
     					<li class="6u 12u$(small)">
-    						<input type="text" data-ng-model="organization.recipient.elder" ng-required="isLegalStatusRequired" class="form-control" placeholder="Cant.">
+    						<input type="number" data-ng-model="organization.recipient.elder" ng-required="isLegalStatusRequired" class="form-control" placeholder="Cant.">
     					</li>
     				</ul>
     			</section>
@@ -234,30 +234,30 @@
     			</section>
     			<section>
     				<span class="icon major fa-clock-o"></span>
-    				<h3>Horario</h3>
+    				<h3>Horario del Servicio</h3>
     				<div class="6u 12u$(small)">
     					<input type="checkbox" data-ng-model="organization.schedule.morning.available" id="mañana" name="demo-copy">
     					<label for="mañana">Mañana</label>
                      <label class="schedule" ng-show="organization.schedule.morning.available">Desde</label>
-                     <input class="schedule" type="text" data-ng-model="organization.schedule.morning.from" ng-show="organization.schedule.morning.available" name="demo-copy" placeholder="08:00">
+                     <input class="schedule" type="number" data-ng-model="organization.schedule.morning.from" ng-show="organization.schedule.morning.available" name="demo-copy" placeholder="08:00">
                      <label class="schedule" ng-show="organization.schedule.morning.available">Hasta</label>
-                     <input class="schedule" type="text" data-ng-model="organization.schedule.morning.to" ng-show="organization.schedule.morning.available" name="demo-copy" placeholder="12:00">
+                     <input class="schedule" type="number" data-ng-model="organization.schedule.morning.to" ng-show="organization.schedule.morning.available" name="demo-copy" placeholder="12:00">
                  </div>
                  <div class="6u 12u$(small)">
                    <input type="checkbox" data-ng-model="organization.schedule.afternoon.available" id="tarde" name="demo-copy">
                    <label for="tarde">Tarde</label>
                    <label class="schedule" ng-show="organization.schedule.afternoon.available">Desde</label>
-                   <input class="schedule" type="text" data-ng-model="organization.schedule.afternoon.from" ng-show="organization.schedule.afternoon.available" name="demo-copy" placeholder="14:00">
+                   <input class="schedule" type="number" data-ng-model="organization.schedule.afternoon.from" ng-show="organization.schedule.afternoon.available" name="demo-copy" placeholder="14:00">
                    <label class="schedule" ng-show="organization.schedule.afternoon.available">Hasta</label>
-                   <input class="schedule" type="text" data-ng-model="organization.schedule.afternoon.to" ng-show="organization.schedule.afternoon.available" name="demo-copy" placeholder="19:00">
+                   <input class="schedule" type="number" data-ng-model="organization.schedule.afternoon.to" ng-show="organization.schedule.afternoon.available" name="demo-copy" placeholder="19:00">
                </div>
                <div class="6u 12u$(small)">
                    <input type="checkbox" data-ng-model="organization.schedule.night.available" id="Noche" name="demo-copy">
                    <label for="Noche">Noche</label>
                    <label class="schedule" ng-show="organization.schedule.night.available">Desde</label>
-                   <input class="schedule" type="text" data-ng-model="organization.schedule.night.from" ng-show="organization.schedule.night.available" name="demo-copy" placeholder="20:00">
+                   <input class="schedule" type="number" data-ng-model="organization.schedule.night.from" ng-show="organization.schedule.night.available" name="demo-copy" placeholder="20:00">
                    <label class="schedule" ng-show="organization.schedule.night.available">Hasta</label>
-                   <input class="schedule" type="text" data-ng-model="organization.schedule.night.to" ng-show="organization.schedule.night.available" name="demo-copy" placeholder="23:00">
+                   <input class="schedule" type="number" data-ng-model="organization.schedule.night.to" ng-show="organization.schedule.night.available" name="demo-copy" placeholder="23:00">
                </div>
            </section>
            <section>
@@ -345,7 +345,7 @@
 							class="btn btn-primary"
 							onclick="window.open('assets/pdf/requisitos-documentacion-organizaciones-sociales.pdf', '_blank', 'fullscreen=yes'); return false;"
 							data-dismiss="modal">
-							Ver en PDF
+							Descargar
 						</button>
 							<button type="button" class="btn btn-primary" data-dismiss="modal">
 								Cerrar
