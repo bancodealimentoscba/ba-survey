@@ -16,12 +16,12 @@ span.italic {
 
 .modal .modal-dialog .modal-content .modal-header,
 .modal .modal-dialog .modal-content .modal-footer {
-  background-color: #5e42a6;
+  background-color: #4d2028;
 }
 
 .modal .modal-dialog .modal-content .modal-footer button {
   background-color: white;
-  color: #5e42a6!important;
+  color: #4d2028!important;
 }
 
 .modal .modal-dialog .modal-content .modal-body p {
@@ -55,4 +55,17 @@ span.italic {
 
 .modal.form-documentation ul {
   padding-left: 4em;
+}
+
+form.organization-form {
+  margin: 0;
+}
+
+form .schedule {
+  width: 90%;
+}
+
+footer.edit-footer.wrapper.alt,
+footer.form-footer.wrapper.alt {
+  background-color: #4d2028;
 }
