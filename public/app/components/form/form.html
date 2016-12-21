@@ -3,10 +3,10 @@
 	<div class="inner">
 		<nav>
 			<ul>
-				<li><a href="" data-ng-click="scrollTo('intro')">Personería Jurídica</a></li>
+				<li><a href="" data-ng-click="scrollTo('intro')">Bienvenido</a></li>
 				<li><a href="" data-ng-click="scrollTo('one')">Información de la Organización</a></li>
                 <li><a href="" data-ng-click="scrollTo('two')" data-ng-show="legalStatus == 'NO'">Pasos previos</a></li>
-                <li><a href="" data-ng-click="scrollTo('three')" data-ng-show="legalStatus == 'YES'">Detalle</a></li>
+                <li><a href="" data-ng-click="scrollTo('three')" data-ng-show="legalStatus == 'YES'">Detalle y beneficios</a></li>
             </ul>
         </nav>
     </div>
@@ -21,7 +21,7 @@
 
 			<h1>Bienvenido!</h1>
 			<p>
-				Si ud tiene una organización que brinda un servicio regular de alimentos  y desea ser parte de la red de instituciones beneficiarias de la Fundación Banco de Alimentos Córdoba, por favor llene el siguiente formulario para ingresar a la lista de espera.
+				Si tenés una organización que brinda un servicio regular de alimentos y desean ser parte de la red de instituciones beneficiarias de la Fundación Banco de Alimentos Córdoba, por favor llená el siguiente formulario para ingresar a la lista de espera.
 			</p>
         </div>
     </section>
@@ -67,12 +67,11 @@
                     <span class="icon major fa-legal"></span>
                     <h3>Tipo de Organización</h3>
                     <select value="option1" required class="form-control" data-ng-model="organization.type">
-                        <option value="" selected="true" disabled="disabled">Seleccione una opción</option>
+                        <option value="" selected="true" disabled="disabled">Seleccioná una opción</option>
                         <option value="1">Asociación Civil</option>
                         <option value="2">Cooperativa</option>
                         <option value="3">Fundación</option>
                         <option value="4">Otro</option>
-                        <!-- <option value="ONG">ONG</option> -->
                     </select>
                 </section>
                 <section>
@@ -112,10 +111,10 @@
             </div>
             <div class="col-md-12 form-group">
                 <ul class="actions">
-                    <li>Posee actualmente Personería Jurídica?</li>
+                    <li>Cuentan actualmente con una Personería Jurídica?</li>
                     <li>
                         <select value="option1" checked class="form-control" data-ng-model="legalStatus" data-ng-change="onLegalStatusChange()">
-                            <option value="" selected="true" disabled="disabled">Seleccione una opción</option>
+                            <option value="" selected="true" disabled="disabled">Seleccioná una opción</option>
                             <option value="YES">Si</option>
                             <option value="NO">No</option>
                         </select>
@@ -132,7 +131,7 @@
     		<div class="content">
     			<div class="inner">
     				<h2>Oops!</h2>
-    				<p>Debe gestionar la Personería Jurídica... </p>
+    				<p>Deben gestionar una Personería Jurídica.</p>
     				<ul class="actions">
     					<li><a href="" class="button special" ng-click="showModal($index)" data-toggle="modal" data-target="#myModal">Cómo hacerlo</a></li>
     				</ul>
@@ -146,7 +145,7 @@
     	<div class="inner">
     		<h2>Detalle de Personería Jurídica</h2>
     		<p>
-    			Antes de continuar, necesitamos algunos datos de su organización.
+    			Antes de continuar, necesitamos algunos datos de tu organización.
     		</p>
     		<div class="features">
     			<section>

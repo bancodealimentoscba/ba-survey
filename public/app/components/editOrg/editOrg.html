@@ -34,7 +34,7 @@
                         </div>
                         <h3>Estado</h3>
                         <select value="option1" required checked class="form-control" data-ng-model="organizacion.estado">
-                            <option value="" ng-selected="organizacion.estado < 1 || organizacion.estado > 5" disabled="disabled">Seleccione una opción</option>
+                            <option value="" ng-selected="organizacion.estado < 1 || organizacion.estado > 5" disabled="disabled">Seleccioná una opción</option>
                             <option value="1" ng-selected="organizacion.estado == 1">Pendiente Inscripta</option>
                             <option value="2" ng-selected="organizacion.estado == 2">Pendiente No Inscripta</option>
                             <option value="3" ng-selected="organizacion.estado == 3">Aprobada</option>
@@ -69,12 +69,11 @@
                         <span class="icon major fa-legal"></span>
                         <h3>Tipo de Organización</h3>
                         <select value="option1" required checked class="form-control" data-ng-model="organizacion.tipo">
-                            <option value="" ng-selected="organizacion.tipo < 1 || organizacion.tipo > 4" disabled="disabled">Seleccione una opción</option>
+                            <option value="" ng-selected="organizacion.tipo < 1 || organizacion.tipo > 4" disabled="disabled">Seleccioná una opción</option>
                             <option value="1" ng-selected="organizacion.tipo == 1">Asociación Civil</option>
                             <option value="2" ng-selected="organizacion.tipo == 2">Cooperativa</option>
                             <option value="3" ng-selected="organizacion.tipo == 3">Fundación</option>
                             <option value="4" ng-selected="organizacion.tipo == 4">Otro</option>
-                            <!-- <option value="ONG">ONG</option> -->
                         </select>
                     </section>
                     <section>
@@ -114,7 +113,7 @@
                         <li>Actualmente {{organizacion.nombre}} no posee Personería Jurídica. Querés Agregarla?</li>
                         <li>
                             <select value="option1" checked class="form-control" data-ng-model="updateLegalStatus">
-                                <option value="" selected="true" disabled="disabled">Seleccione una opción</option>
+                                <option value="" selected="true" disabled="disabled">Seleccioná una opción</option>
                                 <option value="true">Si</option>
                                 <option value="false">No</option>
                             </select>
@@ -128,9 +127,6 @@
         <section id="three" class="wrapper style1 fade-up" data-ng-show="organizacion.personaria_juridica.numero || updateLegalStatus">
            <div class="inner">
               <h2>Detalle de Personería Jurídica</h2>
-              <p>
-                 Antes de continuar, necesitamos algunos datos de su organización.
-             </p>
              <div class="features">
                  <section>
                     <span class="icon major fa-briefcase"></span>
