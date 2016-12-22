@@ -11,3 +11,9 @@
 
   _firebase.initializeApp(config);
 })(window.firebase);
+
+$( document ).ready(function() {
+    var abc = document.body.innerHTML;
+    var a = String(abc).replace(/\u200B/g,'');
+    document.body.innerHTML = a;
+});
