@@ -1622,7 +1622,7 @@
 	}
 
 	body {
-		background: #4d2028;
+		background: #fff;
 	}
 
 		body.is-loading *, body.is-loading *:before, body.is-loading *:after {
@@ -1639,7 +1639,7 @@
 /* Type */
 
 	body, input, select, textarea {
-		color: rgba(255, 255, 255, 0.55);
+		/*color: rgba(255, 255, 255, 0.55);*/
 		font-family: Arial, Helvetica, sans-serif;
 		font-size: 16.5pt;
 		font-weight: normal;
@@ -1699,7 +1699,7 @@
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #ffffff;
+		color: #222;
 		font-weight: bold;
 		line-height: 1.5;
 		margin: 0 0 0.5em 0;
@@ -1975,8 +1975,8 @@
 		input[type="button"].special,
 		button.special,
 		.button.special {
-			background-color: #ffffff;
-			color: #4d2028 !important;
+			background-color: #4d2028;
+			color: #ffffff !important;
 		}
 
 			input[type="submit"].special:after,
@@ -2085,6 +2085,8 @@
 				-webkit-transform: scale(1);
 				-ms-transform: scale(1);
 				transform: scale(1);
+				background-color: #4d2028;
+				color: #fff;
 				position: absolute;
 				left: 3em;
 				top: 3em;
@@ -2287,7 +2289,7 @@
 /* Form */
 
 	form {
-		margin: 0 0 2em 0;
+		margin: 0 0 0 0;
 	}
 
 		form .field {
@@ -2346,7 +2348,7 @@
 		border-radius: 0.25em;
 		border: none;
 		border: solid 1px #999999;
-		color: inherit;
+		color: #000;
 		display: block;
 		outline: 0;
 		padding: 0 1em;
@@ -2371,7 +2373,7 @@
 		input[type="tel"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #ffffff;
+			border-color: #4d2028;
 			box-shadow: 0 0 0 1px #ffffff;
 		}
 
@@ -2409,8 +2411,8 @@
 		}
 
 	select option {
-		background-color: #4d2028;
-		color: #ffffff;
+		background-color: #fff;
+		color: #000;
 	}
 
 	input[type="text"],
@@ -2446,7 +2448,7 @@
 		input[type="checkbox"] + label,
 		input[type="radio"] + label {
 			text-decoration: none;
-			color: rgba(255, 255, 255, 0.55);
+			color: #222;
 			cursor: pointer;
 			display: inline-block;
 			font-size: 1em;
@@ -2484,16 +2486,16 @@
 
 		input[type="checkbox"]:checked + label:before,
 		input[type="radio"]:checked + label:before {
-			background: #ffffff;
-			border-color: #ffffff;
-			color: #333333;
+			background: #4d2028;
+			border-color: #4d2028;
+			color: #fff;
 			content: '\f00c';
 		}
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			border-color: #ffffff;
-			box-shadow: 0 0 0 1px #ffffff;
+			border-color: #4d2028;
+			box-shadow: 0 0 0 1px #4d2028;
 		}
 
 	input[type="checkbox"] + label:before {
@@ -2505,27 +2507,27 @@
 	}
 
 	::-webkit-input-placeholder {
-		color: rgba(255, 255, 255, 0.35) !important;
+		color: rgba(0, 0, 0, 0.65) !important;
 		opacity: 1.0;
 	}
 
 	:-moz-placeholder {
-		color: rgba(255, 255, 255, 0.35) !important;
+		color: rgba(0, 0, 0, 0.65) !important;
 		opacity: 1.0;
 	}
 
 	::-moz-placeholder {
-		color: rgba(255, 255, 255, 0.35) !important;
+		color: rgba(0, 0, 0, 0.65) !important;
 		opacity: 1.0;
 	}
 
 	:-ms-input-placeholder {
-		color: rgba(255, 255, 255, 0.35) !important;
+		color: rgba(0, 0, 0, 0.65) !important;
 		opacity: 1.0;
 	}
 
 	.formerize-placeholder {
-		color: rgba(255, 255, 255, 0.35) !important;
+		color: rgba(0, 0, 0, 0.65) !important;
 		opacity: 1.0;
 	}
 
@@ -2575,11 +2577,11 @@
 			}
 
 				.wrapper.style1 .icon.major:before {
-					color: #333333;
+					color: #fff;
 				}
 
 				.wrapper.style1-alt .icon.major:before {
-					color: #333333;
+					color: #fff;
 				}
 
 				.wrapper.style2 .icon.major:before {
@@ -2591,7 +2593,7 @@
 				}
 
 				.wrapper.style3 .icon.major:before {
-					color: #333333;
+					color: #fff;
 				}
 
 				.wrapper.style3-alt .icon.major:before {
@@ -3072,10 +3074,11 @@
 				top: 0;
 				left: 0;
 				opacity: 0.38;
-				background: rgba(62, 162, 253, 0.5);
+				background: rgba(173, 173, 173, 0.5);
 			}
 
 		.spotlights > section > .content {
+			background-color: #fff;
 			padding: 4em 5em 2em 5em ;
 			display: -moz-flex;
 			display: -webkit-flex;
@@ -3275,11 +3278,11 @@
 			}
 
 		.wrapper.alt {
-			background-color: #333333;
+			background-color: #4d2028;
 		}
 
 		.wrapper.style1 {
-			background-color: #333333;
+			background-color: #444;
 		}
 
 		.wrapper.style1-alt {
@@ -3406,7 +3409,7 @@
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
-		background-color: #333333;
+		background-color: #4d2028;
 		cursor: default;
 		padding: 1.75em 2em;
 	}
@@ -3773,7 +3776,7 @@
 			-ms-transition: color 0.2s ease;
 			transition: color 0.2s ease;
 			border: 0;
-			color: rgba(255, 255, 255, 0.35);
+			color: rgba(255, 255, 255, 0.55);
 			display: block;
 			font-size: 0.6em;
 			font-weight: bold;
@@ -3797,7 +3800,7 @@
 			}
 
 			#sidebar nav a:before {
-				background: #333333;
+				background: rgba(47, 10, 10, 0.55);
 			}
 
 			#sidebar nav a:after {

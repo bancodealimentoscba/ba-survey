@@ -14,6 +14,10 @@ span.italic {
   color: black;
 }
 
+.modal-title {
+  color: #fff;
+}
+
 .modal .modal-dialog .modal-content .modal-header,
 .modal .modal-dialog .modal-content .modal-footer {
   background-color: #4d2028;
@@ -68,4 +72,19 @@ form .schedule {
 footer.edit-footer.wrapper.alt,
 footer.form-footer.wrapper.alt {
   background-color: #4d2028;
+}
+
+section.wrapper {
+  background: #ffffff url(//bancodealimentoscba.org.ar/wp-content/uploads/2015/12/fondoWebBanco7.jpg) top center repeat scroll;
+}
+
+#intro h1,
+#intro p {
+  color: #fff;
+}
+
+section.wrapper .inner,
+section.wrapper .major,
+section.wrapper b {
+  color: #222222 !important;
 }
