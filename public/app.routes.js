@@ -6,26 +6,26 @@ baSurvey.config([
 		// 	templateUrl: 'app/components/index/index.html',
 		// 	controller: 'indexCtrl'
 		// }).
-		when('/editOrg/:id', {
-			templateUrl: 'app/components/editOrg/editOrg.html',
-			controller: 'editOrgCtrl',
+		when('/editar-organizacion/:id', {
+			templateUrl: 'app/components/edit-organization/edit-organization.html',
+			controller: 'editOrganizationCtrl',
 			resolve: {
 	      'currentAuth': ['Auth', function(Auth) {
 	        return Auth.$requireSignIn();
 	      }]
 	    }
 		}).
-		when('/form', {
-			templateUrl: 'app/components/form/form.html',
-			controller: 'formCtrl'
+		when('/agregar-organizacion', {
+			templateUrl: 'app/components/new-organization/new-organization.html',
+			controller: 'newOrganizationController'
 		}).
 		when('/login', {
 			templateUrl: 'app/components/login/login.html',
 			controller: 'loginCtrl'
 		}).
-		when('/orgsList', {
-			templateUrl: 'app/components/orgsList/orgsList.html',
-			controller: 'orgsListCtrl',
+		when('/listado-organizaciones', {
+			templateUrl: 'app/components/list-organizations/list-organizations.html',
+			controller: 'listOrganizationsCtrl',
 			resolve: {
 	      'currentAuth': ['Auth', function(Auth) {
 	        return Auth.$requireSignIn();

@@ -1,4 +1,4 @@
-baSurvey.controller('formCtrl', [
+baSurvey.controller('newOrganizationController', [
 	'$location',
 	'$scope',
 	'$timeout',

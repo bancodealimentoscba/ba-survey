@@ -8,7 +8,7 @@ baSurvey.controller('loginCtrl', [
 			blockUI.start();
 			$firebaseAuth().$signInWithEmailAndPassword($scope.email, $scope.password)
 				.then(function(firebaseUser) {
-					$location.path('orgsList');
+					$location.path('listado-organizaciones');
 				}).finally(function() {
 					blockUI.stop();
 				});

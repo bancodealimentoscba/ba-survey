@@ -1,4 +1,4 @@
-baSurvey.controller('editOrgCtrl', [
+baSurvey.controller('editOrganizationCtrl', [
   '$location',
   '$routeParams',
   '$scope',
@@ -56,12 +56,12 @@ baSurvey.controller('editOrgCtrl', [
       blockUI.start();
       database.editItem('organizaciones', $scope.organizacion).then(function() {
         blockUI.stop();
-        $location.path('orgsList');
+        $location.path('listado-organizaciones');
       })
     };
 
     $scope.cancel = function() {
-      $location.path('orgsList');
+      $location.path('listado-organizaciones');
     };
 
     $scope.setCenterAndMarker = function(lat, lng) {

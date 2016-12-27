@@ -1,4 +1,4 @@
-baSurvey.controller('orgsListCtrl', [
+baSurvey.controller('listOrganizationsCtrl', [
     '$location',
     '$scope',
     '$timeout',
@@ -34,7 +34,7 @@ baSurvey.controller('orgsListCtrl', [
 
         $scope.goEdit = function(id) {
             $timeout(function() {
-                $location.path('editOrg/' + id);
+                $location.path('editar-organizacion/' + id);
             }, 500);
         };
 
