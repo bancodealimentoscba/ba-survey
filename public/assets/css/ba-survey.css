@@ -88,3 +88,10 @@ section.wrapper .major,
 section.wrapper b {
   color: #222222 !important;
 }
+
+.mousescroll {
+  position: absolute;
+  bottom: 10px;
+  left: calc(50% - 10px);
+  cursor: pointer;
+}
