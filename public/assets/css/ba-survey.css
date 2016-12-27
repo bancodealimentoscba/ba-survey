@@ -28,6 +28,12 @@ span.italic {
   color: #4d2028!important;
 }
 
+.modal .modal-dialog .modal-content .modal-footer button.special-tertiary {
+  background-color: #4d2028;
+  border-color: #FFFFFF!important;
+  color: #FFFFFF!important;
+}
+
 .modal .modal-dialog .modal-content .modal-body p {
   margin: 0;
   padding-left: 50px;
@@ -94,4 +100,25 @@ section.wrapper b {
   bottom: 10px;
   left: calc(50% - 10px);
   cursor: pointer;
+}
+
+
+input[type="submit"].special-secondary,
+input[type="reset"].special-secondary,
+input[type="button"].special-secondary,
+button.special-secondary,
+.button.special-secondary {
+  background-color: #FFFFFF;
+  border-color: #4d2028!important;
+  color: #4d2028!important;
+}
+
+input[type="submit"].special-tertiary,
+input[type="reset"].special-tertiary,
+input[type="button"].special-tertiary,
+button.special-tertiary,
+.button.special-tertiary {
+  background-color: #4d2028;
+  border-color: #FFFFFF!important;
+  color: #FFFFFF!important;
 }
