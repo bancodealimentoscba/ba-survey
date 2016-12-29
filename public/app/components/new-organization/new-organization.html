@@ -345,7 +345,7 @@
 							<label class="schedule" ng-show="organization.schedule.morning.available">
 								Hasta
 							</label>
-							<input class="schedule" type="number" data-ng-model="organization.schedule.morning.to" ng-show="organization.schedule.morning.available" name="demo-copy" placeholder="12:00">
+							<input class="schedule to" type="number" data-ng-model="organization.schedule.morning.to" ng-show="organization.schedule.morning.available" name="demo-copy" placeholder="12:00">
 						</div>
 						<div class="6u 12u$(small)">
 							<input type="checkbox" data-ng-model="organization.schedule.afternoon.available" id="tarde" name="demo-copy">
@@ -358,20 +358,9 @@
 							<input class="schedule" type="number" data-ng-model="organization.schedule.afternoon.from" ng-show="organization.schedule.afternoon.available" name="demo-copy" placeholder="14:00">
 							<label class="schedule" ng-show="organization.schedule.afternoon.available">
 								Hasta
-							</label>pe="checkbox" data-ng-model="organization.schedule.night.available" id="Noche" name="demo-copy">
-							<label for="Noche">
-								Noche
 							</label>
-							<label class="schedule" ng-show="organization.schedule.night.available">
-								Desde
-							</label>
-							<input class="schedule" type="number" data-ng-model="organization.schedule.night.from" ng-show="organization.schedule.night.available" name="demo-copy" placeholder="20:00">
-							<label class="schedule" ng-show="organization.schedule.night.available">
-								Hasta
-							</label>
-							<input class="schedule" type="number" data-ng-model="organization.schedule.night.to" ng-show="organization.schedule.night.available" name="demo-copy" placeholder="23:00">
+							<input class="schedule to" type="number" data-ng-model="organization.schedule.afternoon.to" ng-show="organization.schedule.afternoon.available" name="demo-copy" placeholder="23:00">
 						</div>
-	       	</section>
 						<div class="6u 12u$(small)">
 							<input type="checkbox" data-ng-model="organization.schedule.night.available" id="Noche" name="demo-copy">
 							<label for="Noche">
@@ -384,7 +373,7 @@
 							<label class="schedule" ng-show="organization.schedule.night.available">
 								Hasta
 							</label>
-							<input class="schedule" type="number" data-ng-model="organization.schedule.night.to" ng-show="organization.schedule.night.available" name="demo-copy" placeholder="23:00">
+							<input class="schedule to" type="number" data-ng-model="organization.schedule.night.to" ng-show="organization.schedule.night.available" name="demo-copy" placeholder="23:00">
 						</div>
 					</section>
 	 	 		</div>

@@ -52,7 +52,12 @@ span.italic {
 }
 
 .schedule {
-  margin-left: 30px;
+  margin-left: 50px;
+  color: #222;
+}
+
+.schedule.to {
+  margin-bottom: 30px;
 }
 
 .modal.form-documentation .modal-dialog .modal-content .modal-body p {
