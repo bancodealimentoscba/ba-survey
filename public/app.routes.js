@@ -2,10 +2,6 @@ baSurvey.config([
 	'$routeProvider',
 	function ($routeProvider) {
 		$routeProvider.
-		// when('/index', {
-		// 	templateUrl: 'app/components/index/index.html',
-		// 	controller: 'indexCtrl'
-		// }).
 		when('/editar-organizacion/:id', {
 			templateUrl: 'app/components/edit-organization/edit-organization.html',
 			controller: 'editOrganizationCtrl',

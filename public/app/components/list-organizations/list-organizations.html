@@ -1,197 +1,210 @@
 <!-- Header -->
-  <header id="header">
-    <a href="http://bancodealimentoscba.org.ar/" class="title">Banco de Alimentos</a>
-    <nav>
-      <ul>
-        <li>
-          <a class="active">
-            Lista de Organizaciones
-          </a>
-        </li>
-        <li>
-          <logout></logout>
-        </li>
-      </ul>
-    </nav>
-  </header>
+<header id="header">
+  <a href="http://bancodealimentoscba.org.ar/" class="title">
+    Banco de Alimentos
+  </a>
+  <nav>
+    <ul>
+      <li>
+        <a class="active">
+          Lista de Organizaciones
+        </a>
+      </li>
+      <li>
+        <logout></logout>
+      </li>
+    </ul>
+  </nav>
+</header>
 
-  <!-- Wrapper -->
-    <div id="wrapper" class="orgs-list">
+<!-- Wrapper -->
+<div id="wrapper" class="orgs-list">
 
-      <!-- Main -->
-        <section id="main" class="wrapper">
-          <div class="inner">
-            <h1 class="major">Lista de Organizaciones</h1>
-            <!-- Table -->
-              <section>
-                <div class="table-wrapper">
-                  <table class="alt">
-                    <thead>
-                      <tr>
-                        <th>Nombre</th>
-                        <th>Ubicación</th>
-                        <th>Contacto</th>
-                        <th>Acciones</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr data-ng-repeat="(key, org) in orgs">
-                        <td>
-                          <div>
-                            {{org.nombre}}
-                          </div>
-                          <div>
-                            <p><b>{{getStatus(org.estado)}}</b></p>
-                          </div>
-                        </td>
-                        <td>
-                          <div data-ng-show="org.ubicacion.localidad">
-                            Localidad: <span class="italic">{{org.ubicacion.localidad}}</span>
-                          </div>
-                          <div data-ng-show="org.ubicacion.barrio">
-                            B°: <span class="italic">{{org.ubicacion.barrio}}</span>
-                          </div>
-                          <div data-ng-show="org.ubicacion.calle">
-                            Calle: <span class="italic">{{org.ubicacion.calle}}</span>
-                          </div>
-                          <div data-ng-show="org.ubicacion.numero">
-                            N°: <span class="italic">{{org.ubicacion.numero}}</span>
-                          </div>
-                          <div data-ng-show="!org.ubicacion.localidad && !org.ubicacion.barrio && !org.ubicacion.calle && !org.ubicacion.numero">
-                            N/C
-                          </div>
-                        </td>
-                        <td>
-                          <div data-ng-show="org.contacto.nombre">
-                            Nombre: <span class="italic">{{org.contacto.nombre}}</span>
-                          </div>
-                          <div data-ng-show="org.contacto.telefonos.fijo.numero">
-                            Teléfono: <span class="italic">{{org.contacto.telefonos.fijo.caracteristica}}-{{org.contacto.telefonos.fijo.numero}}</span>
-                          </div>
-                          <div data-ng-show="org.contacto.telefonos.celular.numero">
-                            Cel: <span class="italic">{{org.contacto.telefonos.celular.caracteristica}}-{{org.contacto.telefonos.celular.numero}}</span>
-                          </div>
-                          <div data-ng-show="org.contacto.email">
-                            Email: <span class="italic">{{org.contacto.email}}</span>
-                          </div>
-                          <div data-ng-show="!org.contacto.nombre && !org.contacto.telefonos.fijo.numero && !org.contacto.telefonos.celular.numero && !org.contacto.email">
-                            N/C
-                          </div>
-                        </td>
-                        <td class="td-more">
-                        <div class="td-more-content">
-                            <span class="icon fa-eye" title="Ver más" data-ng-click="showEditOrgModal(key)" type="button" data-toggle="modal" data-target="#editOrgModal"></span>
-                            <span class="icon fa-edit" title="Editar" data-ng-click="goEdit(key)" type="button"></span>
-                            <span class="icon fa-trash-o" title="Eliminar" data-ng-click="showRemoveOrgModal(key)" type="button" data-toggle="modal" data-target="#removeOrgModal"></span>
-                          </div>
-                        </td>
-                      </tr>
-                  </table>
-                </div>
-              </section>
+  <!-- Main -->
+    <section id="main" class="wrapper">
+      <div class="inner">
+        <h1 class="major">
+          Lista de Organizaciones
+        </h1>
+        <!-- Table -->
+        <section>
+          <div class="table-wrapper">
+            <table class="alt">
+              <thead>
+                <tr>
+                  <th>
+                    Nombre
+                  </th>
+                  <th>
+                    Ubicación
+                  </th>
+                  <th>
+                    Contacto
+                  </th>
+                  <th>
+                    Acciones
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-ng-repeat="(key, org) in orgs">
+                  <td>
+                    <div>
+                      {{org.nombre}}
+                    </div>
+                    <div>
+                      <p>
+                        <b>{{getStatus(org.estado)}}</b>
+                      </p>
+                    </div>
+                  </td>
+                  <td>
+                    <div data-ng-show="org.ubicacion.localidad">
+                      Localidad: <span class="italic">{{org.ubicacion.localidad}}</span>
+                    </div>
+                    <div data-ng-show="org.ubicacion.barrio">
+                      B°: <span class="italic">{{org.ubicacion.barrio}}</span>
+                    </div>
+                    <div data-ng-show="org.ubicacion.calle">
+                      Calle: <span class="italic">{{org.ubicacion.calle}}</span>
+                    </div>
+                    <div data-ng-show="org.ubicacion.numero">
+                      N°: <span class="italic">{{org.ubicacion.numero}}</span>
+                    </div>
+                    <div data-ng-show="!org.ubicacion.localidad && !org.ubicacion.barrio && !org.ubicacion.calle && !org.ubicacion.numero">
+                      N/C
+                    </div>
+                  </td>
+                  <td>
+                    <div data-ng-show="org.contacto.nombre">
+                      Nombre: <span class="italic">{{org.contacto.nombre}}</span>
+                    </div>
+                    <div data-ng-show="org.contacto.telefonos.fijo.numero">
+                      Teléfono: <span class="italic">{{org.contacto.telefonos.fijo.caracteristica}}-{{org.contacto.telefonos.fijo.numero}}</span>
+                    </div>
+                    <div data-ng-show="org.contacto.telefonos.celular.numero">
+                      Cel: <span class="italic">{{org.contacto.telefonos.celular.caracteristica}}-{{org.contacto.telefonos.celular.numero}}</span>
+                    </div>
+                    <div data-ng-show="org.contacto.email">
+                      Email: <span class="italic">{{org.contacto.email}}</span>
+                    </div>
+                    <div data-ng-show="!org.contacto.nombre && !org.contacto.telefonos.fijo.numero && !org.contacto.telefonos.celular.numero && !org.contacto.email">
+                      N/C
+                    </div>
+                  </td>
+                  <td class="td-more">
+                  <div class="td-more-content">
+                      <span class="icon fa-eye" title="Ver más" data-ng-click="showEditOrgModal(key)" type="button" data-toggle="modal" data-target="#editOrgModal"></span>
+                      <span class="icon fa-edit" title="Editar" data-ng-click="goEdit(key)" type="button"></span>
+                      <span class="icon fa-trash-o" title="Eliminar" data-ng-click="showRemoveOrgModal(key)" type="button" data-toggle="modal" data-target="#removeOrgModal"></span>
+                    </div>
+                  </td>
+                </tr>
+            </table>
           </div>
         </section>
-
-    </div>
-
-  <!-- Footer -->
-    <footer id="footer" class="wrapper alt">
-      <div class="inner">
-        <ul class="menu">
-          <li>© Copyright 2015 - Banco de Alimentos Córdoba</li>
-        </ul>
-        <ul class="icons">
-          <li><a href="https://twitter.com/BDACordoba" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-          <li><a href="https://www.facebook.com/bancodealimentoscordoba" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-          <li><a href="#https://www.instagram.com/bancodealimentoscba/" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-          <li><a href="https://www.linkedin.com/in/fundaci%C3%B3n-banco-de-alimentos-c%C3%B3rdoba-a30848116?trk=hp-identity-name" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-        </ul>
       </div>
-    </footer>
+    </section>
+</div>
 
-    <div class="container">
-      <!-- Modal Remove Org-->
-      <div class="modal fade" id="removeOrgModal" role="dialog">
-        <div class="modal-dialog">
-          <!-- Modal content-->
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Alerta</h4>
-            </div>
-            <div class="modal-body">
-              <p class="sub-title">Estás seguro que queres eliminar la Organización: {{removeOrgModal.nombre}}</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn special-tertiary" data-dismiss="modal">Cancelar</button>
-              <button type="button" class="btn btn-primary" data-ng-click="remove(removeOrgModal.id)" data-dismiss="modal">Eliminar</button>
-            </div>
-          </div>
+<custom-footer></custom-footer>
 
+<div class="container">
+  <!-- Modal Remove Org-->
+  <div class="modal fade" id="removeOrgModal" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">
+            Alerta
+          </h4>
+        </div>
+        <div class="modal-body">
+          <p class="sub-title">
+            Estás seguro que queres eliminar la Organización: {{removeOrgModal.nombre}}
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn special-tertiary" data-dismiss="modal">
+            Cancelar
+          </button>
+          <button type="button" class="btn btn-primary" data-ng-click="remove(removeOrgModal.id)" data-dismiss="modal">
+            Eliminar
+          </button>
         </div>
       </div>
-      <!-- Modal Edit Org-->
-      <div class="modal fade" id="editOrgModal" role="dialog">
-        <div class="modal-dialog modal-lg">
-          <!-- Modal content-->
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Detalle de la Organización {{orgModal.nombre}}</h4>
-              <span class="modal-edit icon fa-edit" data-dismiss="modal" title="Editar" data-ng-click="goEdit(orgModal.id)" type="button"></span>
-            </div>
-            <div class="modal-body">
-              <p class="sub-title">Nombre de la Organización</p>
-              <p>Nombre: <span class="italic">{{orgModal.nombre}}</span></p>
+    </div>
+  </div>
 
-              <p class="sub-title">Estado</p>
-              <p><span class="italic">{{getStatus(orgModal.estado)}}</span></p>
+  <!-- Modal Edit Org-->
+  <div class="modal fade" id="editOrgModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">
+            Detalle de la Organización {{orgModal.nombre}}
+          </h4>
+          <span class="modal-edit icon fa-edit" data-dismiss="modal" title="Editar" data-ng-click="goEdit(orgModal.id)" type="button"></span>
+        </div>
+        <div class="modal-body">
+          <p class="sub-title">
+            Nombre de la Organización
+          </p>
+          <p>Nombre: <span class="italic">{{orgModal.nombre}}</span></p>
 
-              <p class="sub-title">Ubicación</p>
-              <p>Localidad: <span class="italic">{{orgModal.ubicacion.localidad}}</span></p>
-              <p>Barrio: <span class="italic">{{orgModal.ubicacion.barrio}}</span></p>
-              <p>Calle: <span class="italic">{{orgModal.ubicacion.calle}}</span></p>
-              <p>N°: <span class="italic">{{orgModal.ubicacion.numero}}</span></p>
+          <p class="sub-title">Estado</p>
+          <p><span class="italic">{{getStatus(orgModal.estado)}}</span></p>
 
-              <p class="sub-title">Contacto</p>
-              <p>Nombre: <span class="italic">{{orgModal.contacto.nombre}}</span></p>
-              <p>Fijo: <span class="italic">{{orgModal.contacto.telefonos.fijo.caracteristica}}-{{orgModal.contacto.telefonos.fijo.numero}}</span></p>
-              <p>Celular: <span class="italic">{{orgModal.contacto.telefonos.celular.caracteristica}}-{{orgModal.contacto.telefonos.celular.numero}}</span></p>
-              <p>Correo: <span class="italic">{{orgModal.contacto.email}}</span></p>
+          <p class="sub-title">Ubicación</p>
+          <p>Localidad: <span class="italic">{{orgModal.ubicacion.localidad}}</span></p>
+          <p>Barrio: <span class="italic">{{orgModal.ubicacion.barrio}}</span></p>
+          <p>Calle: <span class="italic">{{orgModal.ubicacion.calle}}</span></p>
+          <p>N°: <span class="italic">{{orgModal.ubicacion.numero}}</span></p>
 
-              <p ng-show="orgModal.hasLegalStatus" class="sub-title">Personería Jurídica</p>
-              <p ng-show="orgModal.hasLegalStatus">Número: <span class="italic">{{orgModal.personaria_juridica.numero}}</span></p>
+          <p class="sub-title">Contacto</p>
+          <p>Nombre: <span class="italic">{{orgModal.contacto.nombre}}</span></p>
+          <p>Fijo: <span class="italic">{{orgModal.contacto.telefonos.fijo.caracteristica}}-{{orgModal.contacto.telefonos.fijo.numero}}</span></p>
+          <p>Celular: <span class="italic">{{orgModal.contacto.telefonos.celular.caracteristica}}-{{orgModal.contacto.telefonos.celular.numero}}</span></p>
+          <p>Correo: <span class="italic">{{orgModal.contacto.email}}</span></p>
 
-              <p ng-show="orgModal.tipo" class="sub-title">Tipo de Organización</p>
-              <p ng-show="orgModal.tipo">Tipo: <span class="italic">{{getType(orgModal.tipo)}}</span></p>
+          <p ng-show="orgModal.hasLegalStatus" class="sub-title">Personería Jurídica</p>
+          <p ng-show="orgModal.hasLegalStatus">Número: <span class="italic">{{orgModal.personaria_juridica.numero}}</span></p>
 
-              <p ng-show="orgModal.hasLegalStatus" class="sub-title">Beneficios</p>
-              <p ng-show="orgModal.beneficios.desayuno && orgModal.hasLegalStatus">Desayuno</p>
-              <p ng-show="orgModal.beneficios.almuerzo && orgModal.hasLegalStatus">Almuerzo</p>
-              <p ng-show="orgModal.beneficios.merienda && orgModal.hasLegalStatus">Merienda</p>
-              <p ng-show="orgModal.beneficios.cena && orgModal.hasLegalStatus">Cena</p>
+          <p ng-show="orgModal.tipo" class="sub-title">Tipo de Organización</p>
+          <p ng-show="orgModal.tipo">Tipo: <span class="italic">{{getType(orgModal.tipo)}}</span></p>
 
-              <p ng-show="orgModal.hasLegalStatus" class="sub-title">Beneficiarios</p>
-              <p ng-show="orgModal.beneficiarios._0_2 > 0  && orgModal.hasLegalStatus">0/2 años: <span class="italic">{{orgModal.beneficiarios._0_2}}</span></p>
-              <p ng-show="orgModal.beneficiarios._3_5 > 0  && orgModal.hasLegalStatus">3/5 años: <span class="italic">{{orgModal.beneficiarios._3_5}}</span></p>
-              <p ng-show="orgModal.beneficiarios._6_12 > 0  && orgModal.hasLegalStatus">6/12 años: <span class="italic">{{orgModal.beneficiarios._6_12}}</span></p>
-              <p ng-show="orgModal.beneficiarios.adolescentes > 0  && orgModal.hasLegalStatus">Adolescentes: <span class="italic">{{orgModal.beneficiarios.adolescentes}}</span></p>
-              <p ng-show="orgModal.beneficiarios.adultos > 0  && orgModal.hasLegalStatus">Adultos: <span class="italic">{{orgModal.beneficiarios.adultos}}</span></p>
-              <p ng-show="orgModal.beneficiarios.ancianos > 0  && orgModal.hasLegalStatus">Ancianos: <span class="italic">{{orgModal.beneficiarios.ancianos}}</span></p>
+          <p ng-show="orgModal.hasLegalStatus" class="sub-title">Beneficios</p>
+          <p ng-show="orgModal.beneficios.desayuno && orgModal.hasLegalStatus">Desayuno</p>
+          <p ng-show="orgModal.beneficios.almuerzo && orgModal.hasLegalStatus">Almuerzo</p>
+          <p ng-show="orgModal.beneficios.merienda && orgModal.hasLegalStatus">Merienda</p>
+          <p ng-show="orgModal.beneficios.cena && orgModal.hasLegalStatus">Cena</p>
 
-              <p ng-show="orgModal.hasLegalStatus" class="sub-title">Periodicidad</p>
-              <p ng-show="orgModal.hasLegalStatus"><span class="italic">{{getShedule(orgModal.periodicidad)}}</span></p>
+          <p ng-show="orgModal.hasLegalStatus" class="sub-title">Beneficiarios</p>
+          <p ng-show="orgModal.beneficiarios._0_2 > 0  && orgModal.hasLegalStatus">0/2 años: <span class="italic">{{orgModal.beneficiarios._0_2}}</span></p>
+          <p ng-show="orgModal.beneficiarios._3_5 > 0  && orgModal.hasLegalStatus">3/5 años: <span class="italic">{{orgModal.beneficiarios._3_5}}</span></p>
+          <p ng-show="orgModal.beneficiarios._6_12 > 0  && orgModal.hasLegalStatus">6/12 años: <span class="italic">{{orgModal.beneficiarios._6_12}}</span></p>
+          <p ng-show="orgModal.beneficiarios.adolescentes > 0  && orgModal.hasLegalStatus">Adolescentes: <span class="italic">{{orgModal.beneficiarios.adolescentes}}</span></p>
+          <p ng-show="orgModal.beneficiarios.adultos > 0  && orgModal.hasLegalStatus">Adultos: <span class="italic">{{orgModal.beneficiarios.adultos}}</span></p>
+          <p ng-show="orgModal.beneficiarios.ancianos > 0  && orgModal.hasLegalStatus">Ancianos: <span class="italic">{{orgModal.beneficiarios.ancianos}}</span></p>
 
-              <p ng-show="orgModal.hasLegalStatus" class="sub-title">Horario</p>
-              <p ng-show="orgModal.horario.manana.disponible && orgModal.hasLegalStatus">Mañana: Desde {{orgModal.horario.manana.desde}} hasta {{orgModal.horario.manana.hasta}} hs</p>
-              <p ng-show="orgModal.horario.tarde.disponible && orgModal.hasLegalStatus">Tarde: Desde {{orgModal.horario.tarde.desde}} hasta {{orgModal.horario.tarde.hasta}} hs</p>
-              <p ng-show="orgModal.horario.noche.disponible && orgModal.hasLegalStatus">Noche: Desde {{orgModal.horario.noche.desde}} hasta {{orgModal.horario.noche.hasta}} hs</p>
+          <p ng-show="orgModal.hasLegalStatus" class="sub-title">Periodicidad</p>
+          <p ng-show="orgModal.hasLegalStatus"><span class="italic">{{getShedule(orgModal.periodicidad)}}</span></p>
 
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
-            </div>
-          </div>
+          <p ng-show="orgModal.hasLegalStatus" class="sub-title">Horario</p>
+          <p ng-show="orgModal.horario.manana.disponible && orgModal.hasLegalStatus">Mañana: Desde {{orgModal.horario.manana.desde}} hasta {{orgModal.horario.manana.hasta}} hs</p>
+          <p ng-show="orgModal.horario.tarde.disponible && orgModal.hasLegalStatus">Tarde: Desde {{orgModal.horario.tarde.desde}} hasta {{orgModal.horario.tarde.hasta}} hs</p>
+          <p ng-show="orgModal.horario.noche.disponible && orgModal.hasLegalStatus">Noche: Desde {{orgModal.horario.noche.desde}} hasta {{orgModal.horario.noche.hasta}} hs</p>
 
         </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">
+            Cerrar
+          </button>
+        </div>
       </div>
-
     </div>
+  </div>
+
+</div>

@@ -3,13 +3,29 @@
 	<div class="inner">
 		<nav>
 			<ul>
-				<li><a href="" data-ng-click="scrollTo('intro')">Bienvenido</a></li>
-				<li><a href="" data-ng-click="scrollTo('one')">Información de la Organización</a></li>
-                <li><a href="" data-ng-click="scrollTo('two')" data-ng-show="legalStatus == 'NO'">Pasos previos</a></li>
-                <li><a href="" data-ng-click="scrollTo('three')" data-ng-show="legalStatus == 'YES'">Detalle y beneficios</a></li>
-            </ul>
-        </nav>
-    </div>
+				<li>
+					<a href="" data-ng-click="scrollTo('intro')">
+						Bienvenido
+					</a>
+				</li>
+				<li>
+					<a href="" data-ng-click="scrollTo('one')">
+						Información de la Organización
+					</a>
+				</li>
+				<li>
+					<a href="" data-ng-click="scrollTo('two')" data-ng-show="legalStatus == 'NO'">
+						Pasos previos
+					</a>
+				</li>
+				<li>
+					<a href="" data-ng-click="scrollTo('three')" data-ng-show="legalStatus == 'YES'">
+						Detalle y beneficios
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
 </section>
 
 <!-- Wrapper -->
@@ -18,357 +34,452 @@
 	<!-- Intro -->
 	<section id="intro" class="wrapper style1 fullscreen fade-up">
 		<div class="inner">
-
-			<h1>Bienvenido!</h1>
+			<h1>
+				Bienvenido!
+			</h1>
 			<p>
 				Si tenés una organización que brinda un servicio regular de alimentos y desean ser parte de la red de instituciones beneficiarias de la Fundación Banco de Alimentos Córdoba, por favor llená el siguiente formulario para ingresar a la lista de espera.
 			</p>
+		</div>
+    <img class="mousescroll" src="assets/images/icon_mousescroll.png" alt="scroll" data-ng-click="scrollTo('one')">
+	</section>
+
+  <form name="organizationForm" data-ng-submit="writeOrganization()">
+    <!-- One -->
+    <section id="one" class="wrapper style3 fade-up">
+      <div class="inner">
+        <h2>Información de la Organización</h2>
+      	<div class="features">
+          <section>
+            <span class="icon major fa-building"></span>
+            <h3>
+							Nombre de la Organización
+						</h3>
+            <div>
+              <input type="text" required class="form-control" data-ng-model="organization.name" id="inputPassword" placeholder="Nombre de la Organización">
+            </div>
+          </section>
+          <section>
+            <span class="icon major fa-location-arrow"></span>
+            <h3>
+							Dirección
+						</h3>
+            <h4>
+							Calle
+						</h4>
+            <div>
+              <input type="text" required class="form-control" data-ng-model="organization.address.street" id="calle" placeholder="Calle">
+            </div>
+            <h4>
+							Número
+						</h4>
+            <div>
+              <input type="text" required class="form-control" data-ng-model="organization.address.number" id="numero" placeholder="Número">
+            </div>
+            <h4>
+							Barrio
+						</h4>
+            <div>
+              <input type="text" class="form-control" data-ng-model="organization.address.neighborhood" id="barrio" placeholder="Barrio">
+            </div>
+            <h4>
+							Localidad
+						</h4>
+            <div>
+              <input type="text" required class="form-control" data-ng-model="organization.address.city" id="localidad" placeholder="Localidad">
+            </div>
+          </section>
+          <section>
+            <span class="icon major fa-legal"></span>
+            <h3>
+							Tipo de Organización
+						</h3>
+            <select value="option1" required class="form-control" data-ng-model="organization.type">
+              <option value="" selected="true" disabled="disabled">
+								Seleccioná una opción
+							</option>
+              <option value="1">
+								Asociación Civil
+							</option>
+              <option value="2">
+								Cooperativa
+							</option>
+              <option value="3">
+								Fundación
+							</option>
+              <option value="4">
+								Otro
+							</option>
+            </select>
+          </section>
+          <section>
+            <span class="icon major fa-home"></span>
+            <h3>
+							Contacto
+						</h3>
+            <h4>
+							Nombre
+						</h4>
+            <div>
+            	<input type="text" required class="form-control" data-ng-model="organization.contact.name" id="nombre" placeholder="Nombre">
+            </div>
+            <h4>
+							Teléfonos
+						</h4>
+            <ul class="actions">
+              <h5>
+								Fijo
+							</h5>
+              <li class="5u 12u$(small)">
+                  <input type="text" class="3u form-control" data-ng-model="organization.contact.phone_prefix" id="caracteristica" placeholder="(351)">
+              </li>
+              <li class="6u 12u$(small)">
+                  <input type="text" class="9u form-control" data-ng-model="organization.contact.phone_number" id="telefono" placeholder="4444444">
+              </li>
+              <h5>
+								Celular
+							</h5>
+              <li class="5u 12u$(small)">
+                <input type="text" required class="3u form-control" data-ng-model="organization.contact.cellphone_prefix" id="caracteristica" placeholder="(351)">
+              </li>
+              <li class="6u 12u$(small)">
+                <input type="text" required class="9u form-control" data-ng-model="organization.contact.cellphone_number" id="telefono" placeholder="4444444">
+              </li>
+            </ul>
+            <h4>
+							Email
+						</h4>
+            <div>
+              <input type="email" required class="form-control" data-ng-model="organization.contact.email" id="email" placeholder="Email">
+            </div>
+          </section>
+      	</div>
+        <div class="col-md-12 form-group">
+          <ul class="actions">
+            <li>
+							Cuentan actualmente con una Personería Jurídica?
+						</li>
+            <li>
+              <select value="option1" checked class="form-control" data-ng-model="legalStatus" data-ng-change="onLegalStatusChange()">
+                <option value="" selected="true" disabled="disabled">
+									Seleccioná una opción
+								</option>
+                <option value="YES">
+									Si
+								</option>
+                <option value="NO">
+									No
+								</option>
+              </select>
+            </li>
+          </ul>
         </div>
-        <img class="mousescroll" src="assets/images/icon_mousescroll.png" alt="scroll" data-ng-click="scrollTo('one')">
-    </section>
+    	</div>
+		</section>
 
-    <form name="organizationForm" data-ng-submit="writeOrganization()">
+		<!-- Two -->
+		<section id="two" class="wrapper style2 spotlights" data-ng-show="legalStatus == 'NO'">
+			<section>
+				<a href="" class="image"><img src="assets/images/oops.png" alt="" data-position="center center" /></a>
+				<div class="content">
+					<div class="inner">
+						<h2>
+							Oops!
+						</h2>
+						<p>
+							Deben gestionar una Personería Jurídica.
+						</p>
+						<ul class="actions">
+							<li>
+								<a href="" class="button special" ng-click="showModal($index)" data-toggle="modal" data-target="#myModal">
+									Cómo hacerlo
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+		</section>
 
-        <!-- One -->
-        <section id="one" class="wrapper style3 fade-up">
-            <div class="inner">
-                <h2>Información de la Organización</h2>
-            <!-- <p>
-                Sólo unos ultimos datos más y habremos terminado.
-            </p> -->
-            <div class="features">
-                <section>
-                    <span class="icon major fa-building"></span>
-                    <h3>Nombre de la Organización</h3>
-                    <div>
-                        <input type="text" required class="form-control" data-ng-model="organization.name" id="inputPassword" placeholder="Nombre de la Organización">
-                    </div>
-                </section>
-                <section>
-                    <span class="icon major fa-location-arrow"></span>
-                    <h3>Dirección</h3>
-                    <h4>Calle</h4>
-                    <div>
-                        <input type="text" required class="form-control" data-ng-model="organization.address.street" id="calle" placeholder="Calle">
-                    </div>
-                    <h4>Número</h4>
-                    <div>
-                        <input type="text" required class="form-control" data-ng-model="organization.address.number" id="numero" placeholder="Número">
-                    </div>
-                    <h4>Barrio</h4>
-                    <div>
-                        <input type="text" class="form-control" data-ng-model="organization.address.neighborhood" id="barrio" placeholder="Barrio">
-                    </div>
-                    <h4>Localidad</h4>
-                    <div>
-                        <input type="text" required class="form-control" data-ng-model="organization.address.city" id="localidad" placeholder="Localidad">
-                    </div>
-                </section>
-                <section>
-                    <span class="icon major fa-legal"></span>
-                    <h3>Tipo de Organización</h3>
-                    <select value="option1" required class="form-control" data-ng-model="organization.type">
-                        <option value="" selected="true" disabled="disabled">Seleccioná una opción</option>
-                        <option value="1">Asociación Civil</option>
-                        <option value="2">Cooperativa</option>
-                        <option value="3">Fundación</option>
-                        <option value="4">Otro</option>
-                    </select>
-                </section>
-                <section>
-                    <span class="icon major fa-home"></span>
-                    <h3>Contacto</h3>
-                    <h4>Nombre</h4>
-                    <div>
-                        <input type="text" required class="form-control" data-ng-model="organization.contact.name" id="nombre" placeholder="Nombre">
-                    </div>
-                    <h4>Teléfonos</h4>
-                    <ul class="actions">
-                        <h5>Fijo</h5>
-                        <li class="5u 12u$(small)">
+	  <!-- Three -->
+	  <section id="three" class="wrapper style1 fade-up" data-ng-show="legalStatus == 'YES'">
+	  	<div class="inner">
+	  		<h2>
+					Detalle de Personería Jurídica
+				</h2>
+	  		<p>
+	  			Antes de continuar, necesitamos algunos datos de tu organización.
+	  		</p>
+	  		<div class="features">
+	  			<section>
+	  				<span class="icon major fa-briefcase"></span>
+	  				<h3>
+							Número de Personería Jurídica
+						</h3>
+	  				<div>
+	  					<input type="text" ng-required="isLegalStatusRequired" class="form-control" id="inputPassword" data-ng-model="organization.legalStatus" placeholder="Número de Personería Jurídica">
+	  				</div>
+	  			</section>
+	  			<section>
+	  				<span class="icon major fa-coffee"></span>
+	  				<h3>
+							Beneficios que presta actualmente
+						</h3>
+	  				<div class="6u 12u$(small)">
+	  					<input type="checkbox" id="desayuno" data-ng-model="organization.services.breakfast" name="demo-copy">
+	  					<label for="desayuno">
+								Desayuno
+							</label>
+	  				</div>
+	  				<div class="6u 12u$(small)">
+	  					<input type="checkbox" id="almuerzo" data-ng-model="organization.services.lunch" name="demo-copy">
+	  					<label for="almuerzo">
+								Almuerzo
+							</label>
+	  				</div>
+	  				<div class="6u 12u$(small)">
+	  					<input type="checkbox" id="merienda" data-ng-model="organization.services.snak" name="demo-copy">
+	  					<label for="merienda">
+								Merienda
+							</label>
+	  				</div>
+	  				<div class="6u 12u$(small)">
+	  					<input type="checkbox" id="cena" data-ng-model="organization.services.dinner" name="demo-copy">
+	  					<label for="cena">
+								Cena
+							</label>
+	  				</div>
+	  			</section>
+	  			<section>
+	  				<span class="icon major fa-users"></span>
+	  				<h3>
+							Cantidad de Beneficiarios
+						</h3>
+	  				<ul class="actions 12u 12u$(small)">
+	  					<li class="5u 12u$(small)">
+								0-2 Años
+							</li>
+	  					<li class="6u 12u$(small)">
+	  						<input type="number" data-ng-model="organization.recipient._0_2" ng-required="isLegalStatusRequired" class="form-control" placeholder="Cant.">
+	  					</li>
+	  				</ul>
+	  				<ul class="actions 12u 12u$(small)">
+	  					<li class="5u 12u$(small)">
+								3-5 Años
+							</li>
+	  					<li class="6u 12u$(small)">
+	  						<input type="number" data-ng-model="organization.recipient._3_5" ng-required="isLegalStatusRequired" class="form-control" placeholder="Cant.">
+	  					</li>
+	  				</ul>
+	  				<ul class="actions 12u 12u$(small)">
+	  					<li class="5u 12u$(small)">
+								6-12 Años
+							</li>
+	  					<li class="6u 12u$(small)">
+	  						<input type="number" data-ng-model="organization.recipient._6_12" ng-required="isLegalStatusRequired" class="form-control" placeholder="Cant.">
+	  					</li>
+	  				</ul>
+	  				<ul class="actions 12u 12u$(small)">
+	  					<li class="5u 12u$(small)">
+								Adolescentes
+							</li>
+	  					<li class="6u 12u$(small)">
+	  						<input type="number" data-ng-model="organization.recipient.teenagers" ng-required="isLegalStatusRequired" class="form-control" placeholder="Cant.">
+	  					</li>
+	  				</ul>
+	  				<ul class="actions 12u 12u$(small)">
+	  					<li class="5u 12u$(small)">
+								Adultos
+							</li>
+	  					<li class="6u 12u$(small)">
+	  						<input type="number" data-ng-model="organization.recipient.adults" ng-required="isLegalStatusRequired" class="form-control" placeholder="Cant.">
+	  					</li>
+	  				</ul>
+	  				<ul class="actions 12u 12u$(small)">
+	  					<li class="5u 12u$(small)">
+								Ancianos
+							</li>
+	  					<li class="6u 12u$(small)">
+	  						<input type="number" data-ng-model="organization.recipient.elder" ng-required="isLegalStatusRequired" class="form-control" placeholder="Cant.">
+	  					</li>
+	  				</ul>
+	  			</section>
+	  			<section>
+	  				<span class="icon major fa-calendar-o"></span>
+	  				<h3>
+							Periodicidad
+						</h3>
+	  				<div class="12u 12u$(small)">
+	  					<input type="radio" data-ng-model="organization.periodicity" id="unaPorSemana" ng-required="isLegalStatusRequired" value="1" name="demo-copy">
+	  					<label for="unaPorSemana">
+								Una vez por semana
+							</label>
+	  				</div>
+	  				<div class="12u 12u$(small)">
+	  					<input type="radio" data-ng-model="organization.periodicity" id="tresPorSemana" value="2" name="demo-copy">
+	  					<label for="tresPorSemana">
+								Tres veces por semana
+							</label>
+	  				</div>
+	  				<div class="12u 12u$(small)">
+	  					<input type="radio" data-ng-model="organization.periodicity" id="diario" value="3" name="demo-copy">
+	  					<label for="diario">
+								Diario
+							</label>
+	  				</div>
+	  			</section>
+	  			<section>
+	  				<span class="icon major fa-clock-o"></span>
+	  				<h3>
+							Horario del Servicio
+						</h3>
+	  				<div class="6u 12u$(small)">
+	  					<input type="checkbox" data-ng-model="organization.schedule.morning.available" id="mañana" name="demo-copy">
+	  					<label for="mañana">
+								Mañana
+							</label>
+							<label class="schedule" ng-show="organization.schedule.morning.available">
+								Desde
+							</label>
+							<input class="schedule" type="number" data-ng-model="organization.schedule.morning.from" ng-show="organization.schedule.morning.available" name="demo-copy" placeholder="08:00">
+							<label class="schedule" ng-show="organization.schedule.morning.available">
+								Hasta
+							</label>
+							<input class="schedule" type="number" data-ng-model="organization.schedule.morning.to" ng-show="organization.schedule.morning.available" name="demo-copy" placeholder="12:00">
+						</div>
+						<div class="6u 12u$(small)">
+							<input type="checkbox" data-ng-model="organization.schedule.afternoon.available" id="tarde" name="demo-copy">
+							<label for="tarde">
+								Tarde
+							</label>
+							<label class="schedule" ng-show="organization.schedule.afternoon.available">
+								Desde
+							</label>
+							<input class="schedule" type="number" data-ng-model="organization.schedule.afternoon.from" ng-show="organization.schedule.afternoon.available" name="demo-copy" placeholder="14:00">
+							<label class="schedule" ng-show="organization.schedule.afternoon.available">
+								Hasta
+							</label>pe="checkbox" data-ng-model="organization.schedule.night.available" id="Noche" name="demo-copy">
+							<label for="Noche">
+								Noche
+							</label>
+							<label class="schedule" ng-show="organization.schedule.night.available">
+								Desde
+							</label>
+							<input class="schedule" type="number" data-ng-model="organization.schedule.night.from" ng-show="organization.schedule.night.available" name="demo-copy" placeholder="20:00">
+							<label class="schedule" ng-show="organization.schedule.night.available">
+								Hasta
+							</label>
+							<input class="schedule" type="number" data-ng-model="organization.schedule.night.to" ng-show="organization.schedule.night.available" name="demo-copy" placeholder="23:00">
+						</div>
+	       	</section>
+						<div class="6u 12u$(small)">
+							<input type="checkbox" data-ng-model="organization.schedule.night.available" id="Noche" name="demo-copy">
+							<label for="Noche">
+								Noche
+							</label>
+							<label class="schedule" ng-show="organization.schedule.night.available">
+								Desde
+							</label>
+							<input class="schedule" type="number" data-ng-model="organization.schedule.night.from" ng-show="organization.schedule.night.available" name="demo-copy" placeholder="20:00">
+							<label class="schedule" ng-show="organization.schedule.night.available">
+								Hasta
+							</label>
+							<input class="schedule" type="number" data-ng-model="organization.schedule.night.to" ng-show="organization.schedule.night.available" name="demo-copy" placeholder="23:00">
+						</div>
+					</section>
+	 	 		</div>
+			</div>
+		</section>
 
-                            <input type="text" class="3u form-control" data-ng-model="organization.contact.phone_prefix" id="caracteristica" placeholder="(351)">
-                        </li>
-                        <li class="6u 12u$(small)">
-                            <input type="text" class="9u form-control" data-ng-model="organization.contact.phone_number" id="telefono" placeholder="4444444">
+		<section id="three" class="wrapper style1 fade-up" data-ng-show="legalStatus">
+			<div class="inner">
+			  <ul class="actions">
+			    <li>
+						<input type="submit" required class="button special" id="submit" value="Enviar"/>
+					</li>
+			  </ul>
+			</div>
+		</section>
+	</form>
 
-                        </li>
-                        <h5>Celular</h5>
-                        <li class="5u 12u$(small)">
-
-                            <input type="text" required class="3u form-control" data-ng-model="organization.contact.cellphone_prefix" id="caracteristica" placeholder="(351)">
-                        </li>
-                        <li class="6u 12u$(small)">
-                            <input type="text" required class="9u form-control" data-ng-model="organization.contact.cellphone_number" id="telefono" placeholder="4444444">
-
-                        </li>
-                    </ul>
-
-                    <h4>Email</h4>
-                    <div>
-                        <input type="email" required class="form-control" data-ng-model="organization.contact.email" id="email" placeholder="Email">
-                    </div>
-                </section>
-            </div>
-            <div class="col-md-12 form-group">
-                <ul class="actions">
-                    <li>Cuentan actualmente con una Personería Jurídica?</li>
-                    <li>
-                        <select value="option1" checked class="form-control" data-ng-model="legalStatus" data-ng-change="onLegalStatusChange()">
-                            <option value="" selected="true" disabled="disabled">Seleccioná una opción</option>
-                            <option value="YES">Si</option>
-                            <option value="NO">No</option>
-                        </select>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Two -->
-    <section id="two" class="wrapper style2 spotlights" data-ng-show="legalStatus == 'NO'">
-    	<section>
-    		<a href="" class="image"><img src="assets/images/oops.png" alt="" data-position="center center" /></a>
-    		<div class="content">
-    			<div class="inner">
-    				<h2>Oops!</h2>
-    				<p>Deben gestionar una Personería Jurídica.</p>
-    				<ul class="actions">
-    					<li><a href="" class="button special" ng-click="showModal($index)" data-toggle="modal" data-target="#myModal">Cómo hacerlo</a></li>
-    				</ul>
-    			</div>
-    		</div>
-    	</section>
-    </section>
-
-    <!-- Three -->
-    <section id="three" class="wrapper style1 fade-up" data-ng-show="legalStatus == 'YES'">
-    	<div class="inner">
-    		<h2>Detalle de Personería Jurídica</h2>
-    		<p>
-    			Antes de continuar, necesitamos algunos datos de tu organización.
-    		</p>
-    		<div class="features">
-    			<section>
-    				<span class="icon major fa-briefcase"></span>
-    				<h3>Número de Personería Jurídica</h3>
-    				<div>
-    					<input type="text" ng-required="isLegalStatusRequired" class="form-control" id="inputPassword" data-ng-model="organization.legalStatus" placeholder="Número de Personería Jurídica">
-    				</div>
-    			</section>
-    			<section>
-    				<span class="icon major fa-coffee"></span>
-    				<h3>Beneficios que presta actualmente</h3>
-    				<div class="6u 12u$(small)">
-    					<input type="checkbox" id="desayuno" data-ng-model="organization.services.breakfast" name="demo-copy">
-    					<label for="desayuno">Desayuno</label>
-    				</div>
-    				<div class="6u 12u$(small)">
-    					<input type="checkbox" id="almuerzo" data-ng-model="organization.services.lunch" name="demo-copy">
-    					<label for="almuerzo">Almuerzo</label>
-    				</div>
-    				<div class="6u 12u$(small)">
-    					<input type="checkbox" id="merienda" data-ng-model="organization.services.snak" name="demo-copy">
-    					<label for="merienda">Merienda</label>
-    				</div>
-    				<div class="6u 12u$(small)">
-    					<input type="checkbox" id="cena" data-ng-model="organization.services.dinner" name="demo-copy">
-    					<label for="cena">Cena</label>
-    				</div>
-    			</section>
-    			<section>
-    				<span class="icon major fa-users"></span>
-    				<h3>Cantidad de Beneficiarios</h3>
-    				<ul class="actions 12u 12u$(small)">
-    					<li class="5u 12u$(small)">0-2 Años</li>
-    					<li class="6u 12u$(small)">
-    						<input type="number" data-ng-model="organization.recipient._0_2" ng-required="isLegalStatusRequired" class="form-control" placeholder="Cant.">
-    					</li>
-    				</ul>
-    				<ul class="actions 12u 12u$(small)">
-    					<li class="5u 12u$(small)">3-5 Años</li>
-    					<li class="6u 12u$(small)">
-    						<input type="number" data-ng-model="organization.recipient._3_5" ng-required="isLegalStatusRequired" class="form-control" placeholder="Cant.">
-    					</li>
-    				</ul>
-    				<ul class="actions 12u 12u$(small)">
-    					<li class="5u 12u$(small)">6-12 Años</li>
-    					<li class="6u 12u$(small)">
-    						<input type="number" data-ng-model="organization.recipient._6_12" ng-required="isLegalStatusRequired" class="form-control" placeholder="Cant.">
-    					</li>
-    				</ul>
-    				<ul class="actions 12u 12u$(small)">
-    					<li class="5u 12u$(small)">Adolescentes</li>
-    					<li class="6u 12u$(small)">
-    						<input type="number" data-ng-model="organization.recipient.teenagers" ng-required="isLegalStatusRequired" class="form-control" placeholder="Cant.">
-    					</li>
-    				</ul>
-    				<ul class="actions 12u 12u$(small)">
-    					<li class="5u 12u$(small)">Adultos</li>
-    					<li class="6u 12u$(small)">
-    						<input type="number" data-ng-model="organization.recipient.adults" ng-required="isLegalStatusRequired" class="form-control" placeholder="Cant.">
-    					</li>
-    				</ul>
-    				<ul class="actions 12u 12u$(small)">
-    					<li class="5u 12u$(small)">Ancianos</li>
-    					<li class="6u 12u$(small)">
-    						<input type="number" data-ng-model="organization.recipient.elder" ng-required="isLegalStatusRequired" class="form-control" placeholder="Cant.">
-    					</li>
-    				</ul>
-    			</section>
-    			<section>
-    				<span class="icon major fa-calendar-o"></span>
-    				<h3>Periodicidad</h3>
-    				<div class="12u 12u$(small)">
-    					<input type="radio" data-ng-model="organization.periodicity" id="unaPorSemana" ng-required="isLegalStatusRequired" value="1" name="demo-copy">
-    					<label for="unaPorSemana">Una vez por semana</label>
-    				</div>
-    				<div class="12u 12u$(small)">
-    					<input type="radio" data-ng-model="organization.periodicity" id="tresPorSemana" value="2" name="demo-copy">
-    					<label for="tresPorSemana">Tres veces por semana</label>
-    				</div>
-    				<div class="12u 12u$(small)">
-    					<input type="radio" data-ng-model="organization.periodicity" id="diario" value="3" name="demo-copy">
-    					<label for="diario">Diario</label>
-    				</div>
-    			</section>
-    			<section>
-    				<span class="icon major fa-clock-o"></span>
-    				<h3>Horario del Servicio</h3>
-    				<div class="6u 12u$(small)">
-    					<input type="checkbox" data-ng-model="organization.schedule.morning.available" id="mañana" name="demo-copy">
-    					<label for="mañana">Mañana</label>
-                     <label class="schedule" ng-show="organization.schedule.morning.available">Desde</label>
-                     <input class="schedule" type="number" data-ng-model="organization.schedule.morning.from" ng-show="organization.schedule.morning.available" name="demo-copy" placeholder="08:00">
-                     <label class="schedule" ng-show="organization.schedule.morning.available">Hasta</label>
-                     <input class="schedule" type="number" data-ng-model="organization.schedule.morning.to" ng-show="organization.schedule.morning.available" name="demo-copy" placeholder="12:00">
-                 </div>
-                 <div class="6u 12u$(small)">
-                   <input type="checkbox" data-ng-model="organization.schedule.afternoon.available" id="tarde" name="demo-copy">
-                   <label for="tarde">Tarde</label>
-                   <label class="schedule" ng-show="organization.schedule.afternoon.available">Desde</label>
-                   <input class="schedule" type="number" data-ng-model="organization.schedule.afternoon.from" ng-show="organization.schedule.afternoon.available" name="demo-copy" placeholder="14:00">
-                   <label class="schedule" ng-show="organization.schedule.afternoon.available">Hasta</label>
-                   <input class="schedule" type="number" data-ng-model="organization.schedule.afternoon.to" ng-show="organization.schedule.afternoon.available" name="demo-copy" placeholder="19:00">
-               </div>
-               <div class="6u 12u$(small)">
-                   <input type="checkbox" data-ng-model="organization.schedule.night.available" id="Noche" name="demo-copy">
-                   <label for="Noche">Noche</label>
-                   <label class="schedule" ng-show="organization.schedule.night.available">Desde</label>
-                   <input class="schedule" type="number" data-ng-model="organization.schedule.night.from" ng-show="organization.schedule.night.available" name="demo-copy" placeholder="20:00">
-                   <label class="schedule" ng-show="organization.schedule.night.available">Hasta</label>
-                   <input class="schedule" type="number" data-ng-model="organization.schedule.night.to" ng-show="organization.schedule.night.available" name="demo-copy" placeholder="23:00">
-               </div>
-           </section>
-           <section>
-           </section>
-       </div>
-   </div>
-</section>
-
-<section id="three" class="wrapper style1 fade-up" data-ng-show="legalStatus">
-    <div class="inner">
-        <ul class="actions">
-            <li><input type="submit" required class="button special" id="submit" value="Enviar"/></li>
-        </ul>
-    </div>
-</section>
-
-</form>
-
-    <div class="modal form-documentation fade" id="myModal" role="dialog">
-        <div class="modal-dialog modal-lg">
-          <!-- Modal content-->
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">
-								Requisitos de documentación legal para organizaciones sociales
-							</h4>
-            </div>
-            <div class="modal-body">
-              <p>
-								Los requisitos de documentación no son los mismos para todas las organizaciones. Eso dependerá de la forma jurídica que asuman, a saber:
-							</p>
-							<ul>
-								<li>
-									<b>
-										Organizaciones sin Personería Jurídica:
-									</b>
-									asociación civil, fundación, centro vecinal, cooperativa, mutual, organización religiosa, centro de jubilados, etc.
-								</li>
-								<li>
-									<b>
-										Organizaciones con personería Jurídica:
-									</b>
-									Cooperadoras, Comedores, copas de leche, clubes de trueque, merenderos, que no poseen reconocimiento jurídico estatal).								</li>
-							</ul>
-							<p>
-								Para informarse respecto de si una organización se encuentra inscripta y ha actualizado documentación legal comunicarse al Registro vía:
-							</p>
-							<ul>
-								<li>
-									<b>
-										Teléfono:
-									</b>
-									(0351) 4688572
-								</li>
-								<li>
-									<b>
-										Correo electrónico:
-									</b>
-									registrounicoong@cba.gov.ar
-								</li>
-								<li>
-									<b>
-										Personalmente a la dirección:
-									</b>
-									Av. Vélez Sarfield 2311
-								</li>
-							</ul>
-							<p>
-								Por consultas referidas a requerimientos legales (inscripción o actualización de documentación legal) dirigirse al Registro de ONG y Entidades de Bien Público del Ministerio de Desarrollo Social:							</p>
-							<ul>
-								<li>
-									<b>Domicilio:</b> (Av. Vélez Sarsfield 2311
-								</li>
-								<li>
-									<b>Teléfono:</b> 0351-4688572/8525
-								</li>
-								<li>
-									<b>Horario de Atención:</b> De Lunes a Viernes de 8 a 20 hrs.
-								</li>
-							</ul>
-            </div>
-            <div class="modal-footer">
-							<button
+	<div class="modal form-documentation fade" id="myModal" role="dialog">
+	  <div class="modal-dialog modal-lg">
+	    <!-- Modal content-->
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h4 class="modal-title">
+						Requisitos de documentación legal para organizaciones sociales
+					</h4>
+	      </div>
+	      <div class="modal-body">
+	        <p>
+						Los requisitos de documentación no son los mismos para todas las organizaciones. Eso dependerá de la forma jurídica que asuman, a saber:
+					</p>
+					<ul>
+						<li>
+							<b>
+								Organizaciones sin Personería Jurídica:
+							</b>
+							asociación civil, fundación, centro vecinal, cooperativa, mutual, organización religiosa, centro de jubilados, etc.
+						</li>
+						<li>
+							<b>
+								Organizaciones con personería Jurídica:
+							</b>
+							Cooperadoras, Comedores, copas de leche, clubes de trueque, merenderos, que no poseen reconocimiento jurídico estatal).								</li>
+					</ul>
+					<p>
+						Para informarse respecto de si una organización se encuentra inscripta y ha actualizado documentación legal comunicarse al Registro vía:
+					</p>
+					<ul>
+						<li>
+							<b>
+								Teléfono:
+							</b>
+							(0351) 4688572
+						</li>
+						<li>
+							<b>
+								Correo electrónico:
+							</b>
+							registrounicoong@cba.gov.ar
+						</li>
+						<li>
+							<b>
+								Personalmente a la dirección:
+							</b>
+							Av. Vélez Sarfield 2311
+						</li>
+					</ul>
+					<p>
+						Por consultas referidas a requerimientos legales (inscripción o actualización de documentación legal) dirigirse al Registro de ONG y Entidades de Bien Público del Ministerio de Desarrollo Social:							</p>
+					<ul>
+						<li>
+							<b>Domicilio:</b> (Av. Vélez Sarsfield 2311
+						</li>
+						<li>
+							<b>Teléfono:</b> 0351-4688572/8525
+						</li>
+						<li>
+							<b>Horario de Atención:</b> De Lunes a Viernes de 8 a 20 hrs.
+						</li>
+					</ul>
+	      </div>
+	      <div class="modal-footer">
+					<button
 							type="button"
 							class="btn btn-primary"
 							onclick="window.open('assets/pdf/requisitos-documentacion-organizaciones-sociales.pdf', '_blank', 'fullscreen=yes'); return false;"
 							data-dismiss="modal">
-							Descargar
-						</button>
-							<button type="button" class="btn btn-primary" data-dismiss="modal">
-								Cerrar
-							</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
+						Descargar
+					</button>
+					<button type="button" class="btn btn-primary" data-dismiss="modal">
+						Cerrar
+					</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
 </div>
 
-<!-- Footer -->
-<!-- Footer -->
-<footer id="footer" class="wrapper alt form-footer">
-	<div class="inner">
-		<ul class="menu">
-			<li>© Copyright 2015 - Banco de Alimentos Córdoba</li>
-		</ul>
-		<ul class="icons">
-			<li><a href="https://twitter.com/BDACordoba" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-			<li><a href="https://www.facebook.com/bancodealimentoscordoba" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-			<li><a href="https://www.instagram.com/bancodealimentoscba/" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-			<li><a href="https://www.linkedin.com/in/fundaci%C3%B3n-banco-de-alimentos-c%C3%B3rdoba-a30848116?trk=hp-identity-name" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-		</ul>
-	</div>
-</footer>
+<custom-footer></custom-footer>

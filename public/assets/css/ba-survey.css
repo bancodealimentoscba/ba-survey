@@ -75,8 +75,8 @@ form .schedule {
   width: 90%;
 }
 
-footer.edit-footer.wrapper.alt,
-footer.form-footer.wrapper.alt {
+footer.wrapper.alt,
+footer.wrapper.alt {
   background-color: #4d2028;
 }
 
@@ -101,7 +101,6 @@ section.wrapper b {
   left: calc(50% - 10px);
   cursor: pointer;
 }
-
 
 input[type="submit"].special-secondary,
 input[type="reset"].special-secondary,
