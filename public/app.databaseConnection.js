@@ -15,19 +15,21 @@ baSurvey.factory('database', ['$firebaseObject', function($firebaseObject) {
 	};
 
 	return {
+		getOrganizationId: function(field) {
+			var preId = field.slice(0,3).toUpperCase();
+			var id = preId + ref.push().key;
+			return id;
+		},
 		connect: function() {
 			connection = $firebaseObject(ref);
 
 			return connection.$loaded();
 		},
-		writeItem: function(field, item) {
-			var preId = field.slice(0,3).toUpperCase();
-			var id = preId + ref.push().key;
-
+		writeItem: function(field, item, id) {
 			checkUndefined(item);
 			item.id = id;
 			connection[field][id] = item;
-			
+
 			var saveProcess = connection.$save();
 			return saveProcess;
 		},

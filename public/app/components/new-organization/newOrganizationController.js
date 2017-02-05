@@ -146,11 +146,22 @@ baSurvey.controller('newOrganizationController', [
 				}
 			};
 
+			$scope.goToLanding = function() {
+				$location.path('');
+			};
+
+			$scope.showOrgModal = false;
+
 			blockUI.start();
-			database.writeItem('organizaciones', newOrganization).finally(function(){
+			var id = database.getOrganizationId('organizaciones');
+			database.writeItem('organizaciones', newOrganization, id).finally(function(){
+				$scope.showOrgModal = true;
 				// Signs out the temporary guest account
 				$firebaseAuth().$signOut().then(function() {
-					$location.path('');
+					$scope.orgModal = {
+						id: id,
+						name: newOrganization.nombre
+					};
 				}).finally(function(){
 					blockUI.stop();
 				});

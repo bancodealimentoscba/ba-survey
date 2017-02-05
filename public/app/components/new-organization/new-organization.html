@@ -40,6 +40,29 @@
 			<p>
 				Si tenés una organización que brinda un servicio regular de alimentos y desean ser parte de la red de instituciones beneficiarias de la Fundación Banco de Alimentos Córdoba, por favor llená el siguiente formulario para ingresar a la lista de espera.
 			</p>
+			<p class="requeriments">
+				Recordá que nuestros requisitos son:
+			</p>
+			<ul>
+				<li>
+					Estar formalmente constituidos bajo la forma de Personería Jurídica o como Simple Asociación.
+				</li>
+				<li>
+					Ofrecer servicio alimenticio en forma gratuita, sin condicionamientos y regularmente a personas que la necesiten.
+				</li>
+				<li>
+					No realizar discriminación en la distribución del alimento recibido por raza, religión, credo, vecindad o partido político.
+				</li>
+				<li>
+					Mantener sus instalaciones en condiciones sanitarias adecuadas de acuerdo a los servicios que prestan.
+				</li>
+				<li>
+					Nuestro sistema contempla una donación por parte de las entidades receptoras por cada kilo entregado destinado a cubrir los gastos operativos de nuestra Fundación.
+				</li>
+				<li>
+					Aceptar las visitas de auditoría que realiza el Banco de Alimentos sin previo aviso.
+				</li>
+			</ul>
 		</div>
     <img class="mousescroll" src="assets/images/icon_mousescroll.png" alt="scroll" data-ng-click="scrollTo('one')">
 	</section>
@@ -384,12 +407,43 @@
 			<div class="inner">
 			  <ul class="actions">
 			    <li>
-						<input type="submit" required class="button special" id="submit" value="Enviar"/>
+						<input type="submit" required class="button special" id="submit" value="Enviar"  data-toggle="modal" data-target="#orgModal"/>
 					</li>
 			  </ul>
 			</div>
 		</section>
 	</form>
+</div>
+
+<custom-footer></custom-footer>
+
+<div class="container">
+	<!-- Modal Org Id-->
+	<div class="modal fade" id="orgModal" role="dialog" ng-show="showOrgModal">
+	  <div class="modal-dialog">
+	    <!-- Modal content-->
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h4 class="modal-title">
+	          ¡Felicitaciones!
+	        </h4>
+	      </div>
+	      <div class="modal-body">
+	        <p class="sub-title">
+	          Tu Organización "{{ orgModal.name }}" fue cargada exitosamente.
+	        </p>
+					<p class="sub-title">
+						Este es tu Número de Trámite: {{ orgModal.id }}
+	        </p>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-primary" data-ng-click="goToLanding()" >
+	          Aceptar
+	        </button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
 
 	<div class="modal form-documentation fade" id="myModal" role="dialog">
 	  <div class="modal-dialog modal-lg">
@@ -470,5 +524,3 @@
 	  </div>
 	</div>
 </div>
-
-<custom-footer></custom-footer>

@@ -90,8 +90,18 @@ section.wrapper {
 }
 
 #intro h1,
-#intro p {
+#intro p,
+#intro ul {
   color: #fff;
+}
+
+#intro p.requeriments {
+  margin-bottom: 1em;
+}
+
+#intro p.requeriments,
+#intro ul li {
+  font-size: 1.12em;
 }
 
 section.wrapper .inner,
