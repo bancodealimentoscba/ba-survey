@@ -76,7 +76,7 @@
           <section>
             <span class="icon major fa-building"></span>
             <h3>
-							Nombre de la Organización
+							Nombre de la Organización <i class="fa fa-info-circle fa-1x" title="Indicanos cuál es el nombre de tu Organización" data-toggle="tooltip" data-placement="top" tooltip></i>
 						</h3>
             <div>
               <input type="text" required class="form-control" data-ng-model="organization.name" id="inputPassword" placeholder="Nombre de la Organización">
@@ -85,7 +85,7 @@
           <section>
             <span class="icon major fa-location-arrow"></span>
             <h3>
-							Dirección
+							Dirección <i class="fa fa-info-circle fa-1x" title="Indicanos dónde está ubicada tu Organización" data-toggle="tooltip" data-placement="top" tooltip></i>
 						</h3>
             <h4>
 							Calle
@@ -115,7 +115,7 @@
           <section>
             <span class="icon major fa-legal"></span>
             <h3>
-							Tipo de Organización
+							Tipo de Organización <i class="fa fa-info-circle fa-1x" title="Seleccioná una de las opciones" data-toggle="tooltip" data-placement="top" tooltip></i>
 						</h3>
             <select value="option1" required class="form-control" data-ng-model="organization.type">
               <option value="" selected="true" disabled="disabled">
@@ -138,7 +138,7 @@
           <section>
             <span class="icon major fa-home"></span>
             <h3>
-							Contacto
+							Contacto <i class="fa fa-info-circle fa-1x" title="Indicanos algún la información de un contacto de referencia de tu Organización" data-toggle="tooltip" data-placement="top" tooltip></i>
 						</h3>
             <h4>
 							Nombre
@@ -237,7 +237,7 @@
 	  			<section>
 	  				<span class="icon major fa-briefcase"></span>
 	  				<h3>
-							Número de Personería Jurídica
+							Número de Personería Jurídica <i class="fa fa-info-circle fa-1x" title="Indicanos cuál es el número de Personería Jurídica de tu Organización" data-toggle="tooltip" data-placement="top" tooltip></i>
 						</h3>
 	  				<div>
 	  					<input type="text" ng-required="isLegalStatusRequired" class="form-control" id="inputPassword" data-ng-model="organization.legalStatus" placeholder="Número de Personería Jurídica">
@@ -246,7 +246,7 @@
 	  			<section>
 	  				<span class="icon major fa-coffee"></span>
 	  				<h3>
-							Beneficios que presta actualmente
+							Beneficios que presta actualmente <i class="fa fa-info-circle fa-1x" title="Indicanos que beneficios presta tu Organización en la actualidad. Seleccioná las opciones que correspondan" data-toggle="tooltip" data-placement="top" tooltip></i>
 						</h3>
 	  				<div class="6u 12u$(small)">
 	  					<input type="checkbox" id="desayuno" data-ng-model="organization.services.breakfast" name="demo-copy">
@@ -276,7 +276,7 @@
 	  			<section>
 	  				<span class="icon major fa-users"></span>
 	  				<h3>
-							Cantidad de Beneficiarios
+							Cantidad de Beneficiarios <i class="fa fa-info-circle fa-1x" title="Indicanos cuantos beneficiaros tiene tu Organización actualmente. Detallanos la cantidad de acuerdo a la edad" data-toggle="tooltip" data-placement="top" tooltip></i>
 						</h3>
 	  				<ul class="actions 12u 12u$(small)">
 	  					<li class="5u 12u$(small)">
@@ -330,7 +330,7 @@
 	  			<section>
 	  				<span class="icon major fa-calendar-o"></span>
 	  				<h3>
-							Periodicidad
+							Periodicidad <i class="fa fa-info-circle fa-1x" title="Indicanos con que periodicidad se brindan los beneficios en tu Organización" data-toggle="tooltip" data-placement="top" tooltip></i>
 						</h3>
 	  				<div class="12u 12u$(small)">
 	  					<input type="radio" data-ng-model="organization.periodicity" id="unaPorSemana" ng-required="isLegalStatusRequired" value="1" name="demo-copy">
@@ -354,7 +354,7 @@
 	  			<section>
 	  				<span class="icon major fa-clock-o"></span>
 	  				<h3>
-							Horario del Servicio
+							Horario del Servicio <i class="fa fa-info-circle fa-1x" title="Seleccioná los horarios correspondientes para los servicios de tu Organización e indicanos el horario desde/hasta del servicio" data-toggle="tooltip" data-placement="top" tooltip></i>
 						</h3>
 	  				<div class="6u 12u$(small)">
 	  					<input type="checkbox" data-ng-model="organization.schedule.morning.available" id="mañana" name="demo-copy">
