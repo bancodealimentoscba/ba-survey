@@ -11,7 +11,7 @@ baSurvey.config([
 	      }]
 	    }
 		}).
-		when('/agregar-organizacion', {
+		when('/como-recibir-ayuda', {
 			templateUrl: 'app/components/new-organization/new-organization.html',
 			controller: 'newOrganizationController'
 		}).
