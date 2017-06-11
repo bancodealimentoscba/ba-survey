@@ -7,6 +7,26 @@ baSurvey.controller('listOrganizationsCtrl', [
     'FieldService',
     function($location, $scope, $timeout, blockUI, database, FieldService) {
 
+      $scope.filter = {};
+      $scope.filter.name = '';
+
+      // Filter orgs by name
+      $scope.filterOrgs = function(items) {
+        var result = {};
+        var filterName = $scope.filter.name.toLowerCase();
+        if (filterName.length > 2) {
+          angular.forEach(items, function(value, key) {
+            var orgName = value.nombre.toLowerCase();
+            if (orgName.indexOf(filterName) !== -1) {
+              console.log("if")
+              result[key] = value;
+            }
+          });
+          return result;
+        }
+        return items;
+      };
+
         // Show modal with all data from the org
         $scope.showEditOrgModal = function(key) {
             $scope.orgModal = $scope.orgs[key];
