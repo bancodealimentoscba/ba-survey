@@ -35,7 +35,8 @@
         <input type="text" class="3u form-control" data-ng-model="filter.name" placeholder="Ingresá el nombre de la organización">
 
         <!-- Table -->
-        <section>
+        <div excel-export export-data="exportData" file-name="{{fileName}}"></div>
+        <section>          
           <div class="table-wrapper">
             <table class="alt">
               <thead>

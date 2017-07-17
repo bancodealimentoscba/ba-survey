@@ -12,7 +12,7 @@
   <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-modal.css"/>
   <link rel="stylesheet" href="https://bowercdn.net/c/angular-block-ui-0.2.2/dist/angular-block-ui.min.css"/>
   <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css"/><![endif]-->
-  <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css"/><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css"/><![endif]-->  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/jquery.scrollex.min.js"></script>
@@ -24,13 +24,16 @@
   <script src="assets/js/html5up.js"></script>
   <script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.10.4/jszip.js"></script>    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.10.4/xlsx.full.min.js"></script>  
+  <script src="https://fastcdn.org/FileSaver.js/1.1.20151003/FileSaver.min.js"></script>  
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js">​</script>​
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-route.min.js">​</script>​
   <script src="https://cdn.firebase.com/libs/angularfire/2.1.0/angularfire.min.js">​</script>​
   <script src="https://bowercdn.net/c/angular-block-ui-0.2.2/dist/angular-block-ui.min.js"></script>
   <script src="https://bowercdn.net/c/lodash-4.17.2/dist/lodash.min.js"></script>
   <script src="https://bowercdn.net/c/angular-simple-logger-0.1.7/dist/angular-simple-logger.min.js"></script>
-  <script src="https://bowercdn.net/c/angular-google-maps-2.4.0/dist/angular-google-maps.min.js"></script>
+  <script src="https://bowercdn.net/c/angular-google-maps-2.4.0/dist/angular-google-maps.min.js"></script>        
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7uHBBGZ8uFMT3X7YSHqE06yEcTXx2zg4" type="text/javascript"></script>
   <script src="app.js"></script>
   <script src="app.databaseConnection.js"></script>
@@ -41,6 +44,7 @@
   <script src="app/components/core/directives/logout.js"></script>
   <script src="app/components/core/directives/login.js"></script>
   <script src="app/components/core/directives/tooltip.js"></script>
+  <script src="app/components/core/directives/exportToExcel.js"></script>
   <script src="app/components/edit-organization/editOrganizationController.js"></script>
   <script src="app/components/new-organization/newOrganizationController.js"></script>
   <script src="app/components/list-organizations/listOrganizationsController.js"></script>

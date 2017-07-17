@@ -21,14 +21,25 @@ baSurvey.constant('TimeCode', {
   inactive: 'Inactiva'
 })
 .constant('TypeCode', {
-  civilAssociation: 1,
-  cooperative: 2,
-  foundation: 3,
-  other: 4
+  civilAssociation: '1',
+  cooperative: '2',
+  foundation: '3',
+  other: '4'
 })
 .constant('TypeText', {
   civilAssociation: 'Asociación civil',
   cooperative: 'Cooperativa',
   foundation: 'Fundación',
   other: 'Otro'
-});
+})
+.constant('PeriodicCode', {
+  unaPorSemana: '1',
+  tresPorSemana: '2',
+  diario: '3'  
+})
+.constant('PeriodicText', {
+  unaPorSemana: "Una vez por semana",
+  tresPorSemana: "Tres veces por semana",
+  diario: "Diario"  
+})
+;
