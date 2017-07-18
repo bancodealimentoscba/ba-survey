@@ -22,7 +22,6 @@ baSurvey.controller('listOrganizationsCtrl', [
           angular.forEach(items, function(value, key) {
             var orgName = value.nombre.toLowerCase();
             if (orgName.indexOf(filterName) !== -1) {
-              console.log("if")
               result[key] = value;
             }
           });
@@ -82,7 +81,7 @@ baSurvey.controller('listOrganizationsCtrl', [
 
         $scope.buildReport = function(orgs){
             // Prepare Excel data:
-            $scope.fileName = "report";	        
+            $scope.fileName = "report";
             $scope.exportData = [];
 
             $scope.buildReportHeader();
@@ -91,15 +90,15 @@ baSurvey.controller('listOrganizationsCtrl', [
         }
 
         $scope.buildReportHeader = function(){
-            // Headers:            
-            $scope.exportData.push(["Nombre", 
-                                    "Localidad", 
-                                    "Barrio", 
-                                    "Calle", 
-                                    "Numero", 
-                                    "Nombre Contacto", 
-                                    "Fijo", 
-                                    "Celular", 
+            // Headers:
+            $scope.exportData.push(["Nombre",
+                                    "Localidad",
+                                    "Barrio",
+                                    "Calle",
+                                    "Numero",
+                                    "Nombre Contacto",
+                                    "Fijo",
+                                    "Celular",
                                     "Correo",
                                     "Tipo Organizacion",
                                     "Almuerzo",
@@ -127,10 +126,10 @@ baSurvey.controller('listOrganizationsCtrl', [
                 var horariosTarde = $scope.getWorkTime(value.horario.tarde);
                 var horariosNoche = $scope.getWorkTime(value.horario.noche);
                 $scope.exportData.push([value.nombre,
-                                        value.ubicacion.localidad, 
-                                        value.ubicacion.barrio, 
-                                        value.ubicacion.calle, 
-                                        value.ubicacion.numero, 
+                                        value.ubicacion.localidad,
+                                        value.ubicacion.barrio,
+                                        value.ubicacion.calle,
+                                        value.ubicacion.numero,
                                         value.contacto.nombre,
                                         value.contacto.telefonos.fijo.caracteristica + ' ' + value.contacto.telefonos.fijo.numero,
                                         value.contacto.telefonos.celular.caracteristica + ' ' + value.contacto.telefonos.celular.numero,

@@ -26,17 +26,36 @@
         <h1 class="major">
           Lista de Organizaciones
         </h1>
-        <h1>
-          Filtros
-        </h1>
-        <h5>
-          Nombre de la organización
-        </h5>
-        <input type="text" class="3u form-control" data-ng-model="filter.name" placeholder="Ingresá el nombre de la organización">
+        <div class="tools" ng-init="showTools=false">
+          <div class="tools-title">
+            <h2>
+              Herramientas
+            </h2>
+            <div class="tools-show">
+              <i class="fa fa-chevron-circle-right fa-2x" ng-show="showTools" ng-click="showTools=!showTools"></i>
+            </div>
+            <div class="tools-hide">
+              <i class="fa fa-chevron-circle-down fa-2x" ng-hide="showTools" ng-click="showTools=!showTools"></i>
+            </div>
+          </div>
+          <div class="tool" ng-show="showTools">
+            <h3>
+              Filtros
+            </h3>
+            <h5>
+              Nombre de la organización
+            </h5>
+            <input type="text" class="3u form-control" data-ng-model="filter.name" placeholder="Ingresá el nombre de la organización">
+          </div>
+          <div class="tool" ng-show="showTools">
+            <h3>
+              Descargas
+            </h3>
+            <div excel-export export-data="exportData" file-name="{{fileName}}"></div>
+          </div>
+        </div>
 
-        <!-- Table -->
-        <div excel-export export-data="exportData" file-name="{{fileName}}"></div>
-        <section>          
+        <section>
           <div class="table-wrapper">
             <table class="alt">
               <thead>

@@ -145,3 +145,29 @@ input[type="checkbox"], input[type="radio"] {
     margin-right: 0;
     z-index: 1;
 }
+
+
+.tools {
+    padding: 20px;
+    background-color: #FFFFFF;
+}
+
+.tools .tools-title h2 {
+    margin: 0;
+}
+
+.tools .tools-show,
+.tools .tools-hide {
+  position: relative;
+  float: right;
+  top: -36px;
+  right: 10px;
+}
+
+.tools .tool {
+    padding: 20px;
+}
+
+.table-wrapper {
+  width: 100%;
+}
