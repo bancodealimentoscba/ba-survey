@@ -103,5 +103,11 @@ baSurvey.controller('editOrganizationCtrl', [
       }
       blockUI.stop();
     };
+
+    $scope.scrollTo = function(target) {
+			$('html, body').animate({
+				scrollTop: $('#' + target).offset().top
+			}, 1000);
+		};
   }
 ]);
