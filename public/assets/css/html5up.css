@@ -2621,7 +2621,6 @@
 			position: absolute;
 			pointer-events: none;
 			opacity: 0.38;
-			background: rgba(62, 162, 253, 0.5);
 		}
 
 		.image.left, .image.right {
@@ -3252,7 +3251,7 @@
 	}
 
 		.wrapper > .inner {
-			padding: 5em 5em 5em 5em ;
+			padding: 7em 5em 5em 5em ;
 			max-width: 100%;
 			width: 75em;
 		}
@@ -3260,7 +3259,7 @@
 			@media screen and (max-width: 1680px) {
 
 				.wrapper > .inner {
-					padding: 4em 4em 2em 4em ;
+					padding: 7em 4em 2em 4em ;
 				}
 
 			}
@@ -3276,7 +3275,7 @@
 			@media screen and (max-width: 736px) {
 
 				.wrapper > .inner {
-					padding: 3em 2em 1em 2em ;
+					padding: 7em 2em 1em 2em ;
 				}
 
 			}
@@ -3408,9 +3407,9 @@
 
 
 
-	
 
-			
+
+
 					#header {
 						border: 0;
 						color: rgba(255, 255, 255, 0.35);
@@ -3422,12 +3421,12 @@
 						width: 100%;
 					}
 
-						
 
-		
+
+
 /* Wrapper (main) */
 
-	
+
 
 		@media screen and (max-width: 1280px) {
 
@@ -3452,8 +3451,8 @@
 
 /* Footer */
 #footer > ul.navbar-right {
-	margin-right: 20px;				
-}	
+	margin-right: 20px;
+}
 
 	#header + #wrapper {
 		margin: 0 auto;
@@ -3476,7 +3475,7 @@
 		width: 18em;
 		z-index: 1000;
 	}
-	
+
 		#sidebar > .inner {
 			display: -moz-flex;
 			display: -webkit-flex;
@@ -3814,8 +3813,8 @@
 		background-image: url("images/intro.svg");
 		background-position: top right;
 		background-repeat: no-repeat;
-		background-size: 100% 100%;	
-		background-color: gray;	
+		background-size: 100% 100%;
+		background-color: gray;
 	}
 
 		#intro p {
@@ -3849,7 +3848,7 @@
 			text-align: center;
 			position: relative;
 		  }
-		  
+
 		  .iconbox-icon > .image {
 			position: relative;
 			z-index: 2;
@@ -3859,40 +3858,40 @@
 			border: 12px solid white;
 			line-height: 65px;
 			border-radius: 50%;
-			background: #ff0000;
+			background: #e4022f;
 			vertical-align: middle;
-		  }				  
-		  
+		  }
+
 		  .iconbox-icon > .image > i {
 			font-size: 30px !important;
 			color: #fff !important;
 			line-height: 1;
 			display: inline-block;
 		  }
-		  
+
 		  .iconbox-icon:hover > .image > i {
 			color: white !important;
 		  }
-		  
+
 		  .iconbox-icon > .info {
 			margin-top: -24px;
 			background: rgba(0, 0, 0, 0.04);
 			border: 1px solid #e0e0e0;
 			padding: 15px 0 10px 0;
 		  }
-		  
+
 		  .iconbox-icon:hover > .info {
 			background: rgba(0, 0, 0, 0.04);
 			border-color: #e0e0e0;
 			color: white;
 		  }
-		  
-		  .iconbox-icon > .info > h3.title {			
+
+		  .iconbox-icon > .info > h3.title {
 			font-size: 26px;
 			color: #e4022f;
 			font-weight: 500;
 		  }
-		  
+
 		  .iconbox-icon > .info > p {
 			font-family: "Roboto", sans-serif !important;
 			font-size: 16px;
@@ -3900,13 +3899,13 @@
 			line-height: 1.5em;
 			margin: 20px;
 		  }
-		  
+
 		  .iconbox-icon:hover > .info > h3.title,
 		  .iconbox-icon:hover > .info > p,
 		  .iconbox-icon:hover > .info > .more > a {
 			color: #222;
 		  }
-		  
+
 		  .iconbox-icon > .info > .more a {
 			font-family: "Roboto", sans-serif !important;
 			font-size: 12px;
@@ -3915,12 +3914,12 @@
 			text-transform: uppercase;
 			text-decoration: none;
 		  }
-		  
+
 		  .iconbox-icon:hover > .info > .more > a {
-			color: #fff;			
+			color: #fff;
 			background-color: #ff0000;
 		  }
-		  
+
 		  .iconbox .space {
 			height: 30px;
-		  }				  
+		  }

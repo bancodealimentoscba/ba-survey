@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Droid+Sans');
+
 .image.fit.landing  img {
   overflow: hidden;
   height: 550px;
@@ -179,10 +181,50 @@ input[type="checkbox"], input[type="radio"] {
 
 
 .navbar-default {
-  background-image: linear-gradient(#e4022f 0px, #e4022f 100%);  
+  background-image: linear-gradient(#e4022f 0px, #e4022f 100%);
 }
 
 .navbar-default .navbar-nav>li>a {
   color: white;
+  border: 0;
 }
 
+.navbar-header .title {
+  color: white;
+  border: 0;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+  color: white;
+}
+
+.navbar-toggle {
+  right: 20px;
+  top: 20px;
+  padding: 8px 10px;
+  border: 0!important;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: white;
+}
+
+.navbar-default .navbar-toggle:hover {
+  background-color: transparent;
+}
+
+.navbar-header .title img {
+  margin-left: 40px;
+}
+
+#header {
+  font-family: 'Droid Sans', sans-serif;;
+}
+
+#header ul.navbar-right {
+  margin-top: 20px;
+}
+
+#header ul.navbar-right .logout {
+  margin-top: 10px;
+}

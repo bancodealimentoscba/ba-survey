@@ -192,25 +192,25 @@
 							Beneficios que presta actualmente
 						</h3>
 						<div class="6u 12u$(small)">
-							<input type="checkbox" id="desayuno" data-ng-model="organizacion.beneficios.desayuno" name="demo-copy">
+							<input ng-hide="true" type="checkbox" id="desayuno" data-ng-model="organizacion.beneficios.desayuno" name="demo-copy">
 							<label for="desayuno">
 								Desayuno
 							</label>
 						</div>
 						<div class="6u 12u$(small)">
-							<input type="checkbox" id="almuerzo" data-ng-model="organizacion.beneficios.almuerzo" name="demo-copy">
+							<input ng-hide="true" type="checkbox" id="almuerzo" data-ng-model="organizacion.beneficios.almuerzo" name="demo-copy">
 							<label for="almuerzo">
 								Almuerzo
 							</label>
 						</div>
 						<div class="6u 12u$(small)">
-							<input type="checkbox" id="merienda" data-ng-model="organizacion.beneficios.merienda" name="demo-copy">
+							<input ng-hide="true" type="checkbox" id="merienda" data-ng-model="organizacion.beneficios.merienda" name="demo-copy">
 							<label for="merienda">
 								Merienda
 							</label>
 						</div>
 						<div class="6u 12u$(small)">
-							<input type="checkbox" id="cena" data-ng-model="organizacion.beneficios.cena" name="demo-copy">
+							<input ng-hide="true" type="checkbox" id="cena" data-ng-model="organizacion.beneficios.cena" name="demo-copy">
 							<label for="cena">
 								Cena
 							</label>
@@ -276,19 +276,19 @@
 							Periodicidad
 						</h3>
 						<div class="12u 12u$(small)">
-							<input type="radio" required data-ng-model="organizacion.periodicidad" id="unaPorSemana" value="1" name="demo-copy">
+							<input ng-hide="true" type="radio" required data-ng-model="organizacion.periodicidad" id="unaPorSemana" value="1" name="demo-copy">
 							<label for="unaPorSemana">
 								Una vez por semana
 							</label>
 						</div>
 						<div class="12u 12u$(small)">
-							<input type="radio" data-ng-model="organizacion.periodicidad" id="tresPorSemana" value="2" name="demo-copy">
+							<input ng-hide="true" type="radio" data-ng-model="organizacion.periodicidad" id="tresPorSemana" value="2" name="demo-copy">
 							<label for="tresPorSemana">
 								Tres veces por semana
 							</label>
 						</div>
 						<div class="12u 12u$(small)">
-							<input type="radio" data-ng-model="organizacion.periodicidad" id="diario" value="3" name="demo-copy">
+							<input ng-hide="true" type="radio" data-ng-model="organizacion.periodicidad" id="diario" value="3" name="demo-copy">
 							<label for="diario">
 								Diario
 							</label>
@@ -300,51 +300,51 @@
 							Horario del Servicio
 						</h3>
 						<div class="6u 12u$(small)">
-							<input type="checkbox" data-ng-model="organizacion.horario.manana.disponible" id="mañana" name="demo-copy">
+							<input ng-hide="true" type="checkbox" data-ng-model="organizacion.horario.manana.disponible" id="mañana" name="demo-copy">
 							<label for="mañana">
 								Mañana
 							</label>
 							<label class="schedule" ng-show="organizacion.horario.manana.disponible">
 								Desde
 							</label>
-							<input class="schedule" type="number" data-ng-model="organizacion.horario.manana.desde" ng-show="organizacion.horario.manana.disponible"
+							<input ng-hide="true" class="schedule" type="number" data-ng-model="organizacion.horario.manana.desde" ng-show="organizacion.horario.manana.disponible"
 							 name="demo-copy" placeholder="8:00">
 							<label class="schedule" ng-show="organizacion.horario.manana.disponible">
 								Hasta
 							</label>
-							<input class="schedule to" type="number" data-ng-model="organizacion.horario.manana.hasta" ng-show="organizacion.horario.manana.disponible"
+							<input ng-hide="true" class="schedule to" type="number" data-ng-model="organizacion.horario.manana.hasta" ng-show="organizacion.horario.manana.disponible"
 							 name="demo-copy" placeholder="12:00">
 						</div>
 						<div class="6u 12u$(small)">
-							<input type="checkbox" data-ng-model="organizacion.horario.tarde.disponible" id="tarde" name="demo-copy">
+							<input ng-hide="true" type="checkbox" data-ng-model="organizacion.horario.tarde.disponible" id="tarde" name="demo-copy">
 							<label for="tarde">
 								Tarde
 							</label>
 							<label class="schedule" ng-show="organizacion.horario.tarde.disponible">
 								Desde
 							</label>
-							<input class="schedule" type="number" data-ng-model="organizacion.horario.tarde.desde" ng-show="organizacion.horario.tarde.disponible"
+							<input ng-hide="true" class="schedule" type="number" data-ng-model="organizacion.horario.tarde.desde" ng-show="organizacion.horario.tarde.disponible"
 							 name="demo-copy" placeholder="14:00">
 							<label class="schedule" ng-show="organizacion.horario.tarde.disponible">
 								Hasta
 							</label>
-							<input class="schedule to" type="number" data-ng-model="organizacion.horario.tarde.hasta" ng-show="organizacion.horario.tarde.disponible"
+							<input ng-hide="true" class="schedule to" type="number" data-ng-model="organizacion.horario.tarde.hasta" ng-show="organizacion.horario.tarde.disponible"
 							 name="demo-copy" placeholder="19:00">
 						</div>
 						<div class="6u 12u$(small)">
-							<input type="checkbox" data-ng-model="organizacion.horario.noche.disponible" id="Noche" name="demo-copy">
+							<input ng-hide="true" type="checkbox" data-ng-model="organizacion.horario.noche.disponible" id="Noche" name="demo-copy">
 							<label for="Noche">
 								Noche
 							</label>
 							<label class="schedule" ng-show="organizacion.horario.noche.disponible">
 								Desde
 							</label>
-							<input class="schedule" type="number" data-ng-model="organizacion.horario.noche.desde" ng-show="organizacion.horario.noche.disponible"
+							<input ng-hide="true" class="schedule" type="number" data-ng-model="organizacion.horario.noche.desde" ng-show="organizacion.horario.noche.disponible"
 							 name="demo-copy" placeholder="20:00">
 							<label class="schedule" ng-show="organizacion.horario.noche.disponible">
 								Hasta
 							</label>
-							<input class="schedule to" type="number" data-ng-model="organizacion.horario.noche.hasta" ng-show="organizacion.horario.noche.disponible"
+							<input ng-hide="true" class="schedule to" type="number" data-ng-model="organizacion.horario.noche.hasta" ng-show="organizacion.horario.noche.disponible"
 							 name="demo-copy" placeholder="23:00">
 						</div>
 					</section>
