@@ -1,281 +1,256 @@
-<!-- Sidebar -->
-<section id="sidebar">
-	<div class="inner">
-		<nav>
-			<ul>
-				<li>
-					<a href="" data-ng-click="scrollTo('intro')">
-						Personería Jurídica
-					</a>
-				</li>
-				<li>
-					<a href="" data-ng-click="scrollTo('one')">
-						Información de la Organización
-					</a>
-				</li>
-        <li>
-					<a href="" data-ng-click="scrollTo('two')" data-ng-show="legalStatus == 'NO'">
-						Pasos previos
-					</a>
-				</li>
-        <li>
-					<a href="" data-ng-click="scrollTo('three')" data-ng-show="legalStatus == 'YES'">
-						Detalle
-					</a>
-				</li>
-      </ul>
-    </nav>
-  </div>
-</section>
-
+<custom-header header-Menu="editorganization"></custom-header>
 
 <!-- Wrapper -->
 <div id="wrapper">
-  <form class="organization-form" name="organizationForm" data-ng-submit="save()">
-    <!-- One -->
-    <section id="one" class="wrapper style3 fade-up">
-      <div class="inner">
-          <h2>
-						Información de la Organización {{organizacion.nombre}}
-					</h2>
-          <p>
-            Editá los datos que sean necesarios.
-          </p>
-          <div class="features">
-            <section>
-              <span class="icon major fa-building"></span>
-              <h3>
-								Nombre de la Organización
-							</h3>
-              <div>
-                <input type="text" required class="form-control" data-ng-model="organizacion.nombre" id="inputPassword" placeholder="Nombre de la Organización">
-              </div>
-              <h3>
-								Estado
-							</h3>
-              <select value="option1" required checked class="form-control" data-ng-model="organizacion.estado">
-                <option value="" ng-selected="organizacion.estado < 1 || organizacion.estado > 5" disabled="disabled">
-									Seleccioná una opción
-								</option>
-                <option value="1" ng-selected="organizacion.estado == 1">
-									Pendiente Inscripta
-								</option>
-                <option value="2" ng-selected="organizacion.estado == 2">
-									Pendiente No Inscripta
-								</option>
-                <option value="3" ng-selected="organizacion.estado == 3">
-									Aprobada
-								</option>
-                <option value="4" ng-selected="organizacion.estado == 4">
-									Inactiva
-								</option>
-              </select>
-            </section>
-            <section>
-              <span class="icon major fa-location-arrow"></span>
-              <h3>
-								Dirección
-							</h3>
-              <h4>
-								Calle
-							</h4>
-              <div>
-                <input type="text" required class="form-control" data-ng-model="organizacion.ubicacion.calle" id="calle" placeholder="Calle">
-              </div>
-              <h4>
-								Número
-							</h4>
-              <div>
-                <input type="text" required class="form-control" data-ng-model="organizacion.ubicacion.numero" id="numero" placeholder="Numero">
-              </div>
-              <h4>
-								Barrio
-							</h4>
-              <div>
-                <input type="text" class="form-control" data-ng-model="organizacion.ubicacion.barrio" id="barrio" placeholder="Barrio">
-              </div>
-              <h4>
-								Localidad
-							</h4>
-              <div>
-                <input type="text" required class="form-control" data-ng-model="organizacion.ubicacion.localidad" id="localidad" placeholder="Localidad">
-              </div>
-              <h3>
-								Ubicación
-							</h3>
-              <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options">
-                <ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id"></ui-gmap-marker>
-              </ui-gmap-google-map>
-            </section>
-            <section>
-              <span class="icon major fa-legal"></span>
-              <h3>
-								Tipo de Organización
-							</h3>
-              <select value="option1" required checked class="form-control" data-ng-model="organizacion.tipo">
-                <option value="" ng-selected="organizacion.tipo < 1 || organizacion.tipo > 4" disabled="disabled">
-									Seleccioná una opción
-								</option>
-                <option value="1" ng-selected="organizacion.tipo == 1">
-									Asociación Civil
-								</option>
-                <option value="2" ng-selected="organizacion.tipo == 2">
-									Cooperativa
-								</option>
-                <option value="3" ng-selected="organizacion.tipo == 3">
-									Fundación
-								</option>
-                <option value="4" ng-selected="organizacion.tipo == 4">
-									Otro
-								</option>
-              </select>
-            </section>
-            <section>
-              <span class="icon major fa-home"></span>
-              <h3>
-								Contacto
-							</h3>
-              <h4>
-								Nombre
-							</h4>
-              <div>
-                <input type="text" required class="form-control" data-ng-model="organizacion.contacto.nombre" id="nombre" placeholder="Nombre">
-              </div>
-              <h4>
-								Teléfonos
-							</h4>
-              <ul class="actions">
-                <h5>
-									Fijo
-								</h5>
-                <li class="5u 12u$(small)">
-                  <input type="text" class="3u form-control" data-ng-model="organizacion.contacto.telefonos.fijo.caracteristica" id="caracteristica" placeholder="Caracteristica">
-                </li>
-                <li class="6u 12u$(small)">
-                  <input type="text" class="9u form-control" data-ng-model="organizacion.contacto.telefonos.fijo.numero" id="telefono" placeholder="Numero">
-                </li>
-                <h5>
-									Celular
-								</h5>
-                <li class="5u 12u$(small)">
-                  <input type="text" required class="3u form-control" data-ng-model="organizacion.contacto.telefonos.celular.caracteristica" id="caracteristica" placeholder="Caracteristica">
-                </li>
-                <li class="6u 12u$(small)">
-                  <input type="text" required class="9u form-control" data-ng-model="organizacion.contacto.telefonos.celular.numero" id="telefono" placeholder="Numero">
-                </li>
-              </ul>
-              <h4>
-								Email
-							</h4>
-              <div>
-                <input type="email" required class="form-control" data-ng-model="organizacion.contacto.email" id="email" placeholder="Email">
-              </div>
-            </section>
-          </div>
-          <div class="col-md-12 form-group" data-ng-hide="organizacion.personaria_juridica.numero">
-            <ul class="actions">
-              <li>
-								Actualmente {{organizacion.nombre}} no posee Personería Jurídica. Querés Agregarla?
+	<form class="organization-form" name="organizationForm" data-ng-submit="save()">
+		<!-- One -->
+		<section id="one" class="wrapper style3 fade-up">
+			<div class="inner">
+				<h2>
+					Información de la Organización {{organizacion.nombre}}
+				</h2>
+				<p>
+					Editá los datos que sean necesarios.
+				</p>
+				<div class="features">
+					<section>
+						<span class="icon major fa-building"></span>
+						<h3>
+							Nombre de la Organización
+						</h3>
+						<div>
+							<input type="text" required class="form-control" data-ng-model="organizacion.nombre" id="inputPassword" placeholder="Nombre de la Organización">
+						</div>
+						<h3>
+							Estado
+						</h3>
+						<select value="option1" required checked class="form-control" data-ng-model="organizacion.estado">
+							<option value="" ng-selected="organizacion.estado < 1 || organizacion.estado > 5" disabled="disabled">
+								Seleccioná una opción
+							</option>
+							<option value="1" ng-selected="organizacion.estado == 1">
+								Pendiente Inscripta
+							</option>
+							<option value="2" ng-selected="organizacion.estado == 2">
+								Pendiente No Inscripta
+							</option>
+							<option value="3" ng-selected="organizacion.estado == 3">
+								Aprobada
+							</option>
+							<option value="4" ng-selected="organizacion.estado == 4">
+								Inactiva
+							</option>
+						</select>
+					</section>
+					<section>
+						<span class="icon major fa-location-arrow"></span>
+						<h3>
+							Dirección
+						</h3>
+						<h4>
+							Calle
+						</h4>
+						<div>
+							<input type="text" required class="form-control" data-ng-model="organizacion.ubicacion.calle" id="calle" placeholder="Calle">
+						</div>
+						<h4>
+							Número
+						</h4>
+						<div>
+							<input type="text" required class="form-control" data-ng-model="organizacion.ubicacion.numero" id="numero" placeholder="Numero">
+						</div>
+						<h4>
+							Barrio
+						</h4>
+						<div>
+							<input type="text" class="form-control" data-ng-model="organizacion.ubicacion.barrio" id="barrio" placeholder="Barrio">
+						</div>
+						<h4>
+							Localidad
+						</h4>
+						<div>
+							<input type="text" required class="form-control" data-ng-model="organizacion.ubicacion.localidad" id="localidad" placeholder="Localidad">
+						</div>
+						<h3>
+							Ubicación
+						</h3>
+						<ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options">
+							<ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id"></ui-gmap-marker>
+						</ui-gmap-google-map>
+					</section>
+					<section>
+						<span class="icon major fa-legal"></span>
+						<h3>
+							Tipo de Organización
+						</h3>
+						<select value="option1" required checked class="form-control" data-ng-model="organizacion.tipo">
+							<option value="" ng-selected="organizacion.tipo < 1 || organizacion.tipo > 4" disabled="disabled">
+								Seleccioná una opción
+							</option>
+							<option value="1" ng-selected="organizacion.tipo == 1">
+								Asociación Civil
+							</option>
+							<option value="2" ng-selected="organizacion.tipo == 2">
+								Cooperativa
+							</option>
+							<option value="3" ng-selected="organizacion.tipo == 3">
+								Fundación
+							</option>
+							<option value="4" ng-selected="organizacion.tipo == 4">
+								Otro
+							</option>
+						</select>
+					</section>
+					<section>
+						<span class="icon major fa-home"></span>
+						<h3>
+							Contacto
+						</h3>
+						<h4>
+							Nombre
+						</h4>
+						<div>
+							<input type="text" required class="form-control" data-ng-model="organizacion.contacto.nombre" id="nombre" placeholder="Nombre">
+						</div>
+						<h4>
+							Teléfonos
+						</h4>
+						<ul class="actions">
+							<h5>
+								Fijo
+							</h5>
+							<li class="5u 12u$(small)">
+								<input type="text" class="3u form-control" data-ng-model="organizacion.contacto.telefonos.fijo.caracteristica" id="caracteristica"
+								 placeholder="Caracteristica">
 							</li>
-              <li>
-                <select value="option1" checked class="form-control" data-ng-model="updateLegalStatus">
-                  <option value="" selected="true" disabled="disabled">
-										Seleccioná una opción
-									</option>
-                  <option value="true">
-										Si
-									</option>
-                  <option value="false">
-										No
-									</option>
-                </select>
-              </li>
-            </ul>
-          </div>
-      </div>
-    </section>
+							<li class="6u 12u$(small)">
+								<input type="text" class="9u form-control" data-ng-model="organizacion.contacto.telefonos.fijo.numero" id="telefono" placeholder="Numero">
+							</li>
+							<h5>
+								Celular
+							</h5>
+							<li class="5u 12u$(small)">
+								<input type="text" required class="3u form-control" data-ng-model="organizacion.contacto.telefonos.celular.caracteristica"
+								 id="caracteristica" placeholder="Caracteristica">
+							</li>
+							<li class="6u 12u$(small)">
+								<input type="text" required class="9u form-control" data-ng-model="organizacion.contacto.telefonos.celular.numero" id="telefono"
+								 placeholder="Numero">
+							</li>
+						</ul>
+						<h4>
+							Email
+						</h4>
+						<div>
+							<input type="email" required class="form-control" data-ng-model="organizacion.contacto.email" id="email" placeholder="Email">
+						</div>
+					</section>
+				</div>
+				<div class="col-md-12 form-group" data-ng-hide="organizacion.personaria_juridica.numero">
+					<ul class="actions">
+						<li>
+							Actualmente {{organizacion.nombre}} no posee Personería Jurídica. Querés Agregarla?
+						</li>
+						<li>
+							<select value="option1" checked class="form-control" data-ng-model="updateLegalStatus">
+								<option value="" selected="true" disabled="disabled">
+									Seleccioná una opción
+								</option>
+								<option value="true">
+									Si
+								</option>
+								<option value="false">
+									No
+								</option>
+							</select>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
 
-    <!-- Three -->
+		<!-- Three -->
 		<section id="three" class="wrapper style1 fade-up" data-ng-show="organizacion.personaria_juridica.numero || updateLegalStatus === 'true'">
 			<div class="inner">
-        <h2>
+				<h2>
 					Detalle de Personería Jurídica
 				</h2>
-        <div class="features">
-        	<section>
-          	<span class="icon major fa-briefcase"></span>
-            <h3>
+				<div class="features">
+					<section>
+						<span class="icon major fa-briefcase"></span>
+						<h3>
 							Número de Personería Jurídica
 						</h3>
-            <div>
-            	<input type="text" required class="form-control" id="inputPassword" data-ng-model="organizacion.personaria_juridica.numero" placeholder="Número de Personaría Jurídica">
-            </div>
-          </section>
-          <section>
-            <span class="icon major fa-coffee"></span>
-            <h3>
+						<div>
+							<input type="text" required class="form-control" id="inputPassword" data-ng-model="organizacion.personaria_juridica.numero"
+							 placeholder="Número de Personaría Jurídica">
+						</div>
+					</section>
+					<section>
+						<span class="icon major fa-coffee"></span>
+						<h3>
 							Beneficios que presta actualmente
 						</h3>
-        	  <div class="6u 12u$(small)">
-							<input type="checkbox" id="desayuno" data-ng-model="organizacion.beneficios.desayuno" name="demo-copy">
+						<div class="6u 12u$(small)">
+							<input ng-hide="true" type="checkbox" id="desayuno" data-ng-model="organizacion.beneficios.desayuno" name="demo-copy">
 							<label for="desayuno">
-							 Desayuno
+								Desayuno
 							</label>
 						</div>
-            <div class="6u 12u$(small)">
-							<input type="checkbox" id="almuerzo" data-ng-model="organizacion.beneficios.almuerzo" name="demo-copy">
+						<div class="6u 12u$(small)">
+							<input ng-hide="true" type="checkbox" id="almuerzo" data-ng-model="organizacion.beneficios.almuerzo" name="demo-copy">
 							<label for="almuerzo">
 								Almuerzo
 							</label>
 						</div>
 						<div class="6u 12u$(small)">
-							<input type="checkbox" id="merienda" data-ng-model="organizacion.beneficios.merienda" name="demo-copy">
+							<input ng-hide="true" type="checkbox" id="merienda" data-ng-model="organizacion.beneficios.merienda" name="demo-copy">
 							<label for="merienda">
 								Merienda
 							</label>
 						</div>
 						<div class="6u 12u$(small)">
-							<input type="checkbox" id="cena" data-ng-model="organizacion.beneficios.cena" name="demo-copy">
+							<input ng-hide="true" type="checkbox" id="cena" data-ng-model="organizacion.beneficios.cena" name="demo-copy">
 							<label for="cena">
 								Cena
 							</label>
 						</div>
-          </section>
-          <section>
+					</section>
+					<section>
 						<span class="icon major fa-users"></span>
 						<h3>
 							Cantidad de Beneficiarios
 						</h3>
 						<ul class="actions 12u 12u$(small)">
 							<li class="5u 12u$(small)">
-							 0-2 Años
+								0-2 Años
 							</li>
 							<li class="6u 12u$(small)">
-							 <input type="number" data-ng-model="organizacion.beneficiarios._0_2" required class="form-control" placeholder="Cant.">
+								<input type="number" data-ng-model="organizacion.beneficiarios._0_2" required class="form-control" placeholder="Cant.">
 							</li>
 						</ul>
 						<ul class="actions 12u 12u$(small)">
 							<li class="5u 12u$(small)">
-							 3-5 Años
+								3-5 Años
 							</li>
 							<li class="6u 12u$(small)">
-							 <input type="number" data-ng-model="organizacion.beneficiarios._3_5" required class="form-control" placeholder="Cant.">
+								<input type="number" data-ng-model="organizacion.beneficiarios._3_5" required class="form-control" placeholder="Cant.">
 							</li>
 						</ul>
 						<ul class="actions 12u 12u$(small)">
 							<li class="5u 12u$(small)">
-							 6-12 Años
+								6-12 Años
 							</li>
 							<li class="6u 12u$(small)">
-							 <input type="number" data-ng-model="organizacion.beneficiarios._6_12" required class="form-control" placeholder="Cant.">
+								<input type="number" data-ng-model="organizacion.beneficiarios._6_12" required class="form-control" placeholder="Cant.">
 							</li>
 						</ul>
 						<ul class="actions 12u 12u$(small)">
 							<li class="5u 12u$(small)">
-							Adolescentes
+								Adolescentes
 							</li>
 							<li class="6u 12u$(small)">
-							<input type="number" data-ng-model="organizacion.beneficiarios.adolescentes" required class="form-control" placeholder="Cant.">
+								<input type="number" data-ng-model="organizacion.beneficiarios.adolescentes" required class="form-control" placeholder="Cant.">
 							</li>
 						</ul>
 						<ul class="actions 12u 12u$(small)">
@@ -283,7 +258,7 @@
 								Adultos
 							</li>
 							<li class="6u 12u$(small)">
-							  <input type="number" data-ng-model="organizacion.beneficiarios.adultos" required class="form-control" placeholder="Cant.">
+								<input type="number" data-ng-model="organizacion.beneficiarios.adultos" required class="form-control" placeholder="Cant.">
 							</li>
 						</ul>
 						<ul class="actions 12u 12u$(small)">
@@ -291,94 +266,100 @@
 								Ancianos
 							</li>
 							<li class="6u 12u$(small)">
-							  <input type="number" data-ng-model="organizacion.beneficiarios.ancianos" required class="form-control" placeholder="Cant.">
+								<input type="number" data-ng-model="organizacion.beneficiarios.ancianos" required class="form-control" placeholder="Cant.">
 							</li>
 						</ul>
-          </section>
-          <section>
-            <span class="icon major fa-calendar-o"></span>
-            <h3>
+					</section>
+					<section>
+						<span class="icon major fa-calendar-o"></span>
+						<h3>
 							Periodicidad
 						</h3>
-            <div class="12u 12u$(small)">
-              <input type="radio" required data-ng-model="organizacion.periodicidad" id="unaPorSemana" value="1" name="demo-copy">
-              <label for="unaPorSemana">
+						<div class="12u 12u$(small)">
+							<input ng-hide="true" type="radio" required data-ng-model="organizacion.periodicidad" id="unaPorSemana" value="1" name="demo-copy">
+							<label for="unaPorSemana">
 								Una vez por semana
 							</label>
-            </div>
-            <div class="12u 12u$(small)">
-              <input type="radio" data-ng-model="organizacion.periodicidad" id="tresPorSemana" value="2" name="demo-copy">
-              <label for="tresPorSemana">
+						</div>
+						<div class="12u 12u$(small)">
+							<input ng-hide="true" type="radio" data-ng-model="organizacion.periodicidad" id="tresPorSemana" value="2" name="demo-copy">
+							<label for="tresPorSemana">
 								Tres veces por semana
 							</label>
-            </div>
-            <div class="12u 12u$(small)">
-              <input type="radio" data-ng-model="organizacion.periodicidad" id="diario" value="3" name="demo-copy">
-              <label for="diario">
+						</div>
+						<div class="12u 12u$(small)">
+							<input ng-hide="true" type="radio" data-ng-model="organizacion.periodicidad" id="diario" value="3" name="demo-copy">
+							<label for="diario">
 								Diario
 							</label>
-            </div>
-          </section>
-          <section>
-            <span class="icon major fa-clock-o"></span>
-            <h3>
+						</div>
+					</section>
+					<section>
+						<span class="icon major fa-clock-o"></span>
+						<h3>
 							Horario del Servicio
 						</h3>
-            <div class="6u 12u$(small)">
-              <input type="checkbox" data-ng-model="organizacion.horario.manana.disponible" id="mañana" name="demo-copy">
-              <label for="mañana">
+						<div class="6u 12u$(small)">
+							<input ng-hide="true" type="checkbox" data-ng-model="organizacion.horario.manana.disponible" id="mañana" name="demo-copy">
+							<label for="mañana">
 								Mañana
 							</label>
-              <label class="schedule" ng-show="organizacion.horario.manana.disponible">
+							<label class="schedule" ng-show="organizacion.horario.manana.disponible">
 								Desde
 							</label>
-              <input class="schedule" type="number" data-ng-model="organizacion.horario.manana.desde" ng-show="organizacion.horario.manana.disponible" name="demo-copy" placeholder="8:00">
-              <label class="schedule" ng-show="organizacion.horario.manana.disponible">
+							<input ng-hide="true" class="schedule" type="number" data-ng-model="organizacion.horario.manana.desde" ng-show="organizacion.horario.manana.disponible"
+							 name="demo-copy" placeholder="8:00">
+							<label class="schedule" ng-show="organizacion.horario.manana.disponible">
 								Hasta
 							</label>
-              <input class="schedule to" type="number" data-ng-model="organizacion.horario.manana.hasta" ng-show="organizacion.horario.manana.disponible" name="demo-copy" placeholder="12:00">
-            </div>
-            <div class="6u 12u$(small)">
-              <input type="checkbox" data-ng-model="organizacion.horario.tarde.disponible" id="tarde" name="demo-copy">
-              <label for="tarde">
+							<input ng-hide="true" class="schedule to" type="number" data-ng-model="organizacion.horario.manana.hasta" ng-show="organizacion.horario.manana.disponible"
+							 name="demo-copy" placeholder="12:00">
+						</div>
+						<div class="6u 12u$(small)">
+							<input ng-hide="true" type="checkbox" data-ng-model="organizacion.horario.tarde.disponible" id="tarde" name="demo-copy">
+							<label for="tarde">
 								Tarde
 							</label>
-              <label class="schedule" ng-show="organizacion.horario.tarde.disponible">
+							<label class="schedule" ng-show="organizacion.horario.tarde.disponible">
 								Desde
 							</label>
-              <input class="schedule" type="number" data-ng-model="organizacion.horario.tarde.desde" ng-show="organizacion.horario.tarde.disponible" name="demo-copy" placeholder="14:00">
-              <label class="schedule" ng-show="organizacion.horario.tarde.disponible">
+							<input ng-hide="true" class="schedule" type="number" data-ng-model="organizacion.horario.tarde.desde" ng-show="organizacion.horario.tarde.disponible"
+							 name="demo-copy" placeholder="14:00">
+							<label class="schedule" ng-show="organizacion.horario.tarde.disponible">
 								Hasta
 							</label>
-              <input class="schedule to" type="number" data-ng-model="organizacion.horario.tarde.hasta" ng-show="organizacion.horario.tarde.disponible" name="demo-copy" placeholder="19:00">
-            </div>
-            <div class="6u 12u$(small)">
-              <input type="checkbox" data-ng-model="organizacion.horario.noche.disponible" id="Noche" name="demo-copy">
-              <label for="Noche">
+							<input ng-hide="true" class="schedule to" type="number" data-ng-model="organizacion.horario.tarde.hasta" ng-show="organizacion.horario.tarde.disponible"
+							 name="demo-copy" placeholder="19:00">
+						</div>
+						<div class="6u 12u$(small)">
+							<input ng-hide="true" type="checkbox" data-ng-model="organizacion.horario.noche.disponible" id="Noche" name="demo-copy">
+							<label for="Noche">
 								Noche
 							</label>
-              <label class="schedule" ng-show="organizacion.horario.noche.disponible">
+							<label class="schedule" ng-show="organizacion.horario.noche.disponible">
 								Desde
 							</label>
-              <input class="schedule" type="number" data-ng-model="organizacion.horario.noche.desde" ng-show="organizacion.horario.noche.disponible" name="demo-copy" placeholder="20:00">
-              <label class="schedule" ng-show="organizacion.horario.noche.disponible">
+							<input ng-hide="true" class="schedule" type="number" data-ng-model="organizacion.horario.noche.desde" ng-show="organizacion.horario.noche.disponible"
+							 name="demo-copy" placeholder="20:00">
+							<label class="schedule" ng-show="organizacion.horario.noche.disponible">
 								Hasta
 							</label>
-              <input class="schedule to" type="number" data-ng-model="organizacion.horario.noche.hasta" ng-show="organizacion.horario.noche.disponible" name="demo-copy" placeholder="23:00">
-            </div>
-          </section>
-      	</div>
+							<input ng-hide="true" class="schedule to" type="number" data-ng-model="organizacion.horario.noche.hasta" ng-show="organizacion.horario.noche.disponible"
+							 name="demo-copy" placeholder="23:00">
+						</div>
+					</section>
+				</div>
 			</div>
 		</section>
 
 		<section id="three" class="wrapper style1 fade-up">
-		  <div class="inner">
+			<div class="inner">
 				<ul class="actions">
 					<li>
-						<input type="button" required class="button special-secondary" id="submit" value="Cancelar" ng-click="cancel()"/>
+						<input type="button" required class="button special-secondary" id="submit" value="Cancelar" ng-click="cancel()" />
 					</li>
-				  <li>
-						<input type="submit" required class="button special" id="submit" value="Guardar"/>
+					<li>
+						<input type="submit" required class="button special" id="submit" value="Guardar" />
 					</li>
 				</ul>
 			</div>

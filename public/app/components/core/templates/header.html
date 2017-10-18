@@ -1,0 +1,96 @@
+<nav id="header" class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a href="http://bancodealimentoscba.org.ar/" class="title">
+            <img src="/assets/images/BAC-cintaHztal-1.png" alt="Fundación Banco de Alimentos de Córdoba" width="180" height="90">
+        </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-ex1-collapse" style="margin-right: 20px">
+        <ul class="nav navbar-nav navbar-right" ng-show="Menu == 'landing' || Menu=='loginPage'">
+            <li>
+                <a href="" data-ng-click="newOrganization()" class="active">
+                    Inscripción
+                </a>
+            </li>
+            <li>
+                <a href="http://bancodealimentoscba.org.ar/quienes-somos/">
+                    Quienes Somos
+                </a>
+            </li>
+            <li>
+                <a href="http://bancodealimentoscba.org.ar/contacto/">
+                    Contacto
+                </a>
+            </li>
+            <li>
+                <headerlogin></headerlogin>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right" ng-show="Menu == 'editorganization'">
+            <li>
+                <a href="" data-ng-click="scrollTo('one')">
+                    Información de la Organización
+                </a>
+            </li>
+            <li>
+                <a href="" data-ng-click="scrollTo('three')">
+                    Personería Jurídica
+                </a>
+            </li>
+            <li>
+                <a href="" data-ng-click="scrollTo('two')" data-ng-show="legalStatus == 'NO'">
+                    Pasos previos
+                </a>
+            </li>
+            <li>
+                <a href="" data-ng-click="scrollTo('three')" data-ng-show="legalStatus == 'YES'">
+                    Detalle
+                </a>
+            </li>
+            <li class="logout">
+                <logout></logout>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right" ng-show="Menu == 'neworganization'">
+            <li>
+                <a href="" data-ng-click="scrollTo('intro')">
+                    Bienvenido
+                </a>
+            </li>
+            <li>
+                <a href="" data-ng-click="scrollTo('one')">
+                    Información de la Organización
+                </a>
+            </li>
+            <li>
+                <a href="" data-ng-click="scrollTo('two')" ng-show="legalStatus == 'NO'">
+                    Pasos previos
+                </a>
+            </li>
+            <li>
+                <a href="" data-ng-click="scrollTo('three')" ng-show="legalStatus == 'YES'">
+                    Detalle y beneficios
+                </a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right" ng-show="Menu == 'listorganization'">
+            <li>
+                <a class="active">
+                    Lista de Organizaciones
+                </a>
+            </li>
+            <li>
+                <logout></logout>
+            </li>
+        </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+</nav>

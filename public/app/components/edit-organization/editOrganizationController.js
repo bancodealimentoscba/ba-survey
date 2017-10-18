@@ -102,6 +102,6 @@ baSurvey.controller('editOrganizationCtrl', [
         $scope.setCenterAndMarker($scope.organizacion.ubicacion.coordenadas.lat, $scope.organizacion.ubicacion.coordenadas.lng);
       }
       blockUI.stop();
-    };
+    };    
   }
 ]);

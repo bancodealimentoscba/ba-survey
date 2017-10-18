@@ -1,58 +1,50 @@
-<!-- Header -->
-<header id="header">
-  <a href="http://bancodealimentoscba.org.ar/" class="title">
-    Banco de Alimentos
-  </a>
-  <nav>
-    <ul>
-      <li>
-        <a href="" data-ng-click="newOrganization()" class="active">
-          Inscripción
-        </a>
-      </li>
-      <li>
-        <a href="http://bancodealimentoscba.org.ar/quienes-somos/">
-          Quienes Somos
-        </a>
-      </li>
-      <li>
-        <a href="http://bancodealimentoscba.org.ar/contacto/">
-          Contacto
-        </a>
-      </li>
-      <li>
-        <headerlogin></headerlogin>
-      </li>
-    </ul>
-  </nav>
-</header>
+<custom-header header-Menu="landing"></custom-header>
 
 <!-- Wrapper -->
 <div id="wrapper">
+  <div class="image fit landing">
+    <img src="assets/images/bac.jpg" alt="" />
+  </div>
+
   <!-- Main -->
   <section id="main" class="wrapper">
-    <div class="inner">
-      <h1 class="major">
-        Inscribí tu Organización en el Banco de Alimentos
-      </h1>
-      <span class="image fit landing"><img src="assets/images/bac.jpg" alt="" /></span>
-      <p>
-        La <b>Fundación Banco de Alimentos Córdoba</b> tiene como misión
-        recuperar alimentos para evitar la pérdida y los desperdicios de
-        los mismos.
-      </p>
-      <p>
-        Si tenés una Organización que presta un servicio alimenticio con
-        el objetivo de combatir el hambre, sumate a nuestra red de
-        Organizaciones Beneficiarias.
-      </p>
-      <p>
-        Completá el siguiente Formulario y nos estaremos comunicando con
-        vos en un lapso no mayor a dos semanas.
-      </p>
-      <a data-ng-click="newOrganization()" class="button special">
-        Inscribí tu Organización
-      </a>
+    <div class="row">
+
+      <div class="col-md-offset-2 col-md-8">
+        <div class="iconbox">
+          <div class="iconbox-icon">
+            <div class="image">
+              <i class="fa fa-home"></i>
+            </div>
+            <div class="info">
+              <h3 class="title">
+                Inscribí tu Organización en el Banco de Alimentos
+              </h3>
+              <p>
+                  La
+                  <b>Fundación Banco de Alimentos Córdoba</b> tiene como misión recuperar alimentos para evitar la pérdida y los desperdicios
+                  de los mismos.
+                </p>
+                <p>
+                  Si tenés una Organización que presta un servicio alimenticio con el objetivo de combatir el hambre, sumate a nuestra red
+                  de Organizaciones Beneficiarias.
+                </p>
+                <p>
+                  Completá el siguiente Formulario y nos estaremos comunicando con vos en un lapso no mayor a dos semanas.
+                </p>                
+              <div class="more">
+                  <button data-ng-click="newOrganization()" class="button special">
+                      Inscribí tu Organización
+                  </button>
+              </div>
+            </div>
+          </div>
+          <div class="space"></div>
+        </div>
+      </div>
+
+
+      
     </div>
   </section>
 </div>
