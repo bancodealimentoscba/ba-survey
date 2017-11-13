@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Droid+Sans');
 
 .image.fit.landing  img {
-  overflow: hidden;
-  height: 550px;
+  overflow: hidden;  
+  margin-top: 95px;
   object-fit: cover;
   background-position: center center;
   background-repeat: no-repeat;
