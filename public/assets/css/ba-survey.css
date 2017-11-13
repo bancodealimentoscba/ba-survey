@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Droid+Sans');
 
-.image.fit.landing  img {
-  overflow: hidden;
-  height: 550px;
-  object-fit: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+.image.fit.landing {
+  background-image: url(../../assets/images/bac2.jpg);
+  background-color: #cccccc;
+  height: 700px;
+  width: 100%;
+  background-repeat: no-repeat;  
+  background-size: cover;
+  background-position: top;
 }
 
 span.italic {
